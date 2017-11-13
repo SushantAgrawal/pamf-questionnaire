@@ -1,0 +1,25 @@
+{
+  "name": "pamf-questionnaire",
+  "version": "0.0.1",
+  "description": "Pamf questionnaire",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SushantAgrawal/pamf-questionnaire.git"
+  },
+  "author": "Sushant Agrawal <sagarwal@netwoven.com> (www.netwoven.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SushantAgrawal/pamf-questionnaire/issues"
+  },
+  "homepage": "https://github.com/SushantAgrawal/pamf-questionnaire#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mustache": "^2.3.0"
+  },
+  "devDependencies": {}
+}
