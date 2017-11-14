@@ -17,7 +17,7 @@ export class AppComponent {
         if (d.error) {
           console.log(d.error);
         } else {
-          console.log(d.data);
+          console.log(d.redirectUrl);
         }
       });
   }
