@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 import {messages} from './app.config';
@@ -10,9 +11,21 @@ import {urlMaps} from './app.config';
 export class AppService {
   subject : Subject < any >;
   urlMaps : {};
+  urlParams:{};
 
-  constructor(private httpClient : HttpClient) {
+  constructor(private httpClient : HttpClient, private activatedRoute : ActivatedRoute, private router : Router) {
     this.subject = new Subject();
+    this.setUrlParams();
+  }
+
+  setUrlParams() {    
+    let rawParams = window.location.search;
+    let urlArray = rawParams.slice(rawParams.indexOf('?') + 1).split('&');
+    this.urlParams = urlArray.reduce((prevValue, x, i) => {
+      let elementArray = x && x.split('=');
+      (elementArray.length > 0) && (prevValue[elementArray[0]] = elementArray[1]);
+      return (prevValue);
+    }, {});
   }
 
   emit(id : string, options?: any) {

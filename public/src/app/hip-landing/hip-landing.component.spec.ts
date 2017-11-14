@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LetterLandingPageComponent } from './letter-landing-page.component';
+import { HipLandingComponent } from './hip-landing.component';
 
-describe('LetterLandingPageComponent', () => {
-  let component: LetterLandingPageComponent;
-  let fixture: ComponentFixture<LetterLandingPageComponent>;
+describe('HipLandingComponent', () => {
+  let component: HipLandingComponent;
+  let fixture: ComponentFixture<HipLandingComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LetterLandingPageComponent ]
+      declarations: [ HipLandingComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LetterLandingPageComponent);
+    fixture = TestBed.createComponent(HipLandingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
