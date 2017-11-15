@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 @Component({selector: 'app-letter-landing', templateUrl: './letter-landing.component.html', styleUrls: ['./letter-landing.component.scss'], encapsulation: ViewEncapsulation.None})
 export class LetterLandingComponent implements OnInit {
   subscriptions : any;
+  code:string;
   constructor(private appService : AppService, private router:Router) {}
 
   ngOnInit() {
@@ -13,7 +14,7 @@ export class LetterLandingComponent implements OnInit {
       .subscribe(d => {
         d.error
           ? console.log(d.error)
-          : (() => {
+          : (() => {            
             let redirectUrl = d.redirectUrl;
             console.log(redirectUrl);
             let route = this.appService.getRoute(redirectUrl);
@@ -22,18 +23,19 @@ export class LetterLandingComponent implements OnInit {
       })
   }
 
-  formPost(data) {
-    this
-      .appService
-      .httpPost('post:letter:landing');
-  }
+  // formPost(data) {
+  //   this
+  //     .appService
+  //     .httpPost('post:letter:landing');
+  // }
 
   submitClicked(){
     this
     .appService
-    .httpPost('post:letter:landing');
+    .httpPost('post:letter:landing',this.code);
     return(false);
   }
+
   ngOnDestroy() {
     this
       .subscriptions
