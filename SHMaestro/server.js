@@ -75,6 +75,7 @@ app.put('/bio/questionnaire', (req, res) => {
 
 app.post("/pamf/testPamf", (req, res) => {    
     let redirectUrl = 'http://localhost:3001/pamf/letterLanding';
+    redirectUrl = "http://localhost:4200/pamf/incorrectTjr"
     res.writeHead(301, {Location: redirectUrl});
     res.end();
 });

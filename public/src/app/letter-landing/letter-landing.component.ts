@@ -23,16 +23,10 @@ export class LetterLandingComponent implements OnInit {
       })
   }
 
-  // formPost(data) {
-  //   this
-  //     .appService
-  //     .httpPost('post:letter:landing');
-  // }
-
   submitClicked(){
     this
     .appService
-    .httpPost('post:letter:landing',{code:this.code});
+    .httpPost('post:letter:landing');
     return(false);
   }
 

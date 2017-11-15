@@ -23,7 +23,7 @@ let options = {
 exports.options = options;
 let pamfOptions = {
     nodeServerBaseUrl: 'http://localhost:4200',
-    nodeServerPath:'',
+    nodeServerPath:'pamf',
     redirection:{
         "landing-page":function(contact_type,code,email){
             let ret="";
