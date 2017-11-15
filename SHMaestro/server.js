@@ -73,11 +73,21 @@ app.put('/bio/questionnaire', (req, res) => {
     res.json({status: 'Question posted'});
 });
 
-app.post("/pamf/testPamf", (req, res) => {
-    //res.json({status: 'Question posted'});
-    // let redirectUrl = util.format("%s/%s", options.pamfOptions.nodeServerBaseUrl, options.pamfOptions.nodeServerPath);
-    // redirectUrl = util.format('%s%s', redirectUrl, c4);
-    let redirectUrl='http://localhost:4200?myName=sushant';
+app.post("/pamf/testPamf", (req, res) => {    
+    let redirectUrl = 'http://localhost:3001/pamf/letterLanding';
+    res.writeHead(301, {Location: redirectUrl});
+    res.end();
+});
+
+app.post("/pamf/:page", (req, res, next) => {
+    let page = req.params.page;
+    let contact_type = req.body["contact_type"];
+    let code = req.body["code"];
+    let email = req.body["email"];
+    let nodeServerBaseUrl = options.pamfOptions.nodeServerBaseUrl;
+    let nodeServerPath = options.pamfOptions.nodeServerPath;
+    let redirectPath = (page == 'landing-page') && (options.pamfOptions.redirection[page](contact_type, code, email));
+    let redirectUrl = util.format("%s/%s/%s",nodeServerBaseUrl,nodeServerPath,redirectPath);
     res.writeHead(301, {Location: redirectUrl});
     res.end();
 });

@@ -19,13 +19,22 @@ let options = {
         "redirect-to-survey":"invalidDob"
     }
 };
-// module.exports = options;
+
 exports.options = options;
 let pamfOptions = {
-    nodeServerBaseUrl: 'localhost:4200',
+    nodeServerBaseUrl: 'http://localhost:4200',
     nodeServerPath:'',
     redirection:{
-        pamf:""
+        "landing-page":function(contact_type,code,email){
+            let ret="";
+            if(code=='12345'){
+                ret="selectType";
+            } else{
+                ret="incorrectTjr";
+                // ret='letterLanding'
+            }
+            return(ret);
+        }
     }
 };
 exports.pamfOptions = pamfOptions;
