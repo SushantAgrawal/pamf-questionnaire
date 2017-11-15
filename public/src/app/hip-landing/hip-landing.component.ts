@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-hip-landing',
@@ -8,9 +9,12 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class HipLandingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
 
+  next(){
+    this.router.navigate(['hipIntro']);
+  }
 }

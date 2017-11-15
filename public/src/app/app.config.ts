@@ -2,7 +2,9 @@ import {Routes} from '@angular/router';
 import {LetterLandingComponent} from './letter-landing/letter-landing.component';
 import {HipLandingComponent} from './hip-landing/hip-landing.component';
 import {IncorrectTjrComponent} from './incorrect-tjr/incorrect-tjr.component';
-
+import {HipIntroComponent} from './hip-intro/hip-intro.component';
+import {HipPage1Component} from './hip-page1/hip-page1.component';
+import {HipPage2Component} from './hip-page2/hip-page2.component';
 export const messages = {
     idNotMappedToUrl: 'Message id is not mapped to http url in config.ts file at application root.',
     httpGetUnknownError: 'Unknown error encountered while making http get request'
@@ -42,5 +44,14 @@ export const ROUTES : Routes = [
     }, {
         path: 'incorrectTjr',
         component: IncorrectTjrComponent
+    }, {
+        path: 'hipIntro',
+        component: HipIntroComponent
+    }, {
+        path: 'hipPage1',
+        component: HipPage1Component
+    }, {
+        path: 'hipPage2',
+        component: HipPage2Component
     }
 ];

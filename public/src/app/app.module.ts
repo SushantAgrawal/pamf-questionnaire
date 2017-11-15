@@ -9,10 +9,11 @@ import {AppService} from './app.service';
 import {LetterLandingComponent} from './letter-landing/letter-landing.component';
 import {HipLandingComponent} from './hip-landing/hip-landing.component';
 import {IncorrectTjrComponent} from './incorrect-tjr/incorrect-tjr.component';
+import { HipIntroComponent } from './hip-intro/hip-intro.component';
+import { HipPage1Component } from './hip-page1/hip-page1.component';
+import { HipPage2Component } from './hip-page2/hip-page2.component';
+import { CollaborateComponent } from './collaborate/collaborate.component';
 
-import {HoosQ1Q2Component} from './hoos-q1-q2/hoos-q1-q2.component';
-import {HipHoosIntroComponent} from './hip-hoos-intro/hip-hoos-intro.component';
-import {CollaborateQuestionnaireComponent} from './collaborate-questionnaire/collaborate-questionnaire.component';
 
 @NgModule({
   declarations: [
@@ -20,10 +21,10 @@ import {CollaborateQuestionnaireComponent} from './collaborate-questionnaire/col
     LetterLandingComponent,
     HipLandingComponent,
     IncorrectTjrComponent,
-
-    HoosQ1Q2Component,
-    HipHoosIntroComponent,
-    CollaborateQuestionnaireComponent
+    HipIntroComponent,
+    HipPage1Component,
+    HipPage2Component,
+    CollaborateComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, RouterModule.forRoot(ROUTES, {useHash: false})//, FormsModule

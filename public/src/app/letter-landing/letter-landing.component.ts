@@ -24,9 +24,10 @@ export class LetterLandingComponent implements OnInit {
   }
 
   submitClicked(){
-    this
-    .appService
-    .httpPost('post:letter:landing');
+    this.router.navigate(['hipLanding']);
+    // this
+    // .appService
+    // .httpPost('post:letter:landing');
     return(false);
   }
 
