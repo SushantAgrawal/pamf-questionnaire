@@ -15,7 +15,7 @@ export const urlMaps = {
     "test1": 'http://localhost:3003/bio/questionnaire',
     "test2": 'http://localhost:3003/pamf/testPamf'
 }
-
+//
 export const ROUTES : Routes = [
     {
         path: '',
