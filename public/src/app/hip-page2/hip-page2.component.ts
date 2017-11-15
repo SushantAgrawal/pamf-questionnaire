@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-hip-page2',
   templateUrl: './hip-page2.component.html',
@@ -8,9 +8,11 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class HipPage2Component implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  constructor(private router:Router) {}
+  
+    ngOnInit() {}
+    next() {
+      this.router.navigate(['hipPage2'])
+    }
 
 }
