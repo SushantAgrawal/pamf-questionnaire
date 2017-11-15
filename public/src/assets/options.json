@@ -1,0 +1,25 @@
+{
+    "env": "dev",
+    "allEnvs": {
+        "dev": {
+            "maestroBaseUrl": "http://localhost:3003",
+            "maestroPath": ""
+        },
+        "staging": {
+            "maestroBaseUrl": "http://localhost:3003",
+            "maestroPath": ""
+        },
+        "qa": {
+            "maestroBaseUrl": "http://localhost:3003",
+            "maestroPath": ""
+        },
+        "validation": {
+            "maestroBaseUrl": "http://localhost:3003",
+            "maestroPath": ""
+        },
+        "production": {
+            "maestroBaseUrl": "http://localhost:3003",
+            "maestroPath": ""
+        }
+    }
+}

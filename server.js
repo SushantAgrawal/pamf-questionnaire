@@ -15,9 +15,8 @@ app.set('config', config);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(bodyParser.json({type: 'application/vnd.api+json'}));
-let p = path.join(__dirname, 'public','dist');
+let p = path.join(__dirname, 'public', 'dist');
 app.use(express.static(p));
-
 
 process.env.NODE_ENV = config.env;
 
@@ -42,16 +41,38 @@ var allowCrossDomain = function (req, res, next) {
     }
 };
 app.use(allowCrossDomain);
+app.get('/pamf/options', (req, res, next) => {
+    try {
+        res.json({maestroBaseUrl: options.urls.maestroBaseUrl, maestroPath: options.urls.maestroPath});
+    } catch (error) {
+        let err = new def.NError(500, messages.errInternalServerError, error.message);
+        next(err);
+    }
+})
+app.get('/pamf/:page', (req, res, next) => {
+    try {
+        // let path1 = path.join(__dirname, 'public', 'dist', 'index.html'); let
+        // template = fs.readFileSync(path1, 'utf8'); let file1 =
+        // mustache.render(template, {     maestroBaseUrl:options.urls.maestroBaseUrl,
+        // maestroPath:options.urls.maestroPath }); (pageObj.status || pageObj.status ==
+        // 0) && (file1 = mustache.render(file1, {status: pageObj.status*25}));
+        // res.send(file1);
+        res.sendFile(path.join(__dirname, 'public', 'dist', 'index.html'));
+    } catch (error) {
+        let err = new def.NError(500, messages.errInternalServerError, error.message);
+        next(err);
+    }
 
-app.get('/bio/:page', function (req, res,next) {
+})
+app.get('/bio/:page', function (req, res, next) {
     try {
         let pageShortName = req.params.page;
         let invCode = req.query.c1;
-        let c4 = req.query.c4;        
+        let c4 = req.query.c4;
         let pageObj = options.urls && options.pages && options.pages[pageShortName];
 
         let nextPageUrl = '';
-            // nextPage1Url = '';
+        // nextPage1Url = '';
         if (pageObj) {
             // let path1 = path.join(__dirname, 'public', 'biobank', pageObj.htmlFileName);
             // let template = fs.readFileSync(path1, 'utf8');
@@ -67,9 +88,9 @@ app.get('/bio/:page', function (req, res,next) {
                     : '';
                 nextPageUrl = util.format('%s/%s/%s%s', options.urls.nodeServerBaseUrl, options.urls.nodeServerPath, pageObj.nextPage, invCode);
 
-                // if (pageObj.nextPage1) {
-                //     nextPage1Url = util.format('%s/%s/%s%s', options.urls.nodeServerBaseUrl, options.urls.nodeServerPath, pageObj.nextPage1, invCode);
-                // }
+                // if (pageObj.nextPage1) {     nextPage1Url = util.format('%s/%s/%s%s',
+                // options.urls.nodeServerBaseUrl, options.urls.nodeServerPath,
+                // pageObj.nextPage1, invCode); }
             } else {
                 nextPageUrl = options.sutterHealthUrl;
             }
@@ -84,18 +105,13 @@ app.get('/bio/:page', function (req, res,next) {
                 c4 = ''
             }
             nextPageUrl = util.format('%s%s', nextPageUrl, c4);
-            // nextPage1Url = util.format('%s%s', nextPage1Url, c4);
-            // }
-            // let file1 = mustache.render(template, {
-            //     nextPage: nextPageUrl,
-            //     nextPage1: nextPage1Url,
-            //     questionPost: pageObj.questionPost && (pageObj.questionPost.concat(invCode
-            //         ? '?invitation-code=' + req.query.c1
-            //         : '')),
-            //     progressBar: progressBarTemplate
-            // });
-            // (pageObj.status || pageObj.status == 0) && (file1 = mustache.render(file1, {status: pageObj.status*25}));
-            // res.send(file1);
+            // nextPage1Url = util.format('%s%s', nextPage1Url, c4); } let file1 =
+            // mustache.render(template, {     nextPage: nextPageUrl,     nextPage1:
+            // nextPage1Url,     questionPost: pageObj.questionPost &&
+            // (pageObj.questionPost.concat(invCode         ? '?invitation-code=' +
+            // req.query.c1         : '')),     progressBar: progressBarTemplate });
+            // (pageObj.status || pageObj.status == 0) && (file1 = mustache.render(file1,
+            // {status: pageObj.status*25})); res.send(file1);
         } else {
             //error
             res
@@ -109,11 +125,11 @@ app.get('/bio/:page', function (req, res,next) {
     }
 });
 app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public','dist', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'dist', 'index.html'));
 })
 
 var server = app.listen(cmdPort || process.env.PORT || config.port, function () {
-    console.log('Node server running at port: ' , server.address().port);
+    console.log('Node server running at port: ', server.address().port);
 });
 
 app.use(function (err, req, res, next) {

@@ -6,26 +6,50 @@ import {Observable} from 'rxjs/Observable';
 import {messages} from './app.config';
 import 'rxjs/add/operator/filter';
 import {urlMaps} from './app.config';
+import {utils} from 'protractor';
 
 @Injectable()
 export class AppService {
   subject : Subject < any >;
-  urlMaps : {};
-  urlParams:{};
+  // urlMaps : {};
+  urlParams : {};
+  options : any;
 
   constructor(private httpClient : HttpClient, private activatedRoute : ActivatedRoute, private router : Router) {
     this.subject = new Subject();
-    this.setUrlParams();
+    this.getUrlParams();
+    this.getOptions();
   }
 
-  setUrlParams() {    
-    let rawParams = window.location.search;
+  getOptions() {
+    this
+      .filterOn('file:options:json')
+      .subscribe(d => {
+        if (d.error) {
+          console.log(d.error);
+        } else {
+          let options = d.data;
+          let env = options.env;
+          this.options = options.allEnvs[env];
+        }
+      })
+    this.httpGet('file:options:json');
+  }
+
+  getUrlParams() {
+    let rawParams = decodeURIComponent(window.location.search);
     let urlArray = rawParams.slice(rawParams.indexOf('?') + 1).split('&');
     this.urlParams = urlArray.reduce((prevValue, x, i) => {
       let elementArray = x && x.split('=');
       (elementArray.length > 0) && (prevValue[elementArray[0]] = elementArray[1]);
       return (prevValue);
     }, {});
+  }
+
+  getRoute(url) {
+    let urlArray = url.split('/');
+    let route = (urlArray.length > 0) && (urlArray[urlArray.length - 1]);
+    return (route);
   }
 
   emit(id : string, options?: any) {
@@ -50,7 +74,7 @@ export class AppService {
           .subject
           .next({id: id, data: d, body: body});
       }, err => {
-        if (err.status && (err.status == 200)) {
+        if (err.status && ((err.status == 200) || (err.status == 404))) {
           this
             .subject
             .next({id: id, redirectUrl: err.url})
@@ -67,7 +91,7 @@ export class AppService {
     value: string
   }[], headers?: [any], carryBag?: any) {
     try {
-      let url = this.urlMaps[id];
+      let url = urlMaps[id];
       let myParams = new URLSearchParams();
       queryParams && (queryParams.map(x => myParams.append(x.name, x.value)));
 

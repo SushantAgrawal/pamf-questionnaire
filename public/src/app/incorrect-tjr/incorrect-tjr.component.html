@@ -1,12 +1,25 @@
 <div class="container">
-  <div class="logo-area"><img src="/../assets/images/PAMF_logo.png" alt="Sutter Health" class="img-responsive" /></div>
+  <div class="logo-area">
+    <img src="/../assets/images/PAMF_logo.png" alt="Sutter Health" class="img-responsive" />
+  </div>
 
   <div class="question-text">
-          The Total Joint Replacement Access Code you have entered does not match our records. Please review your Access Code information and re-enter the code. If problems continue to occur, please feel free to call Marianne Bicomong at 408-523-3821.
+    The Total Joint Replacement Access Code you have entered does not match our records. Please review your Access Code information
+    and re-enter the code. If problems continue to occur, please feel free to call Marianne Bicomong at 408-523-3821.
   </div>
- 
+  <!-- <form> -->
   <div class="btnContainer">
-      <a href="#" class="btn-right">Done</a>
+    <button class="btn-right" (click)="done()">Done</button>
+    <!-- <input name="a1" type = "text" required> -->
+    <!-- <a href="#" class="btn-right">Done</a> -->
   </div>
 
+  <!-- </form> -->
+  <!-- <form ngNoForm (onSubmit)="logForm(form.value)" 
+action="http://localhost:3003/pamf/landing-page" method="post">
+    <label>Firstname:</label>
+    <input name="code" type="text" ngModel>
+  
+    <button type="submit">Submit</button>
+  </form> -->
 </div>

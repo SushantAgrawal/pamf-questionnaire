@@ -1,15 +1,10 @@
-import { Component,ViewEncapsulation} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AppService} from './app.service';
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None
-})
+@Component({selector: 'app-root', templateUrl: './app.component.html', styleUrls: ['./app.component.scss'], encapsulation: ViewEncapsulation.None})
 export class AppComponent {
   title = 'app';
-  constructor(private appService : AppService, private activatedRoute:ActivatedRoute, private router:Router) {}
+  constructor(private appService : AppService, private activatedRoute : ActivatedRoute, private router : Router) {}
   ngOnInit() {
     this
       .appService
@@ -23,9 +18,13 @@ export class AppComponent {
       });
   }
 
+  validate(validateForm) {
+    console.log(validateForm);
+  }
   post() {
     this
       .appService
       .httpPost('test2');
+      return(false);
   }
 }

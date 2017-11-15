@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+// import {FormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {ROUTES} from './app.config';
@@ -25,7 +26,7 @@ import {CollaborateQuestionnaireComponent} from './collaborate-questionnaire/col
     CollaborateQuestionnaireComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, RouterModule.forRoot(ROUTES, {useHash: false})
+    BrowserModule, HttpClientModule, RouterModule.forRoot(ROUTES, {useHash: false})//, FormsModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
