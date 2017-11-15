@@ -32,7 +32,7 @@ export class LetterLandingComponent implements OnInit {
   submitClicked(){
     this
     .appService
-    .httpPost('post:letter:landing',this.code);
+    .httpPost('post:letter:landing',{code:this.code});
     return(false);
   }
 
