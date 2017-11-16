@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
-import {HttpModule} from '@angular/http';
+// import {HttpModule} from '@angular/http';
 import {ROUTES} from './app.config';
 import {AppComponent} from './app.component';
 import {AppService} from './app.service';
@@ -61,7 +61,7 @@ import { UnsubscribeThankYouComponent } from './unsubscribe-thank-you/unsubscrib
   imports: [
     BrowserModule, 
     HttpClientModule, 
-    HttpModule,
+    // HttpModule,
     RouterModule.forRoot(ROUTES, {useHash: false}), FormsModule
   ],
   providers: [AppService],
