@@ -12,7 +12,6 @@ import {utils} from 'protractor';
 @Injectable()
 export class AppService {
   subject : Subject < any >;
-  // urlMaps : {};
   urlParams : {};
   options : any;
 
@@ -36,7 +35,7 @@ export class AppService {
           this.options = options.allEnvs[env];
         }
       })
-    // this.httpGet('file:options:json');
+    this.httpGet('file:options:json');
   }
 
   getUrlParams() {
@@ -65,24 +64,8 @@ export class AppService {
     return(this.subject.filter(d => (d.id === id)));
   };
 
-  // httpPost1(id: string, body?: any) {   let url = urlMaps[id];   // let headers
-  // = new Headers(); headers.append('Content-Type',   //   'application/json');
-  // var headers = new Headers();   headers.append('Content-Type',
-  // 'application/x-www-form-urlencoded');   let urlSearchParams = new
-  // URLSearchParams();   urlSearchParams.append('email', 'username');
-  // urlSearchParams.append('password', 'password');   body =
-  // urlSearchParams.toString()   // body = { "name": "sss" };   this     .http
-  // .post(url, body, { headers: headers })     .subscribe(d => {       this
-  // .subject         .next({ id: id, data: d, body: body });     }, err => { if
-  // (err.status && ((err.status == 200) || (err.status == 404))) { this
-  // .subject           .next({ id: id, redirectUrl: err.url })   } else {    this
-  //           .subject           .next({ id: id, error: err });       }   }); };
-
   httpPost(id : string, body?: {}) {
     let url = urlMaps[id];
-    // var headers = new HttpHeaders(); headers =
-    // headers.append('Content-Type','application/json'); body = JSON.stringify({
-    // "name": "sss" });
     if (body) {
       var headers = new HttpHeaders();
       headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -149,6 +132,24 @@ export class AppService {
         .next({id: id, error: messages.httpGetUnknownError})
     }
   }
+}
+
+//deprecated
+
+  // httpPost1(id: string, body?: any) {   let url = urlMaps[id];   // let headers
+  // = new Headers(); headers.append('Content-Type',   //   'application/json');
+  // var headers = new Headers();   headers.append('Content-Type',
+  // 'application/x-www-form-urlencoded');   let urlSearchParams = new
+  // URLSearchParams();   urlSearchParams.append('email', 'username');
+  // urlSearchParams.append('password', 'password');   body =
+  // urlSearchParams.toString()   // body = { "name": "sss" };   this     .http
+  // .post(url, body, { headers: headers })     .subscribe(d => {       this
+  // .subject         .next({ id: id, data: d, body: body });     }, err => { if
+  // (err.status && ((err.status == 200) || (err.status == 404))) { this
+  // .subject           .next({ id: id, redirectUrl: err.url })   } else {    this
+  //           .subject           .next({ id: id, error: err });       }   }); };
+
+  
   //   httpGet(id : string, queryParams?: {     name: string,     value: string
   // }[], headers?: [any], carryBag?: any) {     try {       let url =
   // urlMaps[id];       let myParams = new URLSearchParams();       queryParams &&
@@ -165,4 +166,3 @@ export class AppService {
   // .subject         .next({id: id, error: messages.idNotMappedToUrl});     }   }
   // catch (err) {     this       .subject       .next({id: id, error:
   // messages.httpGetUnknownError});   } };
-}
