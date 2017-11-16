@@ -7,20 +7,21 @@
   <div class="banner-area">
     <img src="/../assets/images/pamf-landing-page.png" alt="Sutter Health" class="img-responsive" />
   </div>  
-  <form>
+  <form #myForm="ngForm">
     <div class="question-text">
       Dear PAMF Patient, please enter the Total Joint Replacement Access Code printed on your letter:
       <span class="asterisk-red">*</span>
     </div>
-    <div class="question-inputfld">
-      <input name="code" type="text"  required ngModel>
+    <div class="question-inputfld">        
+      <input name="code" type="text" required [(ngModel)]="code">
+      <label *ngIf="!code">Please enter the code</label>
     </div>
     <div class="question-text">
       Additionally, we are asking patients for their email address. Your email address will be kept confidential and will not be
       used for any other purpose than for our office to contact you. Please provide your email address below.
     </div>
     <div class="question-inputfld">
-      <input name="email" ngModel type="text" >
+      <input name="email" type="text" [(ngModel)]="email">
     </div>
     <div class="question-text">
       Click "Next" to proceed to your questionnaires
