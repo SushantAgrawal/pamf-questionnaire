@@ -15,7 +15,8 @@ export const urlMaps = {
     "post:letter:landing": "http://localhost:3003/pamf/landing-page",
     "test": 'http://localhost:3003/bio/test',
     "test1": 'http://localhost:3003/bio/questionnaire',
-    "test2": 'http://localhost:3003/pamf/testPamf'
+    "test2": 'http://localhost:3003/pamf/testPamf',
+    "test3":'http://localhost:3003/pamf/test'
 }
 //
 export const ROUTES : Routes = [

@@ -79,7 +79,9 @@ app.post("/pamf/testPamf", (req, res) => {
     res.writeHead(301, {Location: redirectUrl});
     res.end();
 });
-
+app.get("/pamf/test",(req,res,next)=>{
+    res.json({"status":"ok"});
+})
 app.post("/pamf/:page", (req, res, next) => {
     let page = req.params.page;
     let contact_type = req.body["contact_type"];
