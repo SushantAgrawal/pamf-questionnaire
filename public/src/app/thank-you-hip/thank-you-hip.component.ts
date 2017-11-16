@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-thank-you-hip',
   templateUrl: './thank-you-hip.component.html',

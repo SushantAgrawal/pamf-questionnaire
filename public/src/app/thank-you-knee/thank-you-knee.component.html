@@ -1,3 +1,24 @@
-<p>
-  thank-you-knee works!
-</p>
+<div class="container">
+  <div class="progress-bar-container">
+      <div class="questionnaire-progress">Questionnaire Progress</div>
+      <div class="progress-bar" style="width:50%;"></div>
+  </div>
+  
+  <div class="logo-area">
+      <img src="/../assets/images/PAMF_logo.png" alt="Sutter Health" class="img-responsive" />
+  </div>
+
+  
+
+  <div class="question-text">
+      Well done $[custom5] $[custom6]!<br/>
+      You <strong>$[custom12]</strong> questionnaires are complete.<br/><br/>
+      Thank you for participating in the general health assessment and <strong>$[custom12]</strong> questionnaires. By doing so, you help us understand your needs and improve our <strong>$[custom12]</strong> care plans for you and all our patients.<br/><br/>
+
+For general information about the knee replacement program, please visit the <a href="#"> Knee Replacement Website</a>
+  </div>
+
+  <div class="btnContainer">
+    <button class="btn-right" (click)="next()">Next</button>
+  </div>
+</div>

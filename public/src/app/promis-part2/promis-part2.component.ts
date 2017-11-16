@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-promis-part2',
   templateUrl: './promis-part2.component.html',
@@ -8,9 +8,13 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class PromisPart2Component implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  constructor(private router : Router) {}
+  
+    ngOnInit() {}
+    next() {
+      this
+        .router
+        .navigate(['promisPart3'])
+    }
 
 }

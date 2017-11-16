@@ -1,3 +1,63 @@
-<p>
-  knee-page1 works!
-</p>
+<div class="container">
+  <div class="sh-alert-area">Please answer all questions marked with an (<span class="asterisk-red">*</span>) to continue.</div>
+  <header class="sh-header">Stiffness</header>
+
+  <div class="question-text">
+     
+The following question concerns the amount of joint stiffness you hve exerienced during the last week in your knee. Stiffness is a sensation of restriction or slowness in the ease with which you move your knee joint.
+  </div>
+<div  class="sh-table">
+  <table>
+      <thead>
+          <tr>
+              <th></th>
+              <th>None</th>
+              <th>Mild </th>
+              <th>Moderate</th>
+              <th>Severe</th>
+              <th>Extreme</th>
+
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td class="txtAlignLeft">
+                  How severe is your knee stiffness after first wakening in the morning? <span class="asterisk-red">*</span>
+              </td>
+              <td data-th="None">
+                  <label for="opt001">
+                  <input type="radio" id="opt001" name='group1' required value='All of the time'>
+                  </label>
+              </td>
+              <td data-th="Mild">
+                  <label for="opt002">
+                  <input type="radio" id="opt002" name='group1' value='Most of the time'>
+                  </label>
+              </td>
+              <td data-th="Moderate">
+                  <label for="opt003">
+                  <input type="radio" id="opt003" name='group1' value = 'A good bit of the time'>
+                   </label>
+              </td>
+              <td data-th="Severe">
+                  <label for="opt004">
+                  <input type="radio" id="opt004" name='group1' value = 'Some of the time'>
+                   </label>
+              </td>
+              <td data-th="Extreme">
+                  <label for="opt005">
+                  <input type="radio" id="opt005" name='group1' value='A little of the time'>
+                  </label>
+              </td>
+
+
+          </tr>
+          
+      </tbody>
+  </table>
+</div>
+<div class="btnContainer">
+  <button class="btn-right" (click)="next()">Next</button>
+</div>
+
+</div>
