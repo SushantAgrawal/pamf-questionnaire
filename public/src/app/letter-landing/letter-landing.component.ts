@@ -19,12 +19,14 @@ export class LetterLandingComponent implements OnInit {
           ? console.log(d.error)
           : (() => {
             let redirectUrl = d.redirectUrl;
+            let url = new URL(redirectUrl);
+            let c14 = url.searchParams.get("c14");
             let route = this
               .appService
               .getRoute(redirectUrl);
             this
               .router
-              .navigate([route]);
+              .navigate([route], { queryParamsHandling: "merge",queryParams:{c14:c14} });
           })()
       });
   }

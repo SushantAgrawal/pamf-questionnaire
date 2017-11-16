@@ -31,13 +31,14 @@ let pamfOptions = {
             let code = req.query["code"];
             let email = req.query["email"];
             if (code == '12345') {
-                ret = "hipLanding";
+                ret = "hipLanding?c14=10/11/2017";
             } else {
                 ret = "incorrectTjr";
             }
             return (ret);
         },
-        "login": "letterLanding"
+        "login": "letterLanding",
+        "load-questionnaire":"hipIntro"
     }
 };
 exports.pamfOptions = pamfOptions;

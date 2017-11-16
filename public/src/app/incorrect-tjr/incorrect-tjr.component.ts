@@ -19,8 +19,8 @@ export class IncorrectTjrComponent implements OnInit {
               .getRoute(redirectUrl);
             this
               .router
-              .navigate([route]);
-          })()
+              .navigate([route], { queryParamsHandling: "merge" });
+          })();
       }
     );
   }

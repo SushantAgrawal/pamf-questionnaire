@@ -30,6 +30,7 @@ export const messages = {
 export const urlMaps = {
     "letter:landing:next": "landing-page",
     "incorrect:tjr:done":"login",
+    "hip:landing:next":"load-questionnaire",
     "test": 'http://localhost:3003/bio/test',
     "test1": 'http://localhost:3003/bio/questionnaire',
     "test2": 'http://localhost:3003/pamf/testPamf',
