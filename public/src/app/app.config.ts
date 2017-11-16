@@ -20,6 +20,7 @@ import { ThankYouKneeComponent } from './thank-you-knee/thank-you-knee.component
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 import { UnsubscribeThankYouComponent } from './unsubscribe-thank-you/unsubscribe-thank-you.component';
 import { IneligibleComponent } from './ineligible/ineligible.component';
+import { CollaborateComponent } from './collaborate/collaborate.component';
 export const messages = {
     idNotMappedToUrl: 'Message id is not mapped to http url in config.ts file at application root.',
     httpGetUnknownError: 'Unknown error encountered while making http get request'
@@ -117,5 +118,8 @@ export const ROUTES : Routes = [
     }, {
         path: 'ineligible',
         component: IneligibleComponent
+    }, {
+        path: 'collaborate',
+        component: CollaborateComponent
     }
 ];
