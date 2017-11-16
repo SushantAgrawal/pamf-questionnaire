@@ -3,7 +3,7 @@
     "allEnvs": {
         "dev": {
             "maestroBaseUrl": "http://localhost:3003",
-            "maestroPath": ""
+            "maestroPath": "pamf"
         },
         "staging": {
             "maestroBaseUrl": "http://localhost:3003",

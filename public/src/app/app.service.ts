@@ -1,41 +1,37 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 // import { Http, Headers, URLSearchParams } from '@angular/http';
-import {ActivatedRoute, Router} from '@angular/router';
-import {Subject} from 'rxjs/Subject';
-import {Observable} from 'rxjs/Observable';
-import {messages} from './app.config';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+import { messages } from './app.config';
 import 'rxjs/add/operator/filter';
-import {urlMaps} from './app.config';
-import {utils} from 'protractor';
+import { urlMaps } from './app.config';
+import { utils } from 'protractor';
 
 @Injectable()
 export class AppService {
-  subject : Subject < any >;
-  urlParams : {};
-  options : any;
+  subject: Subject<any>;
+  urlParams: {};
+  settings: any;
 
   constructor(
-  //private http: Http,
-  private httpClient : HttpClient, private activatedRoute : ActivatedRoute, private router : Router) {
+    private httpClient: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) {
     this.subject = new Subject();
     this.getUrlParams();
-    this.getOptions();
+    this.getSettings();
   }
 
-  getOptions() {
-    this
-      .filterOn('file:options:json')
+  getSettings() {
+    this.httpClient
+      .get('assets/settings.json')
       .subscribe(d => {
-        if (d.error) {
-          console.log(d.error);
-        } else {
-          let options = d.data;
-          let env = options.env;
-          this.options = options.allEnvs[env];
-        }
-      })
-    this.httpGet('file:options:json');
+        let env = (d as any).env;
+        let allEnvs = (d as any).allEnvs;
+        this.settings = allEnvs[env];
+      }, err => {
+        console.log(err);
+      });
   }
 
   getUrlParams() {
@@ -54,18 +50,20 @@ export class AppService {
     return (route);
   }
 
-  emit(id : string, options?: any) {
+  emit(id: string, options?: any) {
     this
       .subject
-      .next({id: id, data: options});
+      .next({ id: id, data: options });
   };
 
-  filterOn(id : string) : Observable < any > {
-    return(this.subject.filter(d => (d.id === id)));
+  filterOn(id: string): Observable<any> {
+    return (this.subject.filter(d => (d.id === id)));
   };
 
-  httpPost(id : string, body?: {}) {
-    let url = urlMaps[id];
+  httpPost(id: string, body?: {}, queryParams?: {}) {
+    let baseUrl = this.settings.maestroBaseUrl.replace(/\/$/, '');
+    let path = this.settings.maestroPath;
+    let url = baseUrl.concat('/', path, '/', urlMaps[id]);
     if (body) {
       var headers = new HttpHeaders();
       headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -78,29 +76,41 @@ export class AppService {
         }, httpParams);
       body = httpParams.toString();
     }
+    if (queryParams) {
+      let httpParams = new HttpParams();
+      httpParams = Object
+        .keys(queryParams)
+        .reduce((prev, x, i) => {
+          httpParams = httpParams.append(x, queryParams[x]);
+          return (httpParams);
+        }, httpParams);
+      queryParams = httpParams;
+    }
     this
       .httpClient
-      .post(url, body, {headers: headers})
+      .post(url, body, { headers: headers, params: queryParams })
       .subscribe(d => {
         this
           .subject
-          .next({id: id, data: d, body: body});
+          .next({ id: id, data: d, body: body });
       }, err => {
         if (err.status && ((err.status == 200) || (err.status == 404))) {
           this
             .subject
-            .next({id: id, redirectUrl: err.url})
+            .next({ id: id, redirectUrl: err.url })
         } else {
           this
             .subject
-            .next({id: id, error: err});
+            .next({ id: id, error: err });
         }
       });
   };
 
-  httpGet(id : string, queryParams?: {}) {
+  httpGet(id: string, queryParams?: {}) {
     try {
-      let url = urlMaps[id];
+      let baseUrl = this.settings.maestroBaseUrl.replace(/\/$/, '');
+      let path = this.settings.maestroPath;
+      let url = baseUrl.concat(path, '/', urlMaps[id]);
       let httpParams = new HttpParams();
       httpParams = queryParams && (Object.keys(queryParams).reduce((prevValue, x, i) => {
         httpParams = httpParams.append(x, queryParams[x]);
@@ -110,26 +120,25 @@ export class AppService {
       if (url) {
         this
           .httpClient
-          .get(url, {params: httpParams})
-          // .map(response => response.json())
+          .get(url, { params: httpParams })
           .subscribe(d => {
             this
               .subject
-              .next({id: id, data: d});
+              .next({ id: id, data: d });
           }, err => {
             this
               .subject
-              .next({id: id, error: err});
+              .next({ id: id, error: err });
           });
       } else {
         this
           .subject
-          .next({id: id, error: messages.idNotMappedToUrl})
+          .next({ id: id, error: messages.idNotMappedToUrl })
       }
     } catch (err) {
       this
         .subject
-        .next({id: id, error: messages.httpGetUnknownError})
+        .next({ id: id, error: messages.httpGetUnknownError })
     }
   }
 }
@@ -149,7 +158,7 @@ export class AppService {
   // .subject           .next({ id: id, redirectUrl: err.url })   } else {    this
   //           .subject           .next({ id: id, error: err });       }   }); };
 
-  
+
   //   httpGet(id : string, queryParams?: {     name: string,     value: string
   // }[], headers?: [any], carryBag?: any) {     try {       let url =
   // urlMaps[id];       let myParams = new URLSearchParams();       queryParams &&

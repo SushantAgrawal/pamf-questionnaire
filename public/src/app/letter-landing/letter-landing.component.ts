@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
 import { AppService } from '../app.service';
 import { Router } from '@angular/router';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Component({ selector: 'app-letter-landing', templateUrl: './letter-landing.component.html', styleUrls: ['./letter-landing.component.scss'], encapsulation: ViewEncapsulation.None })
 export class LetterLandingComponent implements OnInit {
@@ -14,13 +13,12 @@ export class LetterLandingComponent implements OnInit {
   ngOnInit() {
     this.subscriptions = this
       .appService
-      .filterOn("post:letter:landing")
+      .filterOn("letter:landing:next")
       .subscribe(d => {
         d.error
           ? console.log(d.error)
           : (() => {
             let redirectUrl = d.redirectUrl;
-            // console.log(redirectUrl);
             let route = this
               .appService
               .getRoute(redirectUrl);
@@ -28,14 +26,14 @@ export class LetterLandingComponent implements OnInit {
               .router
               .navigate([route]);
           })()
-      });    
+      });
   }
 
-  next() {    
+  next() {
     // this.router.navigate(['hipLanding']);    
     let thisForm = this.myForm.form;
-    thisForm.valid && (this.appService.httpPost('post:letter:landing',
-      { code: this.code, email: this.email }));
+    thisForm.valid && (this.appService.httpPost('letter:landing:next', null,
+      { contact_type: this.appService.urlParams['c1'], code: this.code, email: this.email }));
     // let validCode = x.controls.code.valid;
   }
 

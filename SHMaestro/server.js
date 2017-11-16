@@ -7,6 +7,7 @@ var config = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
 var def = require('./definitions');
 var messages = require('./messages');
 var express = require('express');
+var _ = require('lodash');
 var app = express();
 let mustache = require('mustache');
 var options = require('./options');
@@ -83,13 +84,13 @@ app.get("/pamf/test",(req,res,next)=>{
     res.json({"status":"ok"});
 })
 app.post("/pamf/:page", (req, res, next) => {
-    let page = req.params.page;
-    let contact_type = req.body["contact_type"];
-    let code = req.body["code"];
-    let email = req.body["email"];
+    let page = req.params.page;    
     let nodeServerBaseUrl = options.pamfOptions.nodeServerBaseUrl;
     let nodeServerPath = options.pamfOptions.nodeServerPath;
-    let redirectPath = (page == 'landing-page') && (options.pamfOptions.redirection[page](contact_type, code, email));
+    let redirectPath = options.pamfOptions.redirection[page];
+    if(_.isFunction(redirectPath)){
+        redirectPath=redirectPath(req);
+    }
     let redirectUrl = util.format("%s/%s/%s",nodeServerBaseUrl,nodeServerPath,redirectPath);
     res.writeHead(301, {Location: redirectUrl});
     res.end();

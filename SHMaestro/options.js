@@ -25,8 +25,11 @@ let pamfOptions = {
     nodeServerBaseUrl: 'http://localhost:4200',
     nodeServerPath: 'pamf',
     redirection: {
-        "landing-page": function (contact_type, code, email) {
+        "landing-page": function (req) {
             let ret = "";
+            let contact_type = req.query["contact_type"];
+            let code = req.query["code"];
+            let email = req.query["email"];
             if (code == '12345') {
                 ret = "hipLanding";
             } else {
@@ -34,7 +37,7 @@ let pamfOptions = {
             }
             return (ret);
         },
-        ""
+        "login": "letterLanding"
     }
 };
 exports.pamfOptions = pamfOptions;
