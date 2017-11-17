@@ -34,7 +34,6 @@ export class LetterLandingComponent implements OnInit {
   }
 
   next() {
-    // console.log(environment.envName);  
     let thisForm = this.myForm.form;
     thisForm.valid && (this.appService.httpPost('letter:landing:next', null,
       { contact_type: this.appService.urlParams['c1'], code: this.code, email: this.email }));

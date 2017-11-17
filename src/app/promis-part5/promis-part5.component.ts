@@ -14,35 +14,35 @@ export class PromisPart5Component implements OnInit {
 
   ngOnInit() {
     this.subscriptions = this
-    .appService
-    .filterOn("promis:part5:submit")
-    .subscribe(d => {
-      d.error
-        ? console.log(d.error)
-        : (() => {
-          this.appService.httpPost('promis:part5:redirect');
-          console.log(d.data);
-        })()
-    });
-  let sub1 = this.appService.filterOn('promis:part5:redirect')
-    .subscribe(d => {
-      d.error
-        ? console.log(d.error)
-        : (() => {
-          let redirectUrl = d.redirectUrl;
-          let url = new URL(redirectUrl);
-          let route = this
-            .appService
-            .getRoute(redirectUrl);
-          this
-            .router
-            .navigate([route], { queryParamsHandling: "merge" });
-        })()
-    });
-  this.subscriptions.add(sub1);
+      .appService
+      .filterOn("promis:part5:submit")
+      .subscribe(d => {
+        d.error
+          ? console.log(d.error)
+          : (() => {
+            this.appService.httpPost('promis:part5:redirect');
+            console.log(d.data);
+          })()
+      });
+    let sub1 = this.appService.filterOn('promis:part5:redirect')
+      .subscribe(d => {
+        d.error
+          ? console.log(d.error)
+          : (() => {
+            let redirectUrl = d.redirectUrl;
+            let url = new URL(redirectUrl);
+            let route = this
+              .appService
+              .getRoute(redirectUrl);
+            this
+              .router
+              .navigate([route], { queryParamsHandling: "merge" });
+          })()
+      });
+    this.subscriptions.add(sub1);
   }
   next() {
-    this.appService.httpPost('promis:part5:submit',promisQuestions)
+    this.appService.httpPost('promis:part5:submit', promisQuestions)
   }
 
   ngOnDestroy() {

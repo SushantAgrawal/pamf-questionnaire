@@ -3,14 +3,17 @@
         <img src="/../assets/images/PAMF_logo.png" alt="Sutter Health" class="img-responsive" />
     </div>
     <div class="question-text">
-        Dear PAMF Patient,<br/>
-        You have requested to unsubscribe from the Total Joint Replacement email list.<br/><br/>
-        If at a later date you wish for our staff to contact you again via email, please feel free to call Linda Balazsy at 408-524-4193 to update your communication preferences.<br/><br/>
-        Thank you.
+        Dear PAMF Patient,
+        <br/> You have requested to unsubscribe from the Total Joint Replacement email list.
+        <br/>
+        <br/> If at a later date you wish for our staff to contact you again via email, please feel free to call Linda Balazsy
+        at 408-524-4193 to update your communication preferences.
+        <br/>
+        <br/> Thank you.
     </div>
-  
+
     <div class="btnContainer">
-        <button class="btn-left">Do Not Unsubscribe</button>
-    <button class="btn-right">Unsubscribe</button>
-  </div>
+        <button class="btn-left" (click)="notUnsubscribe()">Do Not Unsubscribe</button>
+        <button class="btn-right" (click)="next()" >Unsubscribe</button>
+    </div>
 </div>

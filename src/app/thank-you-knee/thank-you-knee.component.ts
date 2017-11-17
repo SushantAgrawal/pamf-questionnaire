@@ -1,6 +1,4 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import {Router} from '@angular/router';
-import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-thank-you-knee',
@@ -10,7 +8,7 @@ import { AppService } from '../app.service';
 })
 export class ThankYouKneeComponent implements OnInit {
 
-  constructor(private appService: AppService) { }
+  constructor() { }
 
   ngOnInit() {
   }

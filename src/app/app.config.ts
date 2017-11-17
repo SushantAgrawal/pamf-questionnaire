@@ -27,7 +27,7 @@ export const messages = {
     httpGetUnknownError: 'Unknown error encountered while making http get request'
 };
 // let host = window.location.href;
-
+// export const pamfUrl = "http://www.pamf.org";
 export const urlMaps = {
     "letter:landing:next": "landing-page",
     "incorrect:tjr:done": "login",
@@ -43,7 +43,8 @@ export const urlMaps = {
     "do:not:unsubscribe": "http://www.pamf.org",
     "unsubscribe:thank:you:exit": "http://www.pamf.org",
     "collaborate:submit": "submit-questionnaire",
-    "collaborate:redirect": "load-questionnaire"
+    "collaborate:redirect": "load-questionnaire",
+    "pamf:url":"http://www.pamf.org"
 }
 //
 export const ROUTES: Routes = [
