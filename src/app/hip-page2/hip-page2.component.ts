@@ -43,7 +43,6 @@ export class HipPage2Component implements OnInit {
   }
   next() {
     this.appService.httpPost('hip:page2:submit', hipQuestions);
-    // this.router.navigate(['hipMandatory'])
   }
 
   ngOnDestroy() {

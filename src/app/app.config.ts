@@ -34,15 +34,15 @@ export const urlMaps = {
     "hip:landing:next": "load-questionnaire",
     "hip:page2:submit": "submit-questionnaire",
     "hip:page2:redirect": "load-questionnaire",
-    "knee:page3:post": "submit-questionnaire",
+    "knee:page3:submit": "submit-questionnaire",
     "knee:page3:redirect": "load-questionnaire",
-    "promis:part5:post": "submit-questionnaire",
+    "promis:part5:submit": "submit-questionnaire",
     "promis:part5:redirect": "load-questionnaire",
     "ineligible:next": "login",
     "unsubscribe:next": "opt-out",
     "do:not:unsubscribe": "http://www.pamf.org",
     "unsubscribe:thank:you:exit": "http://www.pamf.org",
-    "collaborate:post": "submit-questionnaire",
+    "collaborate:submit": "submit-questionnaire",
     "collaborate:redirect": "load-questionnaire"
 }
 //
@@ -54,7 +54,7 @@ export const ROUTES: Routes = [
     }, {
         path: 'pamf',
         redirectTo: 'letterLanding',
-        pathMatch: 'full'
+        pathMatch: 'full', data: { title: 'letter-landing' }
     }, {
         path: 'pamf/letterLanding',
         redirectTo: 'letterLanding',
