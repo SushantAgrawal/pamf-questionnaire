@@ -11,7 +11,7 @@ import { AppService } from '../app.service';
 export class HipLandingComponent implements OnInit {
   subscriptions: any;
   constructor(private appService: AppService, private router: Router) { 
-    
+
   }
 
   ngOnInit() {
@@ -31,6 +31,7 @@ export class HipLandingComponent implements OnInit {
               .navigate([route], { queryParamsHandling: "merge"});
           })()
       });
+      
   }
   //code=${custom1}&bundle=${custom2}&contact_type=${custom4}&accessed_by=${custom11}&complete_date=${custom14
   next() {
