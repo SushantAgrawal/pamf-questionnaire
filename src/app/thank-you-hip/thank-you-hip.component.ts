@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {Router} from '@angular/router';
+import { AppService } from '../app.service';
+
 @Component({
   selector: 'app-thank-you-hip',
   templateUrl: './thank-you-hip.component.html',
@@ -8,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class ThankYouHipComponent implements OnInit {
 
-  constructor() { }
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
   }

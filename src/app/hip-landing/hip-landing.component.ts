@@ -10,7 +10,9 @@ import { AppService } from '../app.service';
 })
 export class HipLandingComponent implements OnInit {
   subscriptions: any;
-  constructor(private appService: AppService, private router: Router) { }
+  constructor(private appService: AppService, private router: Router) { 
+    
+  }
 
   ngOnInit() {
     this.subscriptions = this

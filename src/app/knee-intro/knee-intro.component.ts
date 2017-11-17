@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {Router} from '@angular/router';
+import { AppService } from '../app.service';
+
 @Component({
   selector: 'app-knee-intro',
   templateUrl: './knee-intro.component.html',
@@ -7,7 +9,7 @@ import {Router} from '@angular/router';
   encapsulation: ViewEncapsulation.None
 })
 export class KneeIntroComponent implements OnInit {
-  constructor(private router : Router) {}
+  constructor(private appService: AppService, private router: Router) {}
   
     ngOnInit() {}
     next() {
