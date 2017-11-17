@@ -29,6 +29,7 @@ import { ThankYouKneeComponent } from './thank-you-knee/thank-you-knee.component
 import { IneligibleComponent } from './ineligible/ineligible.component';
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 import { UnsubscribeThankYouComponent } from './unsubscribe-thank-you/unsubscribe-thank-you.component';
+import { HipMandatoryComponent } from './hip-mandatory/hip-mandatory.component';
 // import { HttpModule } from '@angular/http';
 
 
@@ -56,7 +57,8 @@ import { UnsubscribeThankYouComponent } from './unsubscribe-thank-you/unsubscrib
     ThankYouKneeComponent,
     IneligibleComponent,
     UnsubscribeComponent,
-    UnsubscribeThankYouComponent
+    UnsubscribeThankYouComponent,
+    HipMandatoryComponent
   ],
   imports: [
     BrowserModule, 
