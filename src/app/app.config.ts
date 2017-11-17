@@ -5,7 +5,7 @@ import { IncorrectTjrComponent } from './incorrect-tjr/incorrect-tjr.component';
 import { HipIntroComponent } from './hip-intro/hip-intro.component';
 import { HipPage1Component } from './hip-page1/hip-page1.component';
 import { HipPage2Component } from './hip-page2/hip-page2.component';
-import { HipMandatoryComponent } from './hip-mandatory/hip-mandatory.component';
+// import { HipMandatoryComponent } from './hip-mandatory/hip-mandatory.component';
 import { KneeIntroComponent } from './knee-intro/knee-intro.component';
 import { KneeLandingComponent } from './knee-landing/knee-landing.component';
 import { KneePage1Component } from './knee-page1/knee-page1.component';
@@ -32,8 +32,8 @@ export const urlMaps = {
     "letter:landing:next": "landing-page",
     "incorrect:tjr:done": "login",
     "hip:landing:next": "load-questionnaire",
-    "hip:mandatory:post": "submit-questionnaire",
-    "hip:mandatory:redirect": "load-questionnaire",
+    "hip:page2:submit": "submit-questionnaire",
+    "hip:page2:redirect": "load-questionnaire",
     "knee:page3:post": "submit-questionnaire",
     "knee:page3:redirect": "load-questionnaire",
     "promis:part5:post": "submit-questionnaire",
@@ -81,9 +81,6 @@ export const ROUTES: Routes = [
     }, {
         path: 'hipPage2',
         component: HipPage2Component
-    }, {
-        path: 'hipMandatory',
-        component: HipMandatoryComponent
     },
     {
         path: 'kneeLanding',

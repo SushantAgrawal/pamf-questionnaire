@@ -1,4 +1,4 @@
-export const hipQuestion = {
+export const hipQuestions = {
     "code": "", // c1 from query parameter
     "bundle": "", // c2 from query parameter
     "surgery_type": "", // c3 from query parameter
@@ -181,7 +181,7 @@ export const hipQuestion = {
     ]
 };
 
-export const kneeQuestion = {
+export const kneeQuestions = {
     "code": "", // c1 from query parameter
     "bundle": "", // c2 from query parameter
     "surgery_type": "", // c3 from query parameter
@@ -390,7 +390,7 @@ export const kneeQuestion = {
     ]
 };
 
-export const promisQuestion = {
+export const promisQuestions = {
     "code": "", // c1 from query parameter
     "bundle": "", // c2 from query parameter
     "surgery_type": "", // c3 from query parameter

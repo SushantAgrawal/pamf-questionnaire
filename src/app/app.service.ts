@@ -69,18 +69,18 @@ export class AppService {
     let baseUrl = this.settings.maestroBaseUrl.replace(/\/$/, '');
     let path = this.settings.maestroPath;
     let url = baseUrl.concat('/', path, '/', urlMaps[id]);
-    if (body) {
-      var headers = new HttpHeaders();
-      headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
-      let httpParams = new HttpParams();
-      httpParams = Object
-        .keys(body)
-        .reduce((prevValue, x, i) => {
-          httpParams = httpParams.append(x, body[x]);
-          return (httpParams);
-        }, httpParams);
-      body = httpParams.toString();
-    }
+    // if (body) {
+    //   var headers = new HttpHeaders();
+    //   headers = headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    //   let httpParams = new HttpParams();
+    //   httpParams = Object
+    //     .keys(body)
+    //     .reduce((prevValue, x, i) => {
+    //       httpParams = httpParams.append(x, body[x]);
+    //       return (httpParams);
+    //     }, httpParams);
+    //   body = httpParams.toString();
+    // }
     if (queryParams) {
       let httpParams = new HttpParams();
       httpParams = Object
@@ -90,10 +90,10 @@ export class AppService {
           return (httpParams);
         }, httpParams);
       queryParams = httpParams;
-    }
+    }//headers: headers,
     this
       .httpClient
-      .post(url, body, { headers: headers, params: queryParams })
+      .post(url, body, {  params: queryParams })
       .subscribe(d => {
         this
           .subject

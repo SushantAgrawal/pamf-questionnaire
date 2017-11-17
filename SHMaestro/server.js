@@ -9,16 +9,12 @@ var messages = require('./messages');
 var express = require('express');
 var _ = require('lodash');
 var app = express();
-// let mustache = require('mustache');
 var options = require('./options');
-// app.set('messages', messages); app.set('def', def);
 app.set('config', config);
-// app.disable('etag');
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(bodyParser.json({type: 'application/vnd.api+json'}));
+app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(express.static(path.join(__dirname, 'public', 'biobank')));
-// app.use(express.static('public','biobank'));
 process.env.NODE_ENV = config.env;
 
 //for cross domain
@@ -27,7 +23,7 @@ var allowCrossDomain = function (req, res, next) {
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
     res.header('Access-Control-Allow-Credentials', 'true');
     res.header('Access-Control-Allow-Headers', 'Origin, Accept, Content-Type, Authorization, Content-Length, X-Requested-With, A' +
-            'ccess-Control-Allow-Origin,x-access-token');
+        'ccess-Control-Allow-Origin,x-access-token');
     // intercept OPTIONS method
     if ('OPTIONS' == req.method) {
         res.send(200);
@@ -38,16 +34,20 @@ var allowCrossDomain = function (req, res, next) {
 app.use(allowCrossDomain);
 
 app.post("/pamf/:page", (req, res, next) => {
-    let page = req.params.page;    
-    let nodeServerBaseUrl = options.pamfOptions.nodeServerBaseUrl;
-    let nodeServerPath = options.pamfOptions.nodeServerPath;
-    let redirectPath = options.pamfOptions.redirection[page];
-    if(_.isFunction(redirectPath)){
-        redirectPath=redirectPath(req);
+    let page = req.params.page;
+    if (page == "submit-questionnaire") {
+        res.json({ "formPost": "true" });
+    } else {
+        let nodeServerBaseUrl = options.pamfOptions.nodeServerBaseUrl;
+        let nodeServerPath = options.pamfOptions.nodeServerPath;
+        let redirectPath = options.pamfOptions.redirection[page];
+        if (_.isFunction(redirectPath)) {
+            redirectPath = redirectPath(req);
+        }
+        let redirectUrl = util.format("%s/%s/%s", nodeServerBaseUrl, nodeServerPath, redirectPath);
+        res.writeHead(301, { Location: redirectUrl });
+        res.end();
     }
-    let redirectUrl = util.format("%s/%s/%s",nodeServerBaseUrl,nodeServerPath,redirectPath);
-    res.writeHead(301, {Location: redirectUrl});
-    res.end();
 });
 
 var server = app.listen(process.env.PORT || config.port, function () {
@@ -72,7 +72,7 @@ if (process.env.NODE_ENV === 'development') {
             console.log(messages.errDevError);
             if (!res.finished) {
                 res.status(err.status || 500);
-                res.json({error: err});
+                res.json({ error: err });
             }
         });
 }
@@ -84,6 +84,6 @@ app
         // err.details; }
         if (!res.finished) {
             res.status(err.status || 500);
-            res.json({error: err});
+            res.json({ error: err });
         }
     });
