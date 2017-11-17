@@ -44,9 +44,13 @@ export class AppService {
     }, {});
   }
 
+  setUrlParam(name, value) {
+    this.urlParams[name] = value;
+  }
+
   getRoute(url) {
     url = new URL(url);
-    let urlArray = url.pathname.split('/').filter(x=>x);
+    let urlArray = url.pathname.split('/').filter(x => x);
     let route = (urlArray.length > 0) && (urlArray[urlArray.length - 1]);
     return (route);
   }

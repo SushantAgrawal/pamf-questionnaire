@@ -24,9 +24,12 @@
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
-      "environments": {
+      "environments": {        
         "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
+        "prod": "environments/environment.prod.ts",
+        "qa": "environments/environment.qa.ts",
+        "staging": "environments/environment.staging.ts",
+        "validation": "environments/environment.validation.ts"
       }
     }
   ],

@@ -1,7 +1,8 @@
 export const environment = {
-  production: true,
+  production: false,
+  envName: 'validation',
   endPoints: {
-      server1: "https://www.google.com/search?q=prod",
+      server1: "https://www.google.com/search?q=validation",
       server2: "http://facebook.com",
       server3: "http://linkedin.com"
   }

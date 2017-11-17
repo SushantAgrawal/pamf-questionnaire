@@ -12,7 +12,7 @@ export class HipPage2Component implements OnInit {
   
     ngOnInit() {}
     next() {
-      this.router.navigate(['hipPage2'])
+      this.router.navigate(['hipMandatory'])
     }
 
 }
