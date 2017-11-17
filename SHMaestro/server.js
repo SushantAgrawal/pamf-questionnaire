@@ -9,11 +9,11 @@ var messages = require('./messages');
 var express = require('express');
 var _ = require('lodash');
 var app = express();
-let mustache = require('mustache');
+// let mustache = require('mustache');
 var options = require('./options');
 // app.set('messages', messages); app.set('def', def);
 app.set('config', config);
-app.disable('etag');
+// app.disable('etag');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(bodyParser.json({type: 'application/vnd.api+json'}));
@@ -37,52 +37,6 @@ var allowCrossDomain = function (req, res, next) {
 };
 app.use(allowCrossDomain);
 
-app.get('/grail/:page', function (req, res) {
-    let page = req.params.page;
-    let invCode = 'c1=' + req.query["invitation-code"];
-    let redirectUrl = util.format("%s/%s/%s?%s", options.nodeServerBaseUrl, options.nodeServerGrailPath, options.grailRedirection[page], invCode);
-    res.writeHead(301, {Location: redirectUrl});
-    res.end();
-})
-
-app.get('/bio/:page', function (req, res) {
-    let page = req.params.page;
-    let invCode = 'c1=' + req.query["invitation-code"];
-    let c2 = req.query.c2;
-    c2 = c2
-        ? c2 && '&c2=' + c2
-        : '';
-    let c3 = req.query.c3;
-    c3 = c3
-        ? c3 && '&c3=' + c3
-        : '';
-    let c4 = req.query.c4;
-    c4 = c4
-        ? c4 && '&c4=' + c4
-        : '';
-    let redirectUrl = util.format("%s/%s/%s?%s", options.nodeServerBaseUrl, options.nodeServerPath, options.redirection[page], invCode);
-    redirectUrl = util.format('%s%s', redirectUrl, c4);
-    res.writeHead(301, {Location: redirectUrl});
-    res.end();
-});
-
-app.post('/bio/questionnaire', (req, res) => {
-    res.json({status: 'Question posted'});
-});
-
-app.put('/bio/questionnaire', (req, res) => {
-    res.json({status: 'Question posted'});
-});
-
-app.post("/pamf/testPamf", (req, res) => {    
-    let redirectUrl = 'http://localhost:3001/pamf/letterLanding';
-    redirectUrl = "http://localhost:4200/pamf/incorrectTjr"
-    res.writeHead(301, {Location: redirectUrl});
-    res.end();
-});
-app.get("/pamf/test",(req,res,next)=>{
-    res.json({"status":"ok"});
-})
 app.post("/pamf/:page", (req, res, next) => {
     let page = req.params.page;    
     let nodeServerBaseUrl = options.pamfOptions.nodeServerBaseUrl;
@@ -95,31 +49,6 @@ app.post("/pamf/:page", (req, res, next) => {
     res.writeHead(301, {Location: redirectUrl});
     res.end();
 });
-
-app.post('/bio/:page', function (req, res) {
-    let page = req.params.page;
-    let invCode = 'c1=' + req.query["invitation-code"];
-    let c2 = req.query.c2;
-    c2 = c2
-        ? c2 && '&c2=' + c2
-        : '';
-    let c3 = req.query.c3;
-    c3 = c3
-        ? c3 && '&c3=' + c3
-        : '';
-    let c4 = req.query.c4;
-    c4 = c4
-        ? c4 && '&c4=' + c4
-        : '';
-    let redirectUrl = util.format("%s/%s/%s?%s", options.nodeServerBaseUrl, options.nodeServerPath, options.redirection[page], invCode);
-    redirectUrl = util.format('%s%s', redirectUrl, c4);
-    res.writeHead(301, {Location: redirectUrl});
-    res.end();
-});
-
-app.get('/*', (req, res, next) => {
-    //res.sendFile(path.join(__dirname, 'public','index.html'));
-})
 
 var server = app.listen(process.env.PORT || config.port, function () {
     console.log('Node server running at port: ' + config.port);
