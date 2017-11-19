@@ -1,8 +1,6 @@
 export const environment = {
   production: true,
-  endPoints: {
-      server1: "https://www.google.com/search?q=prod",
-      server2: "http://facebook.com",
-      server3: "http://linkedin.com"
-  }
+  envName: 'prod',
+  "maestroBaseUrl": "http://localhost:3003",
+  "maestroPath": "pamf"
 };

@@ -8,30 +8,18 @@ import { messages } from './app.config';
 import 'rxjs/add/operator/filter';
 import { urlMaps } from './app.config';
 import { utils } from 'protractor';
-
+import {environment} from '../environments/environment';
 @Injectable()
 export class AppService {
   subject: Subject<any>;
   urlParams: {};
-  settings: any;
+  // settings: any;
 
   constructor(
     private httpClient: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) {
     this.subject = new Subject();
     this.getUrlParams();
-    this.getSettings();
-  }
-
-  getSettings() {
-    this.httpClient
-      .get('assets/settings.json')
-      .subscribe(d => {
-        let env = (d as any).env;
-        let allEnvs = (d as any).allEnvs;
-        this.settings = allEnvs[env];
-      }, err => {
-        console.log(err);
-      });
+    // this.getSettings();
   }
 
   getUrlParams() {
@@ -66,8 +54,8 @@ export class AppService {
   };
 
   httpPost(id: string, body?: {}, queryParams?: {}) {
-    let baseUrl = this.settings.maestroBaseUrl.replace(/\/$/, '');
-    let path = this.settings.maestroPath;
+    let baseUrl = environment.maestroBaseUrl.replace(/\/$/, '');
+    let path = environment.maestroPath;
     let url = baseUrl.concat('/', path, '/', urlMaps[id]);
     // if (body) {
     //   var headers = new HttpHeaders();
@@ -113,8 +101,8 @@ export class AppService {
 
   httpGet(id: string, queryParams?: {}) {
     try {
-      let baseUrl = this.settings.maestroBaseUrl.replace(/\/$/, '');
-      let path = this.settings.maestroPath;
+      let baseUrl = environment.maestroBaseUrl.replace(/\/$/, '');
+      let path = environment.maestroPath;
       let url = baseUrl.concat(path, '/', urlMaps[id]);
       let httpParams = new HttpParams();
       httpParams = queryParams && (Object.keys(queryParams).reduce((prevValue, x, i) => {
@@ -149,6 +137,18 @@ export class AppService {
 }
 
 //deprecated
+
+  // getSettings() {
+  //   this.httpClient
+  //     .get('assets/settings.json')
+  //     .subscribe(d => {
+  //       let env = (d as any).env;
+  //       let allEnvs = (d as any).allEnvs;
+  //       // this.settings = allEnvs[env];
+  //     }, err => {
+  //       console.log(err);
+  //     });
+  // }
 
   // httpPost1(id: string, body?: any) {   let url = urlMaps[id];   // let headers
   // = new Headers(); headers.append('Content-Type',   //   'application/json');
