@@ -10,7 +10,7 @@ import { AppService } from '../app.service';
 })
 export class HipLandingComponent implements OnInit {
   subscriptions: any;
-  constructor(private appService: AppService, private router: Router) { 
+  constructor(public appService: AppService, private router: Router) { 
 
   }
 

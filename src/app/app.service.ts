@@ -12,7 +12,7 @@ import {environment} from '../environments/environment';
 @Injectable()
 export class AppService {
   subject: Subject<any>;
-  urlParams: {};
+  urlParams: any;
   // settings: any;
 
   constructor(

@@ -10,7 +10,7 @@ import { promisQuestions } from '../app.questions';
 })
 export class PromisPart5Component implements OnInit {
   subscriptions: any;
-  constructor(private router: Router, private appService: AppService) { }
+  constructor(private router: Router, public appService: AppService) { }
 
   ngOnInit() {
     this.subscriptions = this

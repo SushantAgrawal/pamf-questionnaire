@@ -10,7 +10,7 @@ import { collaborate } from '../app.questions';
 })
 export class CollaborateComponent implements OnInit {
   subscriptions: any;
-  constructor(private router: Router, private appService: AppService) { }
+  constructor(private router: Router, public appService: AppService) { }
 
   ngOnInit() {
   this.subscriptions = this

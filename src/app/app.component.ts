@@ -4,7 +4,7 @@ import {AppService} from './app.service';
 @Component({selector: 'app-root', templateUrl: './app.component.html', styleUrls: ['./app.component.scss'], encapsulation: ViewEncapsulation.None})
 export class AppComponent {
   title = 'app';
-  constructor(private appService : AppService, private activatedRoute : ActivatedRoute, private router : Router) {}
+  constructor(public appService : AppService, private activatedRoute : ActivatedRoute, private router : Router) {}
   ngOnInit() {
     this
       .appService

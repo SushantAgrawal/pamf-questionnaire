@@ -5,7 +5,7 @@ import { AppService } from '../app.service';
 @Component({selector: 'app-hip-intro', templateUrl: './hip-intro.component.html', styleUrls: ['./hip-intro.component.scss'], encapsulation: ViewEncapsulation.None})
 export class HipIntroComponent implements OnInit {
 
-  constructor(private router : Router, private appService:AppService) {}
+  constructor(private router : Router, public appService:AppService) {}
 
   ngOnInit() {}
   next() {

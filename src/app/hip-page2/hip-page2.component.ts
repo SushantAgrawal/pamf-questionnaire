@@ -10,7 +10,7 @@ import { AppService } from '../app.service';
 })
 export class HipPage2Component implements OnInit {
   subscriptions: any;
-  constructor(private router: Router, private appService: AppService) { }
+  constructor(private router: Router, public appService: AppService) { }
 
   ngOnInit() {
     this.subscriptions = this

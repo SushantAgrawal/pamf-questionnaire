@@ -11,7 +11,7 @@ import { urlMaps } from '../app.config';
 })
 export class UnsubscribeComponent implements OnInit {
   subscriptions: any;
-  constructor(private router: Router, private appService: AppService) { }
+  constructor(private router: Router, public appService: AppService) { }
 
   ngOnInit() {
     this.subscriptions = this

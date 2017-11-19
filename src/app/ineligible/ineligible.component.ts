@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class IneligibleComponent implements OnInit {
   subscriptions: any;
-  constructor(private appService: AppService, private router: Router) { }
+  constructor(public appService: AppService, private router: Router) { }
 
   ngOnInit() {
     this.subscriptions = this.appService.filterOn('ineligible:next').subscribe(

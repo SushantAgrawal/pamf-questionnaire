@@ -4,7 +4,7 @@ import {FormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 // import {HttpModule} from '@angular/http';
-import {ROUTES} from './app.config';
+import {ROUTES} from './app.routes';
 import {AppComponent} from './app.component';
 import {AppService} from './app.service';
 import {LetterLandingComponent} from './letter-landing/letter-landing.component';

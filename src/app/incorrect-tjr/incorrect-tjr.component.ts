@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({ selector: 'app-incorrect-tjr', templateUrl: './incorrect-tjr.component.html', styleUrls: ['./incorrect-tjr.component.scss'], encapsulation: ViewEncapsulation.None })
 export class IncorrectTjrComponent implements OnInit {
   subscriptions: any;
-  constructor(private appService: AppService, private router: Router) { }
+  constructor(public appService: AppService, private router: Router) { }
 
   ngOnInit() {
     this.subscriptions = this.appService.filterOn('incorrect:tjr:done').subscribe(

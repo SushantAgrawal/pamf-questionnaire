@@ -9,7 +9,7 @@ import { AppService } from '../app.service';
 })
 export class KneeLandingComponent implements OnInit {
 
-  constructor(private appService: AppService, private router: Router) {}
+  constructor(public appService: AppService, private router: Router) {}
   
     ngOnInit() {}
     next() {

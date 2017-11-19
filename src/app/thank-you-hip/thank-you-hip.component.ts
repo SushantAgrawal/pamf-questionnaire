@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-
+import { AppService } from '../app.service';
 @Component({
   selector: 'app-thank-you-hip',
   templateUrl: './thank-you-hip.component.html',
@@ -8,7 +8,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class ThankYouHipComponent implements OnInit {
 
-  constructor() { }
+  constructor(public appService:AppService) { }
 
   ngOnInit() {
   }

@@ -9,7 +9,7 @@ export class LetterLandingComponent implements OnInit {
   code: string;
   email: string
   @ViewChild('myForm') myForm: any;
-  constructor(private appService: AppService, private router: Router) { }
+  constructor(public appService: AppService, private router: Router) { }
 
   ngOnInit() {
     this.subscriptions = this
