@@ -33,7 +33,7 @@ export class HipLandingComponent implements OnInit {
       });
       
   }
-  //code=${custom1}&bundle=${custom2}&contact_type=${custom4}&accessed_by=${custom11}&complete_date=${custom14
+  
   next() {
     let urlParams: any = this.appService.urlParams;
     this.appService.httpPost('hip:landing:next', null,
