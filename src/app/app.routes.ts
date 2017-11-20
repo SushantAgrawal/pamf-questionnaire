@@ -26,88 +26,115 @@ export const ROUTES: Routes = [
     {
         path: '',
         redirectTo: 'letterLanding',
-        pathMatch: 'full'
+        pathMatch: 'full',
+        data: { title: 'Letter Landing Page - PROD | QuestionPro Survey' }
     }, {
         path: 'pamf',
         redirectTo: 'letterLanding',
-        pathMatch: 'full', data: { title: 'letter-landing' }
+        pathMatch: 'full',
+        data: { title: 'Letter Landing Page - PROD | QuestionPro Survey' }
     }, {
         path: 'pamf/letterLanding',
         redirectTo: 'letterLanding',
-        pathMatch: 'full'
+        pathMatch: 'full',
+        data: { title: 'Letter Landing Page - PROD | QuestionPro Survey' }
     }, {
         path: 'pamf/incorrectTjr',
         redirectTo: 'incorrectTjr',
-        pathMatch: 'full'
+        pathMatch: 'full',
+        data: { title: 'Invalid TJR Access - PROD | QuestionPro Survey' }
     }, {
         path: 'letterLanding',
-        component: LetterLandingComponent
+        component: LetterLandingComponent,
+        data: { title: 'Letter Landing Page - PROD | QuestionPro Survey' }
     }, {
         path: 'hipLanding',
-        component: HipLandingComponent
+        component: HipLandingComponent,
+        data: { title: 'Hip Replacement Landing Page - PROD | QuestionPro Survey' }        
     }, {
         path: 'incorrectTjr',
-        component: IncorrectTjrComponent
+        component: IncorrectTjrComponent,
+        data: { title: 'Hip Replacement Landing Page - PROD | QuestionPro Survey' } 
     }, {
         path: 'hipIntro',
-        component: HipIntroComponent
+        component: HipIntroComponent,
+        data: { title: 'Hip Survey - HOOS Jr - PROD | QuestionPro Survey' } 
     }, {
         path: 'hipPage1',
-        component: HipPage1Component
+        component: HipPage1Component,
+        data: { title: 'Hip Survey - HOOS Jr - PROD | QuestionPro Survey' } 
     }, {
         path: 'hipPage2',
-        component: HipPage2Component
+        component: HipPage2Component,
+        data: { title: 'Hip Survey - HOOS Jr - PROD | QuestionPro Survey' } 
     },
     {
         path: 'kneeLanding',
-        component: KneeLandingComponent
+        component: KneeLandingComponent,
+        data: { title: 'Knee Replacement Landing Page - PROD | QuestionPro Survey' } 
     }, {
         path: 'kneeIntro',
-        component: KneeIntroComponent
+        component: KneeIntroComponent,
+        data: { title: 'Knee Survey - KOOS Jr - PROD | QuestionPro Survey' } 
     }, {
         path: 'kneePage1',
-        component: KneePage1Component
+        component: KneePage1Component,
+        data: { title: 'Knee Survey - KOOS Jr - PROD | QuestionPro Survey' } 
     }, {
         path: 'kneePage2',
-        component: KneePage2Component
+        component: KneePage2Component,
+        data: { title: 'Knee Survey - KOOS Jr  - PROD | QuestionPro Survey' } 
     }, {
         path: 'kneePage3',
-        component: KneePage3Component
+        component: KneePage3Component,
+        data: { title: 'Knee Survey - KOOS Jr  - PROD | QuestionPro Survey' } 
     }, {
         path: 'promisPart1',
-        component: PromisPart1Component
+        component: PromisPart1Component,
+        data: { title: 'PROMIS - General Health Survey - PROD | QuestionPro Survey' } 
     }, {
         path: 'promisPart2',
-        component: PromisPart2Component
+        component: PromisPart2Component,
+        data: { title: 'PROMIS - General Health Survey - PROD | QuestionPro Survey' } 
     }, {
         path: 'promisPart3',
-        component: PromisPart3Component
+        component: PromisPart3Component,
+        data: { title: 'PROMIS - General Health Survey - PROD | QuestionPro Survey' } 
     }, {
         path: 'promisPart4',
-        component: PromisPart4Component
+        component: PromisPart4Component,
+        data: { title: 'PROMIS - General Health Survey - PROD| QuestionPro Survey' } 
     }, {
         path: 'promisPart5',
-        component: PromisPart5Component
+        component: PromisPart5Component,
+        data: { title: 'PROMIS - General Health Survey - PROD| QuestionPro Survey' } 
     }, {
         path: 'promisPart5',
-        component: PromisPart5Component
+        component: PromisPart5Component,
+        data: { title: 'PROMIS - General Health Survey - PROD | QuestionPro Survey' } 
     }, {
         path: 'thankYouHip',
-        component: ThankYouHipComponent
+        component: ThankYouHipComponent,
+        data: { title: 'Thank You Hip Replacement - PROD  | QuestionPro Survey' } 
     }, {
         path: 'thankYouKnee',
-        component: ThankYouKneeComponent
+        component: ThankYouKneeComponent,
+        data: { title: 'Thank You Knee Replacement - PROD  | QuestionPro Survey' } 
     }, {
         path: 'unsubscribe',
-        component: UnsubscribeComponent
+        component: UnsubscribeComponent,
+        data: { title: 'Unsubscribe Confirm - PROD | QuestionPro Survey' } 
     }, {
         path: 'unsubscribeThankYou',
-        component: UnsubscribeThankYouComponent
+        component: UnsubscribeThankYouComponent,
+        data: { title: 'Unsubscribe Thank you - PROD | QuestionPro Survey' } 
     }, {
         path: 'ineligible',
-        component: IneligibleComponent
+        component: IneligibleComponent,
+        data: { title: 'Ineligible Pt - PROD  | QuestionPro Survey' } 
     }, {
         path: 'collaborate',
-        component: CollaborateComponent
+        component: CollaborateComponent,
+        data: { title: 'CollaboRATE Survey - PROD | QuestionPro Survey' } 
     }
 ];

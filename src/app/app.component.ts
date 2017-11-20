@@ -1,10 +1,14 @@
-import {Component, ViewEncapsulation} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {AppService} from './app.service';
-@Component({selector: 'app-root', templateUrl: './app.component.html', styleUrls: ['./app.component.scss'], encapsulation: ViewEncapsulation.None})
+import { Component, ViewEncapsulation } from '@angular/core';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { AppService } from './app.service';
+import { Title } from '@angular/platform-browser';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/mergeMap';
+
+@Component({ selector: 'app-root', templateUrl: './app.component.html', styleUrls: ['./app.component.scss'], encapsulation: ViewEncapsulation.None })
 export class AppComponent {
-  title = 'app';
-  constructor(public appService : AppService, private activatedRoute : ActivatedRoute, private router : Router) {}
+  constructor(private titleService: Title, public appService: AppService, private activatedRoute: ActivatedRoute, private router: Router) { }
   ngOnInit() {
     this
       .appService
@@ -16,6 +20,15 @@ export class AppComponent {
           console.log(d.redirectUrl);
         }
       });
+    this.router.events
+      .filter((event) => event instanceof NavigationEnd)
+      .map(() => this.activatedRoute)
+      .map((route) => {
+        while (route.firstChild) route = route.firstChild;
+        return route;
+      })
+      .mergeMap((route) => route.data)
+      .subscribe((event) => this.titleService.setTitle(event['title']));
   }
 
   validate(validateForm) {
@@ -25,6 +38,6 @@ export class AppComponent {
     this
       .appService
       .httpPost('test2');
-      return(false);
+    return (false);
   }
 }
