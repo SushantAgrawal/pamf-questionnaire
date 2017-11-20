@@ -16,8 +16,8 @@
       <img src="#" />
     </div>
     <div class="question-text">
-      A few minutes of your time answering the following questionnaires will help with our 
-      shared-decision on your <strong>{{appService.urlParams.c12}}</strong>
+      A few minutes of your time answering the following questionnaires will help with our shared-decision on your
+      <strong>{{appService.urlParams.c12}}</strong>
       care plan.
       <br/>
       <br/>
@@ -33,13 +33,13 @@
   </div>
 
   <div class="question-small-link">
-    <a href="#">Privacy Policy</a>
+    <a [attr.href]="kneeprivacypolicy">Privacy Policy</a>
     <a href="#"> Terms and Conditions</a>
   </div>
 
   <div class="btnContainer">
     <button class="btn-right" (click)="next()">Next</button>
-</div>
+  </div>
   <header class="sh-header">UNDERSTAND MORE ABOUT YOUR KNEE REPLACEMENT PROCEDURE </header>
   <ul class="question-helps">
     <li>

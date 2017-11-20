@@ -20,7 +20,8 @@ export const urlMaps = {
     "unsubscribe:thank:you:exit": "http://www.pamf.org",
     "collaborate:submit": "submit-questionnaire",
     "collaborate:redirect": "load-questionnaire",
-    "pamf:url":"http://www.pamf.org"
+    "pamf:url":"http://www.pamf.org",
+    "pamf:kneeprivacypolicy:url":"http://www.pamf.org/privacy/website_policy.html"
 }
 
 
