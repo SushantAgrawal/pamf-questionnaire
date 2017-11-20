@@ -202,9 +202,12 @@ height: 6px}
         }
         }
     }
-
-@media only screen and (max-width: 480px) {
+.sh-alert-text{ color: #ff3b39; font-size: 14pt;}
+@media only screen and (max-width: 776px) {
     body{ font-size: 14pt;}
+}
+@media only screen and (max-width: 568px) {
+   
     .sh-table table{ width: 100%;}
     .sh-table tr {
         border-top: 1px solid #ddd;
@@ -254,6 +257,10 @@ height: 6px}
     .btnClass, .btnContainer .btn-left, .btnContainer .btn-right{
         font-size: 14pt;
     }
+    .pamf-image-container{
+        display: block;
+    }
+
     }
 
     @media only screen and (max-width: 320px) {

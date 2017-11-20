@@ -14,7 +14,7 @@
     </div>
     <div class="question-inputfld">        
       <input name="code" type="text" required [(ngModel)]="code">
-      <label *ngIf="!code">Please enter the code</label>
+      <label *ngIf="!code" class="sh-alert-text">Please enter the code</label>
     </div>
     <div class="question-text">
       Additionally, we are asking patients for their email address. Your email address will be kept confidential and will not be
