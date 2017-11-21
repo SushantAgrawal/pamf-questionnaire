@@ -1,25 +1,43 @@
-import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation, ViewChild, ElementRef} from '@angular/core';
 import {Router} from '@angular/router';
-import { hipQuestions } from '../app.questions';
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms"
+import {hipQuestions} from '../app.questions';
+// import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from
+// "@angular/forms"
 
 @Component({selector: 'app-hip-page1', templateUrl: './hip-page1.component.html', styleUrls: ['./hip-page1.component.scss'], encapsulation: ViewEncapsulation.None})
 export class HipPage1Component implements OnInit {
-  gender:any;
-  constructor(private router:Router,fb: FormBuilder) {
-    this.gender = null; 
+  @ViewChild('myForm')myForm : any;
+  start : boolean = true;
+  stairs : string;
+  surface : string;
+  scores : {} = {
+    none: 1,
+    Mild: 2,
+    Moderate: 3,
+    Severe: 4,
+    Extreme: 5
+  };
+  constructor(private router : Router) {
+    // this.gender = null;
   }
 
-  ngOnInit() {    
-
-  }
-  change(event,score,value) {
-    hipQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text=[];
-    hipQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score=[];
-    hipQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text.push(value);
-    hipQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score.push(score);
-  }
+  ngOnInit() {}
+  // change(event, score, value) {   hipQuestions     .responses     .find(x =>
+  // x.qx_code === event.srcElement.name)     .answer_text = [];   hipQuestions
+  //  .responses     .find(x => x.qx_code === event.srcElement.name)
+  // .answer_text_score = [];   hipQuestions     .responses     .find(x =>
+  // x.qx_code === event.srcElement.name)     .answer_text     .push(value);
+  // hipQuestions     .responses     .find(x => x.qx_code ===
+  // event.srcElement.name)     .answer_text_score     .push(score); }
   next() {
-    this.router.navigate(['hipPage2'])
+    this.start = false;
+    let thisForm = this.myForm.form;
+    thisForm.valid && (
+      hipQuestions.responses[0].answer_text[0] = this.stairs
+      , hipQuestions.responses[0].answer_text_score[0] = this.scores[this.stairs]
+      , hipQuestions.responses[1].answer_text[0] = this.surface
+      , hipQuestions.responses[1].answer_text_score[0] = this.scores[this.surface]
+      , this.router.navigate(['hipPage2'])
+    );
   }
 }
