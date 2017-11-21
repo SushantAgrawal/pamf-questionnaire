@@ -41,13 +41,14 @@ export class HipPage2Component implements OnInit {
       });
     this.subscriptions.add(sub1);
   }
-  change(event,score,value) {
-    hipQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text=[];
-    hipQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score=[];
+  change(event, score, value) {
+    hipQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text = [];
+    hipQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score = [];
     hipQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text.push(value);
     hipQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score.push(score);
   }
   next() {
+    let qx_os = navigator.userAgent;
     this.appService.httpPost('hip:page2:submit', hipQuestions);
   }
 
