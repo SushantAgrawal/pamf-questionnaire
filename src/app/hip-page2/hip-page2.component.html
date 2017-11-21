@@ -98,7 +98,7 @@
                         </td>
                         <td data-th="None">
                             <label for="opt008">
-                                <input type="radio" id="opt008" name='DV_Q2_3' [(ngModel)]="lying" value="None">
+                                <input type="radio" id="opt008" name='DV_Q2_3' required [(ngModel)]="lying" value="None">
                             </label>
                         </td>
                         <td data-th="Mild">
@@ -130,7 +130,7 @@
                         </td>
                         <td data-th="None">
                             <label for="opt008">
-                                <input type="radio" id="opt008" name='DV_Q2_4' [(ngModel)]="sitting" value="None">
+                                <input type="radio" id="opt008" name='DV_Q2_4' required [(ngModel)]="sitting" value="None">
                             </label>
                         </td>
                         <td data-th="Mild">
@@ -157,9 +157,9 @@
                 </tbody>
             </table>
         </div>
-    </form>
+   
     <div class="btnContainer">
         <button class="btn-right" (click)="next()">Next</button>
     </div>
-
+</form>
 </div>

@@ -6,59 +6,57 @@
         The following question concerns the amount of joint stiffness you hve exerienced during the last week in your knee. Stiffness
         is a sensation of restriction or slowness in the ease with which you move your knee joint.
     </div>
-    <div class="sh-table">
+    <form #myForm="ngForm">
+        <div class="sh-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>None</th>
+                        <th>Mild </th>
+                        <th>Moderate</th>
+                        <th>Severe</th>
+                        <th>Extreme</th>
 
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>None</th>
-                    <th>Mild </th>
-                    <th>Moderate</th>
-                    <th>Severe</th>
-                    <th>Extreme</th>
-
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="txtAlignLeft">
-                        How severe is your knee stiffness after first wakening in the morning?
-                        <span class="asterisk-red">*</span>
-                        <label *ngIf="dvQ1==null" class="sh-alert-text"> Please choose at least one option </label>
-                    </td>
-                    <td data-th="None">
-                        <label for="opt001">
-                            <input type="radio" id="opt001" name='DV_Q1' required (change)="change($event,1,'none')">
-                        </label>
-                    </td>
-                    <td data-th="Mild">
-                        <label for="opt002">
-                            <input type="radio" id="opt002" name='DV_Q1' required (change)="change($event,2,'Mild')">
-                        </label>
-                    </td>
-                    <td data-th="Moderate">
-                        <label for="opt003">
-                            <input type="radio" id="opt003" name='DV_Q1' required (change)="change($event,3,'Moderate')">
-                        </label>
-                    </td>
-                    <td data-th="Severe">
-                        <label for="opt004">
-                            <input type="radio" id="opt004" name='DV_Q1' required (change)="change($event,4,'Severe')">
-                        </label>
-                    </td>
-                    <td data-th="Extreme">
-                        <label for="opt005">
-                            <input type="radio" id="opt005" name='DV_Q1' required (change)="change($event,5,'Extreme')">
-                        </label>
-                    </td>
-
-
-                </tr>
-
-            </tbody>
-        </table>
-    </div>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="txtAlignLeft">
+                            How severe is your knee stiffness after first wakening in the morning?
+                            <span class="asterisk-red">*</span>
+                            <span *ngIf="!(start || kneeStiffness)" class="sh-alert-text">Please select a value</span>
+                        </td>
+                        <td data-th="None">
+                            <label for="opt001">
+                                <input type="radio" id="opt001" name='DV_Q1' [(ngModel)]="kneeStiffness" value="none" required>
+                            </label>
+                        </td>
+                        <td data-th="Mild">
+                            <label for="opt002">
+                                <input type="radio" id="opt002" name='DV_Q1' [(ngModel)]="kneeStiffness" value="Mild">
+                            </label>
+                        </td>
+                        <td data-th="Moderate">
+                            <label for="opt003">
+                                <input type="radio" id="opt003" name='DV_Q1' [(ngModel)]="kneeStiffness" value="Moderate">
+                            </label>
+                        </td>
+                        <td data-th="Severe">
+                            <label for="opt004">
+                                <input type="radio" id="opt004" name='DV_Q1' [(ngModel)]="kneeStiffness" value="Severe">
+                            </label>
+                        </td>
+                        <td data-th="Extreme">
+                            <label for="opt005">
+                                <input type="radio" id="opt005" name='DV_Q1' [(ngModel)]="kneeStiffness" value="Extreme">
+                            </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
     <div class="btnContainer">
         <button class="btn-right" (click)="next()">Next</button>
     </div>

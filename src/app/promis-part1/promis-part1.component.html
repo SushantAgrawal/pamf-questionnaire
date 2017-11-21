@@ -1,227 +1,248 @@
 <div class="container">
-  <div class="sh-alert-area">Please answer all questions marked with an (<span class="asterisk-red">*</span>) to continue.</div>
-  <!-- <div class="sh-alert-warning">Please answer all questions marked with an (*) to continue.</div> -->
-  <div class="progress-bar-container">
-      <div class="questionnaire-progress">Questionnaire Progress</div>
-      <div class="progress-bar" style="width:50%;"></div>
-  </div>
-  <div class="logo-area">
-      <img src="/../assets/images/PAMF_logo.png" alt="Sutter Health" class="img-responsive" />
-  </div>
+    <div class="sh-alert-area">Please answer all questions marked with an (
+        <span class="asterisk-red">*</span>) to continue.</div>
+    <!-- <div class="sh-alert-warning">Please answer all questions marked with an (*) to continue.</div> -->
+    <div class="progress-bar-container">
+        <div class="questionnaire-progress">Questionnaire Progress</div>
+        <div class="progress-bar" style="width:50%;"></div>
+    </div>
+    <div class="logo-area">
+        <img src="/../assets/images/PAMF_logo.png" alt="Sutter Health" class="img-responsive" />
+    </div>
 
-  <div class="header-txt">
-      PROMIS - Global Health
-  </div>
+    <div class="header-txt">
+        PROMIS - Global Health
+    </div>
 
-  <div class="sub-header-bold">
-      Please respond to each item by marking one box per row.
-  </div>
+    <div class="sub-header-bold">
+        Please respond to each item by marking one box per row.
+    </div>
 
-  
-<div  class="sh-table">
-  <table>
-      <thead>
-          <tr>
-              <th></th>
-              <th>Excellent</th>
-              <th>Very good </th>
-              <th>Good</th>
-              <th>Fair</th>
-              <th>Poor</th>
+    <form #myForm="ngForm">
+        <div class="sh-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Excellent</th>
+                        <th>Very good </th>
+                        <th>Good</th>
+                        <th>Fair</th>
+                        <th>Poor</th>
 
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <td class="txtAlignLeft">
-                  In general, would you say your health is: <span class="asterisk-red">*</span>
-              </td>
-              <td data-th="Excellent">
-                  <label for="opt001">
-                  <input type="radio" id="opt001" name='DV_Q1_1' (change)="change($event,1,'Excellent')">
-                  </label>
-              </td>
-              <td data-th="Very good">
-                  <label for="opt002">
-                  <input type="radio" id="opt002" name='DV_Q1_1' (change)="change($event,2,'Very good')">
-                  </label>
-              </td>
-              <td data-th="Good">
-                  <label for="opt003">
-                  <input type="radio" id="opt003" name='DV_Q1_1' (change)="change($event,3,'Good')">
-                   </label>
-              </td>
-              <td data-th="Fair">
-                  <label for="opt004">
-                  <input type="radio" id="opt004" name='DV_Q1_1' (change)="change($event,4,'Fair')">
-                   </label>
-              </td>
-              <td data-th="Poor">
-                  <label for="opt005">
-                  <input type="radio" id="opt005" name='DV_Q1_1' (change)="change($event,5,'Poor')">
-                  </label>
-              </td>
-          </tr>
-          <tr>
-              <td class="txtAlignLeft">
-                  In general, would you say your quality of life is: <span class="asterisk-red">*</span>
-              </td>
-              <td data-th="Excellent">
-                    <label for="opt001">
-                    <input type="radio" id="opt001" name='DV_Q1_2' (change)="change($event,1,'Excellent')">
-                    </label>
-                </td>
-                <td data-th="Very good">
-                    <label for="opt002">
-                    <input type="radio" id="opt002" name='DV_Q1_2' (change)="change($event,2,'Very good')">
-                    </label>
-                </td>
-                <td data-th="Good">
-                    <label for="opt003">
-                    <input type="radio" id="opt003" name='DV_Q1_2' (change)="change($event,3,'Good')">
-                     </label>
-                </td>
-                <td data-th="Fair">
-                    <label for="opt004">
-                    <input type="radio" id="opt004" name='DV_Q1_2' (change)="change($event,4,'Fair')">
-                     </label>
-                </td>
-                <td data-th="Poor">
-                    <label for="opt005">
-                    <input type="radio" id="opt005" name='DV_Q1_2' (change)="change($event,5,'Poor')">
-                    </label>
-                </td>
-          </tr>
-          <tr>
-              <td class="txtAlignLeft">
-                  In general, how would you rate your physical health? <span class="asterisk-red">*</span>
-              </td>
-              <td data-th="Excellent">
-                    <label for="opt001">
-                    <input type="radio" id="opt001" name='DV_Q1_3' (change)="change($event,1,'Excellent')">
-                    </label>
-                </td>
-                <td data-th="Very good">
-                    <label for="opt002">
-                    <input type="radio" id="opt002" name='DV_Q1_3' (change)="change($event,2,'Very good')">
-                    </label>
-                </td>
-                <td data-th="Good">
-                    <label for="opt003">
-                    <input type="radio" id="opt003" name='DV_Q1_3' (change)="change($event,3,'Good')">
-                     </label>
-                </td>
-                <td data-th="Fair">
-                    <label for="opt004">
-                    <input type="radio" id="opt004" name='DV_Q1_3' (change)="change($event,4,'Fair')">
-                     </label>
-                </td>
-                <td data-th="Poor">
-                    <label for="opt005">
-                    <input type="radio" id="opt005" name='DV_Q1_3' (change)="change($event,5,'Poor')">
-                    </label>
-                </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="txtAlignLeft">
+                            In general, would you say your health is:
+                            <span class="asterisk-red">*</span>
+                            <br/>
+                            <span *ngIf="!(start || health)" class="sh-alert-text">Please select a value</span>
+                        </td>
+                        <td data-th="Excellent">
+                            <label for="opt001">
+                                <input type="radio" id="opt001" name='DV_Q1_1' [(ngModel)]="health" value="Excellent" required>
+                            </label>
+                        </td>
+                        <td data-th="Very good">
+                            <label for="opt002">
+                                <input type="radio" id="opt002" name='DV_Q1_1' [(ngModel)]="health" value="Very good">
+                            </label>
+                        </td>
+                        <td data-th="Good">
+                            <label for="opt003">
+                                <input type="radio" id="opt003" name='DV_Q1_1' [(ngModel)]="health" value="Good">
+                            </label>
+                        </td>
+                        <td data-th="Fair">
+                            <label for="opt004">
+                                <input type="radio" id="opt004" name='DV_Q1_1' [(ngModel)]="health" value="Fair">
+                            </label>
+                        </td>
+                        <td data-th="Poor">
+                            <label for="opt005">
+                                <input type="radio" id="opt005" name='DV_Q1_1' [(ngModel)]="health" value="Poor">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="txtAlignLeft">
+                            In general, would you say your quality of life is:
+                            <span class="asterisk-red">*</span>
+                            <br/>
+                            <span *ngIf="!(start || quality)" class="sh-alert-text">Please select a value</span>
+                        </td>
+                        <td data-th="Excellent">
+                            <label for="opt001">
+                                <input type="radio" id="opt001" name='DV_Q1_2' [(ngModel)]="quality" value="Excellent" required>
+                            </label>
+                        </td>
+                        <td data-th="Very good">
+                            <label for="opt002">
+                                <input type="radio" id="opt002" name='DV_Q1_2' [(ngModel)]="quality" value="Very good">
+                            </label>
+                        </td>
+                        <td data-th="Good">
+                            <label for="opt003">
+                                <input type="radio" id="opt003" name='DV_Q1_2' [(ngModel)]="quality" value="Good">
+                            </label>
+                        </td>
+                        <td data-th="Fair">
+                            <label for="opt004">
+                                <input type="radio" id="opt004" name='DV_Q1_2' [(ngModel)]="quality" value="Fair">
+                            </label>
+                        </td>
+                        <td data-th="Poor">
+                            <label for="opt005">
+                                <input type="radio" id="opt005" name='DV_Q1_2' [(ngModel)]="quality" value="Poor">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="txtAlignLeft">
+                            In general, how would you rate your physical health?
+                            <span class="asterisk-red">*</span>
+                            <br/>
+                            <span *ngIf="!(start || physical)" class="sh-alert-text">Please select a value</span>
+                        </td>
+                        <td data-th="Excellent">
+                            <label for="opt001">
+                                <input type="radio" id="opt001" name='DV_Q1_3' [(ngModel)]="physical" value="Excellent" required>
+                            </label>
+                        </td>
+                        <td data-th="Very good">
+                            <label for="opt002">
+                                <input type="radio" id="opt002" name='DV_Q1_3' [(ngModel)]="physical" value="Very good" >
+                            </label>
+                        </td>
+                        <td data-th="Good">
+                            <label for="opt003">
+                                <input type="radio" id="opt003" name='DV_Q1_3' [(ngModel)]="physical" value="Good">
+                            </label>
+                        </td>
+                        <td data-th="Fair">
+                            <label for="opt004">
+                                <input type="radio" id="opt004" name='DV_Q1_3' [(ngModel)]="physical" value="Fair">
+                            </label>
+                        </td>
+                        <td data-th="Poor">
+                            <label for="opt005">
+                                <input type="radio" id="opt005" name='DV_Q1_3' [(ngModel)]="physical" value="Poor">
+                            </label>
+                        </td>
 
-          </tr>
-          <tr>
-              <td class="txtAlignLeft">
-                  In general, how would you rate your mental health, including your mood and your ability to think? <span class="asterisk-red">*</span>
-              </td>
-              <td data-th="Excellent">
-                    <label for="opt001">
-                    <input type="radio" id="opt001" name='DV_Q1_4' (change)="change($event,1,'Excellent')">
-                    </label>
-                </td>
-                <td data-th="Very good">
-                    <label for="opt002">
-                    <input type="radio" id="opt002" name='DV_Q1_4' (change)="change($event,2,'Very good')">
-                    </label>
-                </td>
-                <td data-th="Good">
-                    <label for="opt003">
-                    <input type="radio" id="opt003" name='DV_Q1_4' (change)="change($event,3,'Good')">
-                     </label>
-                </td>
-                <td data-th="Fair">
-                    <label for="opt004">
-                    <input type="radio" id="opt004" name='DV_Q1_4' (change)="change($event,4,'Fair')">
-                     </label>
-                </td>
-                <td data-th="Poor">
-                    <label for="opt005">
-                    <input type="radio" id="opt005" name='DV_Q1_4' (change)="change($event,5,'Poor')">
-                    </label>
-                </td>
-
-
-          </tr>
-          <tr>
-              <td class="txtAlignLeft">
-                  In general, how would you rate your satisfaction with your social activities and relationships?<span class="asterisk-red">*</span>
-              </td>
-              <td data-th="Excellent">
-                    <label for="opt001">
-                    <input type="radio" id="opt001" name='DV_Q1_5' (change)="change($event,1,'Excellent')">
-                    </label>
-                </td>
-                <td data-th="Very good">
-                    <label for="opt002">
-                    <input type="radio" id="opt002" name='DV_Q1_5' (change)="change($event,2,'Very good')">
-                    </label>
-                </td>
-                <td data-th="Good">
-                    <label for="opt003">
-                    <input type="radio" id="opt003" name='DV_Q1_5' (change)="change($event,3,'Good')">
-                     </label>
-                </td>
-                <td data-th="Fair">
-                    <label for="opt004">
-                    <input type="radio" id="opt004" name='DV_Q1_5' (change)="change($event,4,'Fair')">
-                     </label>
-                </td>
-                <td data-th="Poor">
-                    <label for="opt005">
-                    <input type="radio" id="opt005" name='DV_Q1_5' (change)="change($event,5,'Poor')">
-                    </label>
-                </td>
+                    </tr>
+                    <tr>
+                        <td class="txtAlignLeft">
+                            In general, how would you rate your mental health, including your mood and your ability to think?
+                            <span class="asterisk-red">*</span>
+                            <br/>
+                            <span *ngIf="!(start || mentalHealth)" class="sh-alert-text">Please select a value</span>
+                        </td>
+                        <td data-th="Excellent">
+                            <label for="opt001">
+                                <input type="radio" id="opt001" name='DV_Q1_4' [(ngModel)]="mentalHealth" value="Excellent" required>
+                            </label>
+                        </td>
+                        <td data-th="Very good">
+                            <label for="opt002">
+                                <input type="radio" id="opt002" name='DV_Q1_4' [(ngModel)]="mentalHealth" value="Very good">
+                            </label>
+                        </td>
+                        <td data-th="Good">
+                            <label for="opt003">
+                                <input type="radio" id="opt003" name='DV_Q1_4' [(ngModel)]="mentalHealth" value="Good">
+                            </label>
+                        </td>
+                        <td data-th="Fair">
+                            <label for="opt004">
+                                <input type="radio" id="opt004" name='DV_Q1_4' [(ngModel)]="mentalHealth" value="Fair">
+                            </label>
+                        </td>
+                        <td data-th="Poor">
+                            <label for="opt005">
+                                <input type="radio" id="opt005" name='DV_Q1_4' [(ngModel)]="mentalHealth" value="Poor">
+                            </label>
+                        </td>
 
 
-          </tr>
-          <tr>
-              <td class="txtAlignLeft">
-                  In general, please rate how well you carry out your usual social activities and roles. (This includes activities at home, at work and in your community, and responsibilities as a parent child, spouse, employee, friend, etc.) <span class="asterisk-red">*</span>
-              </td>
-              <td data-th="Excellent">
-                    <label for="opt001">
-                    <input type="radio" id="opt001" name='DV_Q1_6' (change)="change($event,1,'Excellent')">
-                    </label>
-                </td>
-                <td data-th="Very good">
-                    <label for="opt002">
-                    <input type="radio" id="opt002" name='DV_Q1_6' (change)="change($event,2,'Very good')">
-                    </label>
-                </td>
-                <td data-th="Good">
-                    <label for="opt003">
-                    <input type="radio" id="opt003" name='DV_Q1_6' (change)="change($event,3,'Good')">
-                     </label>
-                </td>
-                <td data-th="Fair">
-                    <label for="opt004">
-                    <input type="radio" id="opt004" name='DV_Q1_6' (change)="change($event,4,'Fair')">
-                     </label>
-                </td>
-                <td data-th="Poor">
-                    <label for="opt005">
-                    <input type="radio" id="opt005" name='DV_Q1_6' (change)="change($event,5,'Poor')">
-                    </label>
-                </td>
-          </tr>              
-      </tbody>
-  </table>
-</div>
-<div class="btnContainer">
-  <button class="btn-right" (click)="next()">Next</button>
-</div>
+                    </tr>
+                    <tr>
+                        <td class="txtAlignLeft">
+                            In general, how would you rate your satisfaction with your social activities and relationships?
+                            <span class="asterisk-red">*</span>
+                            <br/>
+                            <span *ngIf="!(start || social)" class="sh-alert-text">Please select a value</span>
+                        </td>
+                        <td data-th="Excellent">
+                            <label for="opt001">
+                                <input type="radio" id="opt001" name='DV_Q1_5' [(ngModel)]="social" value="Excellent" required>
+                            </label>
+                        </td>
+                        <td data-th="Very good">
+                            <label for="opt002">
+                                <input type="radio" id="opt002" name='DV_Q1_5' [(ngModel)]="social" value="Very good">
+                            </label>
+                        </td>
+                        <td data-th="Good">
+                            <label for="opt003">
+                                <input type="radio" id="opt003" name='DV_Q1_5' [(ngModel)]="social" value="Good">
+                            </label>
+                        </td>
+                        <td data-th="Fair">
+                            <label for="opt004">
+                                <input type="radio" id="opt004" name='DV_Q1_5' [(ngModel)]="social" value="Fair">
+                            </label>
+                        </td>
+                        <td data-th="Poor">
+                            <label for="opt005">
+                                <input type="radio" id="opt005" name='DV_Q1_5' [(ngModel)]="social" value="Poor">
+                            </label>
+                        </td>
 
+
+                    </tr>
+                    <tr>
+                        <td class="txtAlignLeft">
+                            In general, please rate how well you carry out your usual social activities and roles. (This includes activities at home,
+                            at work and in your community, and responsibilities as a parent child, spouse, employee, friend,
+                            etc.)
+                            <span class="asterisk-red">*</span>
+                            <br/>
+                            <span *ngIf="!(start || activities)" class="sh-alert-text">Please select a value</span>
+                        </td>
+                        <td data-th="Excellent">
+                            <label for="opt001">
+                                <input type="radio" id="opt001" name='DV_Q1_6' [(ngModel)]="activities" value="Excellent" required>
+                            </label>
+                        </td>
+                        <td data-th="Very good">
+                            <label for="opt002">
+                                <input type="radio" id="opt002" name='DV_Q1_6' [(ngModel)]="activities" value="Very good">
+                            </label>
+                        </td>
+                        <td data-th="Good">
+                            <label for="opt003">
+                                <input type="radio" id="opt003" name='DV_Q1_6' [(ngModel)]="activities" value="Good">
+                            </label>
+                        </td>
+                        <td data-th="Fair">
+                            <label for="opt004">
+                                <input type="radio" id="opt004" name='DV_Q1_6' [(ngModel)]="activities" value="Fair">
+                            </label>
+                        </td>
+                        <td data-th="Poor">
+                            <label for="opt005">
+                                <input type="radio" id="opt005" name='DV_Q1_6' [(ngModel)]="activities" value="Poor">
+                            </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="btnContainer">
+            <button class="btn-right" (click)="next()">Next</button>
+        </div>
+    </form>
 </div>

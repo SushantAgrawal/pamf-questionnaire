@@ -5,59 +5,60 @@
     <div class="sub-header-bold">
         In the past seven days...
     </div>
+    <form #myForm="ngForm">
+        <div class="sh-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>None</th>
+                        <th>Mild</th>
+                        <th>Moderate</th>
+                        <th>Severe</th>
+                        <th>Very Severe</th>
 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="txtAlignLeft">
+                            How would you rate your fatigue on average?
+                            <span class="asterisk-red">*</span><br/>
+                            <span *ngIf="!(start || fatigue)" class="sh-alert-text">Please select a value</span>
+                        </td>
+                        <td data-th="None">
+                            <label for="opt001">
+                                <input type="radio" id="opt001" name='DV_Q4'  [(ngModel)]="fatigue" value="None" required>
+                            </label>
+                        </td>
+                        <td data-th="Mild">
+                            <label for="opt002">
+                                <input type="radio" id="opt002" name='DV_Q4'  [(ngModel)]="fatigue" value="Mild" >
+                            </label>
+                        </td>
+                        <td data-th="Moderate">
+                            <label for="opt003">
+                                <input type="radio" id="opt003" name='DV_Q4'  [(ngModel)]="fatigue" value="Moderate" >
+                            </label>
+                        </td>
+                        <td data-th="Severe">
+                            <label for="opt004">
+                                <input type="radio" id="opt004" name='DV_Q4'  [(ngModel)]="fatigue" value="Severe" >
+                            </label>
+                        </td>
+                        <td data-th="Very Severe">
+                            <label for="opt005">
+                                <input type="radio" id="opt005" name='DV_Q4'  [(ngModel)]="fatigue" value="Very Severe" >
+                            </label>
+                        </td>
+                    </tr>
 
-    <div class="sh-table">
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>None</th>
-                    <th>Mild</th>
-                    <th>Moderate</th>
-                    <th>Severe</th>
-                    <th>Very Severe</th>
-
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="txtAlignLeft">
-                        How would you rate your fatigue on average?
-                        <span class="asterisk-red">*</span>
-                    </td>
-                    <td data-th="None">
-                        <label for="opt001">
-                            <input type="radio" id="opt001" name='DV_Q4' required (change)="change($event,1,'None')">
-                        </label>
-                    </td>
-                    <td data-th="Mild">
-                        <label for="opt002">
-                            <input type="radio" id="opt002" name='DV_Q4' (change)="change($event,2,'Mild')">
-                        </label>
-                    </td>
-                    <td data-th="Moderate">
-                        <label for="opt003">
-                            <input type="radio" id="opt003" name='DV_Q4' (change)="change($event,3,'Moderate')">
-                        </label>
-                    </td>
-                    <td data-th="Severe">
-                        <label for="opt004">
-                            <input type="radio" id="opt004" name='DV_Q4' (change)="change($event,4,'Severe')">
-                        </label>
-                    </td>
-                    <td data-th="Very Severe">
-                        <label for="opt005">
-                            <input type="radio" id="opt005" name='DV_Q4' (change)="change($event,5,'Very Severe')">
-                        </label>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-    </div>
-    <div class="btnContainer">
-        <button class="btn-right" (click)="next()">Next</button>
-    </div>
+                </tbody>
+            </table>
+        </div>
+        <div class="btnContainer">
+            <button class="btn-right" (click)="next()">Next</button>
+        </div>
+    </form>
 
 </div>

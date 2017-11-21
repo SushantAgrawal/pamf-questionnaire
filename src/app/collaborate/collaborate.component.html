@@ -1,167 +1,172 @@
 <div class="container">
-    <div class="sh-alert-area">Please answer all questions marked with an (
-        <span class="asterisk-red">*</span>) to continue.</div>
-    <div class="progress-bar-container">
-        <div class="questionnaire-progress">Questionnaire Progress</div>
-        <div class="progress-bar" style="width:50%;"></div>
-    </div>
-    <div class="header-txt">
-        CollaboRATE
-    </div>
-    <div class="sub-header-txt">
-        Thinking about the visit you had with your health care provider today …
-        <br/>
-        <br/> How much effort was made to help you understand your health issues?
-    </div>
-    <div class="review-bar">
-        <div class="ast-box">
-            <span class="asterisk-red">*</span>
+    <form #myForm="ngForm">
+        <div class="sh-alert-area">Please answer all questions marked with an (
+            <span class="asterisk-red">*</span>) to continue.</div>
+        <div class="progress-bar-container">
+            <div class="questionnaire-progress">Questionnaire Progress</div>
+            <div class="progress-bar" style="width:50%;"></div>
         </div>
-        <div class="num-box">
-            <label class="node1">No effort was made</label>
-            <span>0</span>
-            <input type="radio" name="DV_Q1_1" (change)="change($event,0,'0')" />
+        <div class="header-txt">
+            CollaboRATE
         </div>
-        <div class="num-box">
-            <span>1</span>
-            <input type="radio" name="DV_Q1_1" (change)="change($event,1,'1')"/>
+        <div class="sub-header-txt">
+            Thinking about the visit you had with your health care provider today …
+            <br/>
+            <br/> How much effort was made to help you understand your health issues?
         </div>
-        <div class="num-box">
-            <span>2</span>
-            <input type="radio" name="DV_Q1_1" (change)="change($event,2,'2')"/>
-        </div>
-        <div class="num-box">
-            <span>3</span>
-            <input type="radio" name="DV_Q1_1" (change)="change($event,3,'3')"/>
-        </div>
-        <div class="num-box">
-            <span>4</span>
-            <input type="radio" name="DV_Q1_1" (change)="change($event,4,'4')"/>
-        </div>
-        <div class="num-box">
-            <span>5</span>
-            <input type="radio" name="DV_Q1_1" (change)="change($event,5,'5')"/>
-        </div>
-        <div class="num-box">
-            <span>6</span>
-            <input type="radio" name="DV_Q1_1" (change)="change($event,6,'6')"/>
-        </div>
-        <div class="num-box">
-            <span>7</span>
-            <input type="radio" name="DV_Q1_1" (change)="change($event,7,'7')"/>
-        </div>
-        <div class="num-box">
-            <span>8</span>
-            <input type="radio" name="DV_Q1_1" (change)="change($event,8,'8')"/>
-        </div>
-        <div class="num-box">
-            <label class="node-last">Every effort was made</label>
-            <span>9</span>
-            <input type="radio" name="DV_Q1_1" (change)="change($event,9,'9')"/>
-        </div>
-    </div>
-
-    <div class="sub-header-txt">
-        How much effort was made to listen to the things that matter most to you about your health issues?
-    </div>
-    <div class="review-bar">
-        <div class="ast-box">
-            <span class="asterisk-red">*</span>
-        </div>
-        <div class="num-box">
+        <div class="review-bar">
+            <div class="ast-box">
+                <span class="asterisk-red">*</span>
+                <span *ngIf="!(start || healthIssues)" class="sh-alert-text">Please select a value</span>
+            </div>
+            <div class="num-box">
                 <label class="node1">No effort was made</label>
                 <span>0</span>
-                <input type="radio" name="DV_Q1_2" (change)="change($event,0,'0')" />
+                <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="0" required />
             </div>
             <div class="num-box">
                 <span>1</span>
-                <input type="radio" name="DV_Q1_2" (change)="change($event,1,'1')"/>
+                <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="1" />
             </div>
             <div class="num-box">
                 <span>2</span>
-                <input type="radio" name="DV_Q1_2" (change)="change($event,2,'2')"/>
+                <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="2" />
             </div>
             <div class="num-box">
                 <span>3</span>
-                <input type="radio" name="DV_Q1_2" (change)="change($event,3,'3')"/>
+                <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="3" />
             </div>
             <div class="num-box">
                 <span>4</span>
-                <input type="radio" name="DV_Q1_2" (change)="change($event,4,'4')"/>
+                <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="4" />
             </div>
             <div class="num-box">
                 <span>5</span>
-                <input type="radio" name="DV_Q1_2" (change)="change($event,5,'5')"/>
+                <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="5" />
             </div>
             <div class="num-box">
                 <span>6</span>
-                <input type="radio" name="DV_Q1_2" (change)="change($event,6,'6')"/>
+                <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="6" />
             </div>
             <div class="num-box">
                 <span>7</span>
-                <input type="radio" name="DV_Q1_2" (change)="change($event,7,'7')"/>
+                <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="7" />
             </div>
             <div class="num-box">
                 <span>8</span>
-                <input type="radio" name="DV_Q1_2" (change)="change($event,8,'8')"/>
+                <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="8" />
             </div>
             <div class="num-box">
                 <label class="node-last">Every effort was made</label>
                 <span>9</span>
-                <input type="radio" name="DV_Q1_2" (change)="change($event,9,'9')"/>
+                <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="9" />
             </div>
-    </div>
-    <div class="sub-header-txt"> How much effort was made to include what matters most to you in choosing what to do next?</div>
-    <div class="review-bar">
-        <div class="ast-box">
-            <span class="asterisk-red">*</span>
         </div>
-        <div class="num-box">
+
+        <div class="sub-header-txt">
+            How much effort was made to listen to the things that matter most to you about your health issues?
+        </div>
+        <div class="review-bar">
+            <div class="ast-box">
+                <span class="asterisk-red">*</span>
+                <span *ngIf="!(start || matter)" class="sh-alert-text">Please select a value</span>
+            </div>
+            <div class="num-box">
                 <label class="node1">No effort was made</label>
                 <span>0</span>
-                <input type="radio" name="DV_Q1_3" (change)="change($event,0,'0')" />
+                <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="0"  />
             </div>
             <div class="num-box">
                 <span>1</span>
-                <input type="radio" name="DV_Q1_3" (change)="change($event,1,'1')"/>
+                <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="1" />
             </div>
             <div class="num-box">
                 <span>2</span>
-                <input type="radio" name="DV_Q1_3" (change)="change($event,2,'2')"/>
+                <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="2" />
             </div>
             <div class="num-box">
                 <span>3</span>
-                <input type="radio" name="DV_Q1_3" (change)="change($event,3,'3')"/>
+                <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="3" />
             </div>
             <div class="num-box">
                 <span>4</span>
-                <input type="radio" name="DV_Q1_3" (change)="change($event,4,'4')"/>
+                <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="4"/>
             </div>
             <div class="num-box">
                 <span>5</span>
-                <input type="radio" name="DV_Q1_3" (change)="change($event,5,'5')"/>
+                <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="5" />
             </div>
             <div class="num-box">
                 <span>6</span>
-                <input type="radio" name="DV_Q1_3" (change)="change($event,6,'6')"/>
+                <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="6" />
             </div>
             <div class="num-box">
                 <span>7</span>
-                <input type="radio" name="DV_Q1_3" (change)="change($event,7,'7')"/>
+                <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="7" />
             </div>
             <div class="num-box">
                 <span>8</span>
-                <input type="radio" name="DV_Q1_3" (change)="change($event,8,'8')"/>
+                <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="8"/>
             </div>
             <div class="num-box">
                 <label class="node-last">Every effort was made</label>
                 <span>9</span>
-                <input type="radio" name="DV_Q1_3" (change)="change($event,9,'9')"/>
+                <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="9" />
             </div>
-    </div>
+        </div>
+        <div class="sub-header-txt"> How much effort was made to include what matters most to you in choosing what to do next?</div>
+        <div class="review-bar">
+            <div class="ast-box">
+                <span class="asterisk-red">*</span>
+                <span *ngIf="!(start || choosingNext)" class="sh-alert-text">Please select a value</span>
+            </div>
+            <div class="num-box">
+                <label class="node1">No effort was made</label>
+                <span>0</span>
+                <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="0"/>
+            </div>
+            <div class="num-box">
+                <span>1</span>
+                <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="1" />
+            </div>
+            <div class="num-box">
+                <span>2</span>
+                <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="2" />
+            </div>
+            <div class="num-box">
+                <span>3</span>
+                <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="3" />
+            </div>
+            <div class="num-box">
+                <span>4</span>
+                <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="4" />
+            </div>
+            <div class="num-box">
+                <span>5</span>
+                <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="5" />
+            </div>
+            <div class="num-box">
+                <span>6</span>
+                <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="6" />
+            </div>
+            <div class="num-box">
+                <span>7</span>
+                <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="7" />
+            </div>
+            <div class="num-box">
+                <span>8</span>
+                <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="8"/>
+            </div>
+            <div class="num-box">
+                <label class="node-last">Every effort was made</label>
+                <span>9</span>
+                <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="8" />
+            </div>
+        </div>
 
-    <div class="btnContainer">
-        <button class="btn-right" (click)="next()">Next</button>
-    </div>
+        <div class="btnContainer">
+            <button class="btn-right" (click)="next()">Next</button>
+        </div>
+    </form>
 
 </div>

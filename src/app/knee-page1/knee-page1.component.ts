@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import {Router} from '@angular/router';
+import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { kneeQuestions } from '../app.questions';
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms"
 
 @Component({
   selector: 'app-knee-page1',
@@ -10,22 +9,32 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/
   encapsulation: ViewEncapsulation.None
 })
 export class KneePage1Component implements OnInit {
-  dvQ1:any = null;
+  @ViewChild('myForm') myForm: any;
+  start: boolean = true;
+  kneeStiffness: string;
+  scores: {} = {
+    none: 1,
+    Mild: 2,
+    Moderate: 3,
+    Severe: 4,
+    Extreme: 5
+  };
 
-  constructor(private router : Router) {
-    this.dvQ1=null;
-  }  
-    ngOnInit() {}
-    change(event,score,value) {
-      this.dvQ1=score;
-      kneeQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text=[];
-      kneeQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score=[];
-      kneeQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text.push(value);
-      kneeQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score.push(score);
-    }
-    next() {
-      this.dvQ1 && this
+  constructor(private router: Router) {
+
+  }
+  ngOnInit() { }
+
+  next() {
+    this.start = false;
+    let thisForm = this.myForm.form;
+    thisForm.valid && (
+      kneeQuestions.responses[0].answer_text[0] = this.kneeStiffness
+      , kneeQuestions.responses[0].answer_text_score[0] = this.scores[this.kneeStiffness]
+      , this
         .router
         .navigate(['kneePage2'])
-    }
+    );
+
+  }
 }

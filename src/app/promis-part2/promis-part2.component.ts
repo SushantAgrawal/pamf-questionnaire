@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
 import {Router} from '@angular/router';
 import { promisQuestions } from '../app.questions';
 @Component({
@@ -8,20 +8,30 @@ import { promisQuestions } from '../app.questions';
   encapsulation: ViewEncapsulation.None
 })
 export class PromisPart2Component implements OnInit {
-
+  @ViewChild('myForm') myForm: any;
+  start: boolean = true;
+  everydayPhysicalActivities: string;
+  scores: {} = {
+    Completely: 1,
+    Mostly: 2,
+    Moderately: 3,
+    "A little": 4,
+    "Not at all": 5
+  };
   constructor(private router : Router) {}
   
     ngOnInit() {}
-    change(event,score,value) {
-      promisQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text=[];
-      promisQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score=[];
-      promisQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text.push(value);
-      promisQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score.push(score);
-    }
     next() {
-      this
-        .router
-        .navigate(['promisPart3'])
+      this.start = false;
+      let thisForm = this.myForm.form;
+      thisForm.valid && (
+        promisQuestions.responses[6].answer_text[0] = this.everydayPhysicalActivities
+        , promisQuestions.responses[6].answer_text_score[0] = this.scores[this.everydayPhysicalActivities]
+        ,console.log(promisQuestions.responses)
+        , this
+          .router
+          .navigate(['promisPart3'])
+      );
     }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
 import {Router} from '@angular/router';
 import { AppService } from '../app.service';
 import {kneeQuestions} from '../app.questions';
@@ -10,6 +10,17 @@ import {kneeQuestions} from '../app.questions';
 })
 export class KneePage3Component implements OnInit {
   subscriptions: any;
+  @ViewChild('myForm') myForm: any;
+  start: boolean = true;
+  rising: string;
+  bending: string;
+  scores: {} = {
+    none: 1,
+    Mild: 2,
+    Moderate: 3,
+    Severe: 4,
+    Extreme: 5
+  };
   constructor(private router : Router, private appService:AppService) {}  
     ngOnInit() {
       this.subscriptions = this
@@ -40,14 +51,18 @@ export class KneePage3Component implements OnInit {
       });
     this.subscriptions.add(sub1);
     }
-    change(event,score,value) {
-      kneeQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text=[];
-      kneeQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score=[];
-      kneeQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text.push(value);
-      kneeQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score.push(score);
-    }
     next() {
-      this.appService.httpPost('knee:page3:submit',kneeQuestions)
+      this.start = false;
+      let thisForm = this.myForm.form;
+      thisForm.valid && (
+        kneeQuestions.responses[5].answer_text[0] = this.rising
+        , kneeQuestions.responses[5].answer_text_score[0] = this.scores[this.rising]
+        ,kneeQuestions.responses[6].answer_text[0] = this.bending
+        , kneeQuestions.responses[6].answer_text_score[0] = this.scores[this.bending]
+        ,console.log(kneeQuestions.responses)
+        , this.appService.httpPost('knee:page3:submit',kneeQuestions)
+      );
+      
     }
 
     ngOnDestroy() {

@@ -1,91 +1,100 @@
 <div class="container">
-  <div class="sh-alert-area">Please answer all questions marked with an (<span class="asterisk-red">*</span>) to continue.</div>
-  <header class="sh-header">Function, Daily Living</header>
+    <div class="sh-alert-area">Please answer all questions marked with an (
+        <span class="asterisk-red">*</span>) to continue.</div>
+    <header class="sh-header">Function, Daily Living</header>
 
-  <div class="sub-header-bold">
-      The following questions concern your physical function. By this we mean your ability to move around and to look after yourself. For each of the following activities please indicate the degree of difficulty you have experienced in the last week due to your knee.
-  </div>
-<div  class="sh-table">
-  <table>
-      <thead>
-          <tr>
-              <th></th>
-              <th>None</th>
-              <th>Mild </th>
-              <th>Moderate</th>
-              <th>Severe</th>
-              <th>Extreme</th>
+    <div class="sub-header-bold">
+        The following questions concern your physical function. By this we mean your ability to move around and to look after yourself.
+        For each of the following activities please indicate the degree of difficulty you have experienced in the last week
+        due to your knee.
+    </div>
+    <form #myForm="ngForm">
+        <div class="sh-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>None</th>
+                        <th>Mild </th>
+                        <th>Moderate</th>
+                        <th>Severe</th>
+                        <th>Extreme</th>
 
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <td class="txtAlignLeft">
-                  Rising from sitting <span class="asterisk-red">*</span>
-              </td>
-              <td data-th="None">
-                  <label for="opt001">
-                  <input type="radio" id="opt001" name='DV_Q3_1' required (change)="change($event,1,'None')">
-                  </label>
-              </td>
-              <td data-th="Mild">
-                  <label for="opt002">
-                  <input type="radio" id="opt002" name='DV_Q3_1' (change)="change($event,2,'Mild')">
-                  </label>
-              </td>
-              <td data-th="Moderate">
-                  <label for="opt003">
-                  <input type="radio" id="opt003" name='DV_Q3_1' (change)="change($event,3,'Moderate')">
-                   </label>
-              </td>
-              <td data-th="Severe">
-                  <label for="opt004">
-                  <input type="radio" id="opt004" name='DV_Q3_1' (change)="change($event,4,'Severe')">
-                   </label>
-              </td>
-              <td data-th="Extreme">
-                  <label for="opt005">
-                  <input type="radio" id="opt005" name='DV_Q3_1' (change)="change($event,5,'Extreme')">
-                  </label>
-              </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="txtAlignLeft">
+                            Rising from sitting
+                            <span class="asterisk-red">*</span> <br/>
+                            <span *ngIf="!(start || rising)" class="sh-alert-text">Please select a value</span>
+                        </td>
+                        <td data-th="None">
+                            <label for="opt001">
+                                <input type="radio" id="opt001" name='DV_Q3_1' required [(ngModel)]="rising" value="none">
+                            </label>
+                        </td>
+                        <td data-th="Mild">
+                            <label for="opt002">
+                                <input type="radio" id="opt002" name='DV_Q3_1' [(ngModel)]="rising" value="Mild">
+                            </label>
+                        </td>
+                        <td data-th="Moderate">
+                            <label for="opt003">
+                                <input type="radio" id="opt003" name='DV_Q3_1' [(ngModel)]="rising" value="Moderate">
+                            </label>
+                        </td>
+                        <td data-th="Severe">
+                            <label for="opt004">
+                                <input type="radio" id="opt004" name='DV_Q3_1' [(ngModel)]="rising" value="Severe">
+                            </label>
+                        </td>
+                        <td data-th="Extreme">
+                            <label for="opt005">
+                                <input type="radio" id="opt005" name='DV_Q3_1' [(ngModel)]="rising" value="Extreme">
+                            </label>
+                        </td>
 
 
-          </tr>
-          <tr>
-              <td class="txtAlignLeft">
-                  Bending to floor/pick up an object <span class="asterisk-red">*</span>
-              </td>
-              <td data-th="None">
-                  <label for="opt008">
-                  <input type="radio" id="opt008" name='DV_Q3_2' required (change)="change($event,1,'None')"/>
-                  </label>
-              </td>
-              <td data-th="Mild">
-                  <label for="opt009">
-                  <input type="radio" id="opt009" name='DV_Q3_2' (change)="change($event,2,'Mild')"/>
-                  </label>
-              </td>
-              <td data-th="Moderate">
-                  <label for="opt010">
-                  <input type="radio" id="opt010" name='DV_Q3_2' (change)="change($event,3,'Moderate')"/>
-                  </label>
-              </td>
-              <td data-th="Severe">
-                  <label for="opt011">
-                  <input type="radio" id="opt011" name='DV_Q3_2' (change)="change($event,4,'Severe')"/>
-                    </label>
-              </td>
-              <td data-th="Extreme">
-                  <label for="opt012">
-                  <input type="radio" id="opt012" name='DV_Q3_2' (change)="change($event,5,'Extreme')"/>
-                   </label>
-              </td>
-          </tr>         
-      </tbody>
-  </table>
-</div>
-<div class="btnContainer">
-  <button class="btn-right" (click)="next()">Next</button>
-</div>
+                    </tr>
+                    <tr>
+                        <td class="txtAlignLeft">
+                            Bending to floor/pick up an object
+                            <span class="asterisk-red">*</span><br/>
+                            <span *ngIf="!(start || bending)" class="sh-alert-text">Please select a value</span>
+                        </td>
+                        <td data-th="None">
+                            <label for="opt008">
+                                <input type="radio" id="opt008" name='DV_Q3_2' required  [(ngModel)]="bending" value="none" />
+                            </label>
+                        </td>
+                        <td data-th="Mild">
+                            <label for="opt009">
+                                <input type="radio" id="opt009" name='DV_Q3_2'  [(ngModel)]="bending" value="Mild" />
+                            </label>
+                        </td>
+                        <td data-th="Moderate">
+                            <label for="opt010">
+                                <input type="radio" id="opt010" name='DV_Q3_2'  [(ngModel)]="bending" value="Moderate" />
+                            </label>
+                        </td>
+                        <td data-th="Severe">
+                            <label for="opt011">
+                                <input type="radio" id="opt011" name='DV_Q3_2'  [(ngModel)]="bending" value="Severe"/>
+                            </label>
+                        </td>
+                        <td data-th="Extreme">
+                            <label for="opt012">
+                                <input type="radio" id="opt012" name='DV_Q3_2'  [(ngModel)]="bending" value="Extreme" />
+                            </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+    <div class="btnContainer">
+        <button class="btn-right" (click)="next()">Next</button>
+    </div>
 
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
 import {Router} from '@angular/router';
 import { promisQuestions } from '../app.questions';
 @Component({
@@ -8,20 +8,46 @@ import { promisQuestions } from '../app.questions';
   encapsulation: ViewEncapsulation.None
 })
 export class PromisPart1Component implements OnInit {
-
+  @ViewChild('myForm') myForm: any;
+  start: boolean = true;
+  health: string;
+  quality: string;
+  physical: string;
+  mentalHealth: string;
+  social: string;
+  activities: string;
+  scores: {} = {
+    Excellent: 1,
+    "Very good": 2,
+    Good: 3,
+    Fair: 4,
+    Poor: 5
+  };
   constructor(private router : Router) {}
-  
     ngOnInit() {}
-    change(event,score,value) {
-      promisQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text=[];
-      promisQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score=[];
-      promisQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text.push(value);
-      promisQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score.push(score);
-    }
-    next() {
-      this
-        .router
-        .navigate(['promisPart2'])
-    }
+    
+    
 
+    next() {
+      this.start = false;
+      let thisForm = this.myForm.form;
+      thisForm.valid && (
+        promisQuestions.responses[0].answer_text[0] = this.health
+        , promisQuestions.responses[0].answer_text_score[0] = this.scores[this.health]
+        ,promisQuestions.responses[1].answer_text[0] = this.quality
+        , promisQuestions.responses[1].answer_text_score[0] = this.scores[this.quality]
+        ,promisQuestions.responses[2].answer_text[0] = this.physical
+        , promisQuestions.responses[2].answer_text_score[0] = this.scores[this.physical]
+       , promisQuestions.responses[3].answer_text[0] = this.mentalHealth
+        , promisQuestions.responses[3].answer_text_score[0] = this.scores[this.mentalHealth]
+        , promisQuestions.responses[4].answer_text[0] = this.social
+        , promisQuestions.responses[4].answer_text_score[0] = this.scores[this.social]
+        , promisQuestions.responses[5].answer_text[0] = this.activities
+        , promisQuestions.responses[5].answer_text_score[0] = this.scores[this.activities]
+        ,console.log(promisQuestions.responses)
+        , this
+          .router
+          .navigate(['promisPart2'])
+      );
+    }
 }

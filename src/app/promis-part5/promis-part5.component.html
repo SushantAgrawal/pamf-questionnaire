@@ -1,65 +1,68 @@
 <div class="container">
-  <div class="sh-alert-area">Please answer all questions marked with an (
-    <span class="asterisk-red">*</span>) to continue.</div>
-  <header class="sh-header">Pain</header>
-  <div class="sub-header-txt">
-    How would you rate your pain on average?
-  </div>
-  <div class="review-bar">
-    <div class="ast-box">
-      <span class="asterisk-red">*</span>
+  <form #myForm="ngForm">
+    <div class="sh-alert-area">Please answer all questions marked with an (
+      <span class="asterisk-red">*</span>) to continue.</div>
+    <header class="sh-header">Pain</header>
+    <div class="sub-header-txt">
+      How would you rate your pain on average?
     </div>
-    <div class="num-box">
-      <label class="node1">No Pain</label>
-      <span>0</span>
-      <input type="radio" name="DV_Q5" (change)="change($event,0,'0')" />
+    <div class="review-bar">
+      <div class="ast-box">
+        <span class="asterisk-red">*</span>
+        <span *ngIf="!(start || pain)" class="sh-alert-text">Please select a value</span>
+      </div>
+      <div class="num-box">
+        <label class="node1">No Pain</label>
+        <span>0</span>
+        <input type="radio" name="DV_Q5"  [(ngModel)]="pain" value="0" required />
+      </div>
+      <div class="num-box">
+        <span>1</span>
+        <input type="radio" name="DV_Q5"  [(ngModel)]="pain" value="1"  />
+      </div>
+      <div class="num-box">
+        <span>2</span>
+        <input type="radio" name="DV_Q5"  [(ngModel)]="pain" value="2"  />
+      </div>
+      <div class="num-box">
+        <span>3</span>
+        <input type="radio" name="DV_Q5"  [(ngModel)]="pain" value="3" />
+      </div>
+      <div class="num-box">
+        <span>4</span>
+        <input type="radio" name="DV_Q5"  [(ngModel)]="pain" value="4" />
+      </div>
+      <div class="num-box">
+        <span>5</span>
+        <input type="radio" name="DV_Q5"  [(ngModel)]="pain" value="5"  />
+      </div>
+      <div class="num-box">
+        <span>6</span>
+        <input type="radio" name="DV_Q5"  [(ngModel)]="pain" value="6"  />
+      </div>
+      <div class="num-box">
+        <span>7</span>
+        <input type="radio" name="DV_Q5" [(ngModel)]="pain" value="7" />
+      </div>
+      <div class="num-box">
+        <span>8</span>
+        <input type="radio" name="DV_Q5" [(ngModel)]="pain" value="8" />
+      </div>
+      <div class="num-box">
+        <span>9</span>
+        <input type="radio" name="DV_Q5" [(ngModel)]="pain" value="9" />
+      </div>
+      <div class="num-box">
+        <label class="node-last">Worst Imaginable Pain</label>
+        <span>10</span>
+        <input type="radio" name="DV_Q5" [(ngModel)]="pain" value="10" />
+      </div>
     </div>
-    <div class="num-box">
-      <span>1</span>
-      <input type="radio" name="DV_Q5" (change)="change($event,1,'1')" />
-    </div>
-    <div class="num-box">
-      <span>2</span>
-      <input type="radio" name="DV_Q5" (change)="change($event,2,'2')" />
-    </div>
-    <div class="num-box">
-      <span>3</span>
-      <input type="radio" name="DV_Q5" (change)="change($event,3,'3')" />
-    </div>
-    <div class="num-box">
-      <span>4</span>
-      <input type="radio" name="DV_Q5" (change)="change($event,4,'4')" />
-    </div>
-    <div class="num-box">
-      <span>5</span>
-      <input type="radio" name="DV_Q5" (change)="change($event,5,'5')" />
-    </div>
-    <div class="num-box">
-      <span>6</span>
-      <input type="radio" name="DV_Q5" (change)="change($event,6,'6')" />
-    </div>
-    <div class="num-box">
-      <span>7</span>
-      <input type="radio" name="DV_Q5" (change)="change($event,7,'7')" />
-    </div>
-    <div class="num-box">
-      <span>8</span>
-      <input type="radio" name="DV_Q5" (change)="change($event,8,'8')" />
-    </div>
-    <div class="num-box">
-      <span>9</span>
-      <input type="radio" name="DV_Q5" (change)="change($event,9,'9')" />
-    </div>
-    <div class="num-box">
-      <label class="node-last">Worst Imaginable Pain</label>
-      <span>10</span>
-      <input type="radio" name="DV_Q5" (change)="change($event,10,'10')" />
-    </div>
-  </div>
 
 
-  <div class="btnContainer">
-    <button class="btn-right" (click)="next()">Next</button>
-  </div>
+    <div class="btnContainer">
+      <button class="btn-right" (click)="next()">Next</button>
+    </div>
+  </form>
 
 </div>

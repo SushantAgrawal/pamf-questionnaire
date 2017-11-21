@@ -1,62 +1,62 @@
 <div class="container">
-  <div class="sh-alert-area">Please answer all questions marked with an (<span class="asterisk-red">*</span>) to continue.</div>
- 
-  <div class="sub-header-bold">
-      Please respond to each item by marking one box per row.
-  </div>
+    <div class="sh-alert-area">Please answer all questions marked with an (
+        <span class="asterisk-red">*</span>) to continue.</div>
 
-  
-<div  class="sh-table">
-  <table>
-      <thead>
-          <tr>
-              <th></th>
-              <th>Completely</th>
-              <th>Mostly</th>
-              <th>Moderately</th>
-              <th>A little</th>
-              <th>Not at all</th>
+    <div class="sub-header-bold">
+        Please respond to each item by marking one box per row.
+    </div>
+    <form #myForm="ngForm">
+        <div class="sh-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Completely</th>
+                        <th>Mostly</th>
+                        <th>Moderately</th>
+                        <th>A little</th>
+                        <th>Not at all</th>
 
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <td class="txtAlignLeft">To what extent are you able to carry out your everyday physical activities such as walking, climbing stairs, carrying groceries, or moving a chair? <span class="asterisk-red">*</span>
-              </td>
-              <td data-th="Completely">
-                  <label for="opt001">
-                  <input type="radio" id="opt001" name='DV_Q2' required (change)="change($event,5,'Poor')">
-                  </label>
-              </td>
-              <td data-th="Mostly">
-                  <label for="opt002">
-                  <input type="radio" id="opt002" name='DV_Q2' (change)="change($event,5,'Poor')">
-                  </label>
-              </td>
-              <td data-th="Moderately">
-                  <label for="opt003">
-                  <input type="radio" id="opt003" name='DV_Q2' (change)="change($event,5,'Poor')">
-                   </label>
-              </td>
-              <td data-th="A little">
-                  <label for="opt004">
-                  <input type="radio" id="opt004" name='DV_Q2' (change)="change($event,5,'Poor')">
-                   </label>
-              </td>
-              <td data-th="Not at all">
-                  <label for="opt005">
-                  <input type="radio" id="opt005" name='DV_Q2' (change)="change($event,5,'Poor')">
-                  </label>
-              </td>
-
-
-          </tr>
-          
-      </tbody>
-  </table>
-</div>
-<div class="btnContainer">
-  <button class="btn-right" (click)="next()">Next</button>
-</div>
-
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="txtAlignLeft">To what extent are you able to carry out your everyday physical activities such as walking, climbing
+                            stairs, carrying groceries, or moving a chair?
+                            <span class="asterisk-red">*</span>  <br/>
+                            <span *ngIf="!(start || everydayPhysicalActivities)" class="sh-alert-text">Please select a value</span>
+                        </td>
+                        <td data-th="Completely">
+                            <label for="opt001">
+                                <input type="radio" id="opt001" name='DV_Q2'  [(ngModel)]="everydayPhysicalActivities" value="Completely" required>
+                            </label>
+                        </td>
+                        <td data-th="Mostly">
+                            <label for="opt002">
+                                <input type="radio" id="opt002" name='DV_Q2'  [(ngModel)]="everydayPhysicalActivities" value="Mostly" required>
+                            </label>
+                        </td>
+                        <td data-th="Moderately">
+                            <label for="opt003">
+                                <input type="radio" id="opt003" name='DV_Q2' [(ngModel)]="everydayPhysicalActivities" value="Moderately">
+                            </label>
+                        </td>
+                        <td data-th="A little">
+                            <label for="opt004">
+                                <input type="radio" id="opt004" name='DV_Q2' [(ngModel)]="everydayPhysicalActivities" value="A little">
+                            </label>
+                        </td>
+                        <td data-th="Not at all">
+                            <label for="opt005">
+                                <input type="radio" id="opt005" name='DV_Q2' [(ngModel)]="everydayPhysicalActivities" value="Not at all">
+                            </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="btnContainer">
+            <button class="btn-right" (click)="next()">Next</button>
+        </div>
+    </form>
 </div>

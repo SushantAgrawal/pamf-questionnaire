@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { promisQuestions } from '../app.questions';
 
@@ -9,19 +9,30 @@ import { promisQuestions } from '../app.questions';
   encapsulation: ViewEncapsulation.None
 })
 export class PromisPart4Component implements OnInit {
-
+  @ViewChild('myForm') myForm: any;
+  start: boolean = true;
+  fatigue: string;
+  scores: {} = {
+    None: 1,
+    Mild: 2,
+    Moderate: 3,
+    Severe: 4,
+    "Very Severe": 5
+  };
   constructor(private router: Router) { }
 
   ngOnInit() { }
-  change(event, score, value) {
-    promisQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text = [];
-    promisQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score = [];
-    promisQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text.push(value);
-    promisQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score.push(score);
-  }
+
   next() {
-    this
-      .router
-      .navigate(['promisPart5'])
+    this.start = false;
+    let thisForm = this.myForm.form;
+    thisForm.valid && (
+      promisQuestions.responses[8].answer_text[0] = this.fatigue
+      , promisQuestions.responses[8].answer_text_score[0] = this.scores[this.fatigue]
+      , console.log(promisQuestions.responses)
+      , this
+        .router
+        .navigate(['promisPart5'])
+    );
   }
 }
