@@ -18,7 +18,6 @@ export class KneePage1Component implements OnInit {
     ngOnInit() {}
     change(event,score,value) {
       this.dvQ1=score;
-      debugger;
       kneeQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text=[];
       kneeQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score=[];
       kneeQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text.push(value);

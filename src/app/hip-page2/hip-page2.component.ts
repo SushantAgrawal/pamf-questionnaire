@@ -48,7 +48,7 @@ export class HipPage2Component implements OnInit {
     hipQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score.push(score);
   }
   next() {
-    let qx_os = navigator.userAgent;
+   // let qx_os = navigator.userAgent;
     this.appService.httpPost('hip:page2:submit', hipQuestions);
   }
 
