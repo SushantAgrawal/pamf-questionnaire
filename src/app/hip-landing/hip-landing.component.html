@@ -1,35 +1,58 @@
 <div class="container">
-  <div class="logo-area"><img src="/../assets/images/PAMF_logo.png" alt="Sutter Health" class="img-responsive" /></div>
-  <div class="banner-area"><img src="/../assets/images/pamf-landing-page.png" alt="Sutter Health" class="img-responsive" /></div>
+  <div class="logo-area">
+    <img src="/../assets/images/PAMF_logo.png" alt="Sutter Health" class="img-responsive" />
+  </div>
+  <div class="banner-area">
+    <img src="/../assets/images/pamf-landing-page.png" alt="Sutter Health" class="img-responsive" />
+  </div>
   <div class="question-text">
-       Welcome  {{appService.urlParams.c5}}   {{appService.urlParams.c6}},<br/><br/>
+    Welcome {{appService.urlParams.c5}} {{appService.urlParams.c6}},
+    <br/>
+    <br/>
   </div>
 
   <div class="pamf-image-container">
     <div class="profile-image">
-      <img src="#"/>
+      <img src="#" />
     </div>
-      <div class="question-text">
-       A few minutes of your time answering the following questionnaires will help with our shared-decision
-       on your <strong> {{appService.urlParams.c12}}</strong> care plan.
-      <br/><br/>  {{appService.urlParams.c7}} <br/> {{appService.urlParams.c9}}
-      </div>
+    <div class="question-text">
+      A few minutes of your time answering the following questionnaires will help with our shared-decision on your
+      <strong>
+      {{appService.urlParams.c12}}</strong> care plan.
+      <br/>
+      <br/> {{appService.urlParams.c7}}
+      <br/> {{appService.urlParams.c9}}
+    </div>
   </div>
 
   <div class="question-text">
-      Please note that your responses will not be used for determining coverage or any other insurance related purposes. Questionnaire
-      answers will be used for quality improvement purposes only.
+    Please note that your responses will not be used for determining coverage or any other insurance related purposes. Questionnaire
+    answers will be used for quality improvement purposes only.
   </div>
 
-  <div class="question-small-link"> <a href="#" >Privacy Policy</a> <a href="#"> Terms and Conditions</a></div>
+  <div class="question-small-link">
+    <a [attr.href]="kneeprivacypolicy">Privacy Policy</a>
+    <a [attr.href]="termsandconditions"> Terms and Conditions</a>
+  </div>
 
   <div class="btnContainer">
-      <!-- <a href="#" class="btn-right">Continue</a> -->
-      <button class="btn-right" (click)="next()">Next</button>
+    <!-- <a href="#" class="btn-right">Continue</a> -->
+    <button class="btn-right" (click)="next()">Next</button>
   </div>
   <header class="sh-header">UNDERSTAND MORE ABOUT YOUR HIP REPLACEMENT PROCEDURE </header>
-<ul class="question-helps">
- <li> <a href="#" >Should I Have Hip Replacement?</a></li>  <li><a href="#" > What Happens During Hip Replacement
-      Surgery</a> </li> <li><a href="#" > Preparing for Surgery - What To Expect</a></li> <li> <a href="#" > Recovering from Hip Replacement </a></li>
-</ul>
+  <ul class="question-helps">
+    <li>
+      <a [attr.href]="pros1">Should I Have Hip Replacement?</a>
+    </li>
+    <li>
+      <a [attr.href]="pros2"> What Happens During Hip Replacement Surgery
+      </a>
+    </li>
+    <li>
+      <a [attr.href]="pros3"> Preparing for Surgery - What To Expect</a>
+    </li>
+    <li>
+      <a [attr.href]="pros4"> Recovering from Hip Replacement </a>
+    </li>
+  </ul>
 </div>

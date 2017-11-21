@@ -13,7 +13,9 @@ let pamfOptions = {
                 ret = "kneeLanding?c14=10/12/2017"
             } else if(code == 'col'){
                 ret = "collaborate?c14=10/12/2017"
-            }
+            }else if(code == 'promis'){
+                ret = "promisPart1?c14=10/12/2017"
+            }            
             else {
                 ret = "incorrectTjr";
             }

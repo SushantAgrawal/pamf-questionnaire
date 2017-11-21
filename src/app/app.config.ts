@@ -21,7 +21,18 @@ export const urlMaps = {
     "collaborate:submit": "submit-questionnaire",
     "collaborate:redirect": "load-questionnaire",
     "pamf:url":"http://www.pamf.org",
-    "pamf:kneeprivacypolicy:url":"http://www.pamf.org/privacy/website_policy.html"
+    "pamf:privacypolicy:url":"http://www.pamf.org/privacy/website_policy.html",
+    "pamf:termsandconditions:url":"http://www.pamf.org/privacy/website_policy.html#Collecting and Using Personal Information",
+    "pamf:kneereplacementpro1:url":"http://www.sutterhealth.org/orthopedics/joint-replacement/when-to-have-joint-replacement.html",
+    "pamf:kneereplacementpro2:url":"http://www.sutterhealth.org/orthopedics/knee/knee-replacement-procedure.html",
+    "pamf:kneereplacementpro3:url":"http://www.sutterhealth.org/orthopedics/knee/preparing-for-knee-replacement.html",
+    "pamf:kneereplacementpro4:url":"http://www.sutterhealth.org/orthopedics/knee/recovery-from-knee-replacement.html",
+    "pamf:hipreplacementwebsite:url":"http://www.sutterhealth.org/orthopedics/hip/index.html",
+    "pamf:kneereplacementwebsite:url":"http://www.sutterhealth.org/orthopedics/knee/index.html",
+    "pamf:hipreplacementpro1:url":"http://www.sutterhealth.org/orthopedics/joint-replacement/when-to-have-joint-replacement.html",
+    "pamf:hipreplacementpro2:url":"http://www.sutterhealth.org/orthopedics/hip/hip-replacement-procedure.html",
+    "pamf:hipreplacementpro3:url":"http://www.sutterhealth.org/orthopedics/hip/preparing-for-hip-replacement.html",
+    "pamf:hipreplacementpro4:url":"http://www.sutterhealth.org/orthopedics/hip/recovery-from-hip-replacement.html",
 }
 
 

@@ -29,6 +29,7 @@ import { ThankYouKneeComponent } from './thank-you-knee/thank-you-knee.component
 import { IneligibleComponent } from './ineligible/ineligible.component';
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 import { UnsubscribeThankYouComponent } from './unsubscribe-thank-you/unsubscribe-thank-you.component';
+import {  ReactiveFormsModule } from '@angular/forms';
 // import { HipMandatoryComponent } from './hip-mandatory/hip-mandatory.component';
 // import { HttpModule } from '@angular/http';
 
@@ -64,7 +65,7 @@ import { UnsubscribeThankYouComponent } from './unsubscribe-thank-you/unsubscrib
     BrowserModule, 
     HttpClientModule, 
     // HttpModule,
-    RouterModule.forRoot(ROUTES, {useHash: false}), FormsModule
+    RouterModule.forRoot(ROUTES, {useHash: false}), FormsModule,ReactiveFormsModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]

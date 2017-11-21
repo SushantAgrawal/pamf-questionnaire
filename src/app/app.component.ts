@@ -2,6 +2,7 @@ import {Component, ViewEncapsulation} from '@angular/core';
 import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
 import {AppService} from './app.service';
 import {Title} from '@angular/platform-browser';
+
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
