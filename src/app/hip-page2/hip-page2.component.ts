@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { hipQuestions } from '../app.questions';
 import { AppService } from '../app.service';
@@ -9,6 +9,19 @@ import { AppService } from '../app.service';
   encapsulation: ViewEncapsulation.None
 })
 export class HipPage2Component implements OnInit {
+  @ViewChild('myForm') myForm: any;
+  start: boolean = true;
+  rising: string;
+  bending: string;
+  lying: string;
+  sitting: string;
+  scores: {} = {
+    none: 1,
+    Mild: 2,
+    Moderate: 3,
+    Severe: 4,
+    Extreme: 5
+  };
   subscriptions: any;
   constructor(private router: Router, public appService: AppService) { }
 
@@ -41,16 +54,22 @@ export class HipPage2Component implements OnInit {
       });
     this.subscriptions.add(sub1);
   }
-  change(event, score, value) {
-    hipQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text = [];
-    hipQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score = [];
-    hipQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text.push(value);
-    hipQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score.push(score);
-  }
   next() {
     debugger;
-    let qx_os = navigator.userAgent;
-    this.appService.httpPost('hip:page2:submit', hipQuestions);
+    this.start = false;
+    let thisForm = this.myForm.form;
+    thisForm.valid && (
+      hipQuestions.responses[2].answer_text[0] = this.rising
+      , hipQuestions.responses[2].answer_text_score[0] = this.scores[this.rising]
+      , hipQuestions.responses[3].answer_text[0] = this.bending
+      , hipQuestions.responses[3].answer_text_score[0] = this.scores[this.bending]
+      , hipQuestions.responses[4].answer_text[0] = this.lying
+      , hipQuestions.responses[4].answer_text_score[0] = this.scores[this.lying]
+      , hipQuestions.responses[5].answer_text[0] = this.sitting
+      , hipQuestions.responses[5].answer_text_score[0] = this.scores[this.sitting]
+      , this.appService.httpPost('hip:page2:submit', hipQuestions)
+    );
+
   }
 
   ngOnDestroy() {
