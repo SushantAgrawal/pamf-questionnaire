@@ -13,11 +13,11 @@ export class HipPage1Component implements OnInit {
   ngOnInit() {    
 
   }
-  change(event,score,value,qx_code) {
-    hipQuestions.responses.find(x => x.qx_code === qx_code).answer_text=[];
-    hipQuestions.responses.find(x => x.qx_code === qx_code).answer_text_score=[];
-    hipQuestions.responses.find(x => x.qx_code === qx_code).answer_text.push(value);
-    hipQuestions.responses.find(x => x.qx_code === qx_code).answer_text_score.push(score);
+  change(event,score,value) {
+    hipQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text=[];
+    hipQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score=[];
+    hipQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text.push(value);
+    hipQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score.push(score);
   }
   next() {
     this.router.navigate(['hipPage2'])

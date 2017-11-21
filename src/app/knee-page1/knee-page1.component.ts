@@ -10,21 +10,22 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/
   encapsulation: ViewEncapsulation.None
 })
 export class KneePage1Component implements OnInit {
-  name:string;
-  radioTest: FormGroup;
-  gender;
-  constructor(private router : Router,fb: FormBuilder) {
+  dvQ1:any = null;
+
+  constructor(private router : Router) {
+    this.dvQ1=null;
   }  
     ngOnInit() {}
-    change(event,score,value,qx_code) {
+    change(event,score,value) {
+      this.dvQ1=score;
       debugger;
-      kneeQuestions.responses.find(x => x.qx_code === qx_code).answer_text=[];
-      kneeQuestions.responses.find(x => x.qx_code === qx_code).answer_text_score=[];
-      kneeQuestions.responses.find(x => x.qx_code === qx_code).answer_text.push(value);
-      kneeQuestions.responses.find(x => x.qx_code === qx_code).answer_text_score.push(score);
+      kneeQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text=[];
+      kneeQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score=[];
+      kneeQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text.push(value);
+      kneeQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score.push(score);
     }
     next() {
-      this
+      this.dvQ1 && this
         .router
         .navigate(['kneePage2'])
     }

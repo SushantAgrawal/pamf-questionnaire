@@ -23,7 +23,8 @@ let pamfOptions = {
         },
         "login": "letterLanding",
         "load-questionnaire": "hipIntro",
-        "opt-out": "letterLanding"
+        "opt-out": "letterLanding",
+        "load-questionnaire-knee":"kneeIntro",
     }
 };
 exports.pamfOptions = pamfOptions;

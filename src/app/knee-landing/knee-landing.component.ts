@@ -10,6 +10,7 @@ import { urlMaps } from '../app.config';
   encapsulation: ViewEncapsulation.None
 })
 export class KneeLandingComponent implements OnInit {
+  subscriptions: any;
   kneePrivacyPolicy: any;
   termsAndConditions: any;
   pros1: any;
@@ -21,18 +22,47 @@ export class KneeLandingComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.kneePrivacyPolicy = urlMaps['pamf:privacypolicy:url'];
-    this.termsAndConditions = urlMaps['pamf:termsandconditions:url'];
-    this.pros1 = urlMaps['pamf:kneereplacementpro1:url'];
-    this.pros2 = urlMaps['pamf:kneereplacementpro2:url'];
-    this.pros3 = urlMaps['pamf:kneereplacementpro3:url'];
-    this.pros4 = urlMaps['pamf:kneereplacementpro4:url'];
+    this.kneePrivacyPolicy = urlMaps['pamf:privacy:policy:url'];
+    this.termsAndConditions = urlMaps['pamf:terms:conditions:url'];
+    this.pros1 = urlMaps['pamf:knee:replacement:pro1:url'];
+    this.pros2 = urlMaps['pamf:knee:replacement:pro2:url'];
+    this.pros3 = urlMaps['pamf:knee:replacement:pro3:url'];
+    this.pros4 = urlMaps['pamf:knee:replacement:pro4:url'];
+
+    this.subscriptions = this
+    .appService
+    .filterOn("knee:landing:next")
+    .subscribe(d => {
+      d.error
+        ? console.log(d.error)
+        : (() => {
+          let redirectUrl = d.redirectUrl;
+          let route = this
+            .appService
+            .getRoute(redirectUrl);
+          this
+            .router
+            .navigate([route], { queryParamsHandling: "merge"});
+        })()
+    });
 
   }
   next() {
-    this
-      .router
-      .navigate(['kneeIntro'])
+    let urlParams: any = this.appService.urlParams;
+    this.appService.httpPost('knee:landing:next', null,
+      {
+        code: urlParams.c1,
+        bundle:urlParams.c2,
+        contact_type:urlParams.c4,
+        accessed_by:urlParams.c11,
+        complete_date:urlParams.c14
+      });
+    // this.router.navigate(['hipIntro']);
   }
 
+  ngOnDestroy() {
+    this
+      .subscriptions
+      .unsubscribe();
+  }
 }

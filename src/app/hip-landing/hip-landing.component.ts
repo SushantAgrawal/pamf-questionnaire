@@ -22,13 +22,13 @@ export class HipLandingComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.hipPrivacyPolicy = urlMaps['pamf:privacypolicy:url'];
-    this.hipTermsAndConditions= urlMaps['pamf:termsandconditions:url'];
-    this.pros1= urlMaps['pamf:hipreplacementpro1:url'];
-    this.pros2= urlMaps['pamf:hipreplacementpro2:url'];
-    this.pros3= urlMaps['pamf:hipreplacementpro3:url'];
-    this.pros4= urlMaps['pamf:hipreplacementpro4:url']; 
-    
+    this.hipPrivacyPolicy = urlMaps['pamf:privacy:policy:url'];
+    this.hipTermsAndConditions= urlMaps['pamf:terms:conditions:url'];
+    this.pros1= urlMaps['pamf:hip:replacement:pro1:url'];
+    this.pros2= urlMaps['pamf:hip:replacement:pro2:url'];
+    this.pros3= urlMaps['pamf:hip:replacement:pro3:url'];
+    this.pros4= urlMaps['pamf:hip:replacement:pro4:url']; 
+   
     this.subscriptions = this
       .appService
       .filterOn("hip:landing:next")
