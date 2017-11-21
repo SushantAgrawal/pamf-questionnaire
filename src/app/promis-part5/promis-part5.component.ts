@@ -41,6 +41,12 @@ export class PromisPart5Component implements OnInit {
       });
     this.subscriptions.add(sub1);
   }
+  change(event, score, value) {
+    promisQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text = [];
+    promisQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score = [];
+    promisQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text.push(value);
+    promisQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score.push(score);
+  }
   next() {
     this.appService.httpPost('promis:part5:submit', promisQuestions)
   }

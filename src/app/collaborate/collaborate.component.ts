@@ -41,6 +41,12 @@ export class CollaborateComponent implements OnInit {
       });
     this.subscriptions.add(sub1);
   }
+  change(event,score,value) {
+    collaborate.responses.find(x => x.qx_code === event.srcElement.name).answer_text=[];
+    collaborate.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score=[];
+    collaborate.responses.find(x => x.qx_code === event.srcElement.name).answer_text.push(value);
+    collaborate.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score.push(score);
+  }
   next() {
     this.appService.httpPost('collaborate:submit', collaborate)
   }

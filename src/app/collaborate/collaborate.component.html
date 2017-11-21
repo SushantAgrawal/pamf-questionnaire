@@ -1,63 +1,167 @@
 <div class="container">
-    <div class="sh-alert-area">Please answer all questions marked with an (<span class="asterisk-red">*</span>) to continue.</div>
+    <div class="sh-alert-area">Please answer all questions marked with an (
+        <span class="asterisk-red">*</span>) to continue.</div>
     <div class="progress-bar-container">
-            <div class="questionnaire-progress">Questionnaire Progress</div>
-            <div class="progress-bar" style="width:50%;"></div>
-        </div>
+        <div class="questionnaire-progress">Questionnaire Progress</div>
+        <div class="progress-bar" style="width:50%;"></div>
+    </div>
     <div class="header-txt">
         CollaboRATE
     </div>
     <div class="sub-header-txt">
-        Thinking about the visit you had with your health care provider today …<br/><br/>
-       How much effort was made to help you understand your health issues?
+        Thinking about the visit you had with your health care provider today …
+        <br/>
+        <br/> How much effort was made to help you understand your health issues?
     </div>
-  <div class="review-bar">
-  <div class="ast-box"><span class="asterisk-red">*</span></div>
-  <div class="num-box"><label class="node1">No effort was made</label><span>1</span><input type="radio" name="tt"></div>
-  <div class="num-box"><span>2</span><input type="radio" name="tt"></div>
-  <div class="num-box"><span>3</span><input type="radio" name="tt"></div>
-  <div class="num-box"><span>4</span><input type="radio" name="tt"></div>
-  <div class="num-box"><span>5</span><input type="radio" name="tt"></div>
-  <div class="num-box"><span>6</span><input type="radio" name="tt"></div>
-  <div class="num-box"><span>7</span><input type="radio" name="tt"></div>
-  <div class="num-box"><span>8</span><input type="radio" name="tt"></div>
-  <div class="num-box"><span>9</span><input type="radio" name="tt"></div>
-  <div class="num-box"><label class="node-last">Every effort was made</label><span>10</span><input type="radio" name="tt"></div>
-  </div>
-    
-  <div class="sub-header-txt">
-      How much effort was made to listen to the things that matter most to you about your health issues?
-  </div>
-  <div class="review-bar">
-      <div class="ast-box"><span class="asterisk-red">*</span></div>
-      <div class="num-box"><label class="node1">No effort was made</label><span>1</span><input type="radio" name="tt"></div>
-      <div class="num-box"><span>2</span><input type="radio" name="tt"></div>
-      <div class="num-box"><span>3</span><input type="radio" name="tt"></div>
-      <div class="num-box"><span>4</span><input type="radio" name="tt"></div>
-      <div class="num-box"><span>5</span><input type="radio" name="tt"></div>
-      <div class="num-box"><span>6</span><input type="radio" name="tt"></div>
-      <div class="num-box"><span>7</span><input type="radio" name="tt"></div>
-      <div class="num-box"><span>8</span><input type="radio" name="tt"></div>
-      <div class="num-box"><span>9</span><input type="radio" name="tt"></div>
-      <div class="num-box"><label class="node-last">Every effort was made</label><span>10</span><input type="radio" name="tt"></div>
-      </div>
-  <div class="sub-header-txt">  How much effort was made to include what matters most to you in choosing what to do next?</div>
-  <div class="review-bar">
-      <div class="ast-box"><span class="asterisk-red">*</span></div>
-      <div class="num-box"><label class="node1">No effort was made</label><span>1</span><input type="radio" name="tt"></div>
-      <div class="num-box"><span>2</span><input type="radio" name="tt"></div>
-      <div class="num-box"><span>3</span><input type="radio" name="tt"></div>
-      <div class="num-box"><span>4</span><input type="radio" name="tt"></div>
-      <div class="num-box"><span>5</span><input type="radio" name="tt"></div>
-      <div class="num-box"><span>6</span><input type="radio" name="tt"></div>
-      <div class="num-box"><span>7</span><input type="radio" name="tt"></div>
-      <div class="num-box"><span>8</span><input type="radio" name="tt"></div>
-      <div class="num-box"><span>9</span><input type="radio" name="tt"></div>
-      <div class="num-box"><label class="node-last">Every effort was made</label><span>10</span><input type="radio" name="tt"></div>
-      </div>
+    <div class="review-bar">
+        <div class="ast-box">
+            <span class="asterisk-red">*</span>
+        </div>
+        <div class="num-box">
+            <label class="node1">No effort was made</label>
+            <span>0</span>
+            <input type="radio" name="DV_Q1_1" (change)="change($event,0,'0')" />
+        </div>
+        <div class="num-box">
+            <span>1</span>
+            <input type="radio" name="DV_Q1_1" (change)="change($event,1,'1')"/>
+        </div>
+        <div class="num-box">
+            <span>2</span>
+            <input type="radio" name="DV_Q1_1" (change)="change($event,2,'2')"/>
+        </div>
+        <div class="num-box">
+            <span>3</span>
+            <input type="radio" name="DV_Q1_1" (change)="change($event,3,'3')"/>
+        </div>
+        <div class="num-box">
+            <span>4</span>
+            <input type="radio" name="DV_Q1_1" (change)="change($event,4,'4')"/>
+        </div>
+        <div class="num-box">
+            <span>5</span>
+            <input type="radio" name="DV_Q1_1" (change)="change($event,5,'5')"/>
+        </div>
+        <div class="num-box">
+            <span>6</span>
+            <input type="radio" name="DV_Q1_1" (change)="change($event,6,'6')"/>
+        </div>
+        <div class="num-box">
+            <span>7</span>
+            <input type="radio" name="DV_Q1_1" (change)="change($event,7,'7')"/>
+        </div>
+        <div class="num-box">
+            <span>8</span>
+            <input type="radio" name="DV_Q1_1" (change)="change($event,8,'8')"/>
+        </div>
+        <div class="num-box">
+            <label class="node-last">Every effort was made</label>
+            <span>9</span>
+            <input type="radio" name="DV_Q1_1" (change)="change($event,9,'9')"/>
+        </div>
+    </div>
 
-  <div class="btnContainer">
-    <button class="btn-right" (click)="next()">Next</button>
-  </div>
-  
-  </div>
+    <div class="sub-header-txt">
+        How much effort was made to listen to the things that matter most to you about your health issues?
+    </div>
+    <div class="review-bar">
+        <div class="ast-box">
+            <span class="asterisk-red">*</span>
+        </div>
+        <div class="num-box">
+                <label class="node1">No effort was made</label>
+                <span>0</span>
+                <input type="radio" name="DV_Q1_2" (change)="change($event,0,'0')" />
+            </div>
+            <div class="num-box">
+                <span>1</span>
+                <input type="radio" name="DV_Q1_2" (change)="change($event,1,'1')"/>
+            </div>
+            <div class="num-box">
+                <span>2</span>
+                <input type="radio" name="DV_Q1_2" (change)="change($event,2,'2')"/>
+            </div>
+            <div class="num-box">
+                <span>3</span>
+                <input type="radio" name="DV_Q1_2" (change)="change($event,3,'3')"/>
+            </div>
+            <div class="num-box">
+                <span>4</span>
+                <input type="radio" name="DV_Q1_2" (change)="change($event,4,'4')"/>
+            </div>
+            <div class="num-box">
+                <span>5</span>
+                <input type="radio" name="DV_Q1_2" (change)="change($event,5,'5')"/>
+            </div>
+            <div class="num-box">
+                <span>6</span>
+                <input type="radio" name="DV_Q1_2" (change)="change($event,6,'6')"/>
+            </div>
+            <div class="num-box">
+                <span>7</span>
+                <input type="radio" name="DV_Q1_2" (change)="change($event,7,'7')"/>
+            </div>
+            <div class="num-box">
+                <span>8</span>
+                <input type="radio" name="DV_Q1_2" (change)="change($event,8,'8')"/>
+            </div>
+            <div class="num-box">
+                <label class="node-last">Every effort was made</label>
+                <span>9</span>
+                <input type="radio" name="DV_Q1_2" (change)="change($event,9,'9')"/>
+            </div>
+    </div>
+    <div class="sub-header-txt"> How much effort was made to include what matters most to you in choosing what to do next?</div>
+    <div class="review-bar">
+        <div class="ast-box">
+            <span class="asterisk-red">*</span>
+        </div>
+        <div class="num-box">
+                <label class="node1">No effort was made</label>
+                <span>0</span>
+                <input type="radio" name="DV_Q1_3" (change)="change($event,0,'0')" />
+            </div>
+            <div class="num-box">
+                <span>1</span>
+                <input type="radio" name="DV_Q1_3" (change)="change($event,1,'1')"/>
+            </div>
+            <div class="num-box">
+                <span>2</span>
+                <input type="radio" name="DV_Q1_3" (change)="change($event,2,'2')"/>
+            </div>
+            <div class="num-box">
+                <span>3</span>
+                <input type="radio" name="DV_Q1_3" (change)="change($event,3,'3')"/>
+            </div>
+            <div class="num-box">
+                <span>4</span>
+                <input type="radio" name="DV_Q1_3" (change)="change($event,4,'4')"/>
+            </div>
+            <div class="num-box">
+                <span>5</span>
+                <input type="radio" name="DV_Q1_3" (change)="change($event,5,'5')"/>
+            </div>
+            <div class="num-box">
+                <span>6</span>
+                <input type="radio" name="DV_Q1_3" (change)="change($event,6,'6')"/>
+            </div>
+            <div class="num-box">
+                <span>7</span>
+                <input type="radio" name="DV_Q1_3" (change)="change($event,7,'7')"/>
+            </div>
+            <div class="num-box">
+                <span>8</span>
+                <input type="radio" name="DV_Q1_3" (change)="change($event,8,'8')"/>
+            </div>
+            <div class="num-box">
+                <label class="node-last">Every effort was made</label>
+                <span>9</span>
+                <input type="radio" name="DV_Q1_3" (change)="change($event,9,'9')"/>
+            </div>
+    </div>
+
+    <div class="btnContainer">
+        <button class="btn-right" (click)="next()">Next</button>
+    </div>
+
+</div>

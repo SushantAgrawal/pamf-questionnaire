@@ -25,27 +25,27 @@
               </td>
               <td data-th="Completely">
                   <label for="opt001">
-                  <input type="radio" id="opt001" name='group1' required value='All of the time'>
+                  <input type="radio" id="opt001" name='DV_Q2' required (change)="change($event,5,'Poor')">
                   </label>
               </td>
               <td data-th="Mostly">
                   <label for="opt002">
-                  <input type="radio" id="opt002" name='group1' value='Most of the time'>
+                  <input type="radio" id="opt002" name='DV_Q2' (change)="change($event,5,'Poor')">
                   </label>
               </td>
               <td data-th="Moderately">
                   <label for="opt003">
-                  <input type="radio" id="opt003" name='group1' value = 'A good bit of the time'>
+                  <input type="radio" id="opt003" name='DV_Q2' (change)="change($event,5,'Poor')">
                    </label>
               </td>
               <td data-th="A little">
                   <label for="opt004">
-                  <input type="radio" id="opt004" name='group1' value = 'Some of the time'>
+                  <input type="radio" id="opt004" name='DV_Q2' (change)="change($event,5,'Poor')">
                    </label>
               </td>
               <td data-th="Not at all">
                   <label for="opt005">
-                  <input type="radio" id="opt005" name='group1' value='A little of the time'>
+                  <input type="radio" id="opt005" name='DV_Q2' (change)="change($event,5,'Poor')">
                   </label>
               </td>
 

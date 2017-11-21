@@ -11,8 +11,8 @@ import { urlMaps } from '../app.config';
 })
 export class HipLandingComponent implements OnInit {
   subscriptions: any;
-  kneeprivacypolicy:any;
-  termsandconditions:any;
+  hipPrivacyPolicy:any;
+  hipTermsAndConditions:any;
   pros1:any;
   pros2:any;
   pros3:any;
@@ -22,8 +22,8 @@ export class HipLandingComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.kneeprivacypolicy = urlMaps['pamf:privacypolicy:url'];
-    this.termsandconditions= urlMaps['pamf:termsandconditions:url'];
+    this.hipPrivacyPolicy = urlMaps['pamf:privacypolicy:url'];
+    this.hipTermsAndConditions= urlMaps['pamf:termsandconditions:url'];
     this.pros1= urlMaps['pamf:hipreplacementpro1:url'];
     this.pros2= urlMaps['pamf:hipreplacementpro2:url'];
     this.pros3= urlMaps['pamf:hipreplacementpro3:url'];

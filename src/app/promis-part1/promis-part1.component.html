@@ -38,94 +38,89 @@
               </td>
               <td data-th="Excellent">
                   <label for="opt001">
-                  <input type="radio" id="opt001" name='group1' required value='All of the time'>
+                  <input type="radio" id="opt001" name='DV_Q1_1' (change)="change($event,1,'Excellent')">
                   </label>
               </td>
               <td data-th="Very good">
                   <label for="opt002">
-                  <input type="radio" id="opt002" name='group1' value='Most of the time'>
+                  <input type="radio" id="opt002" name='DV_Q1_1' (change)="change($event,2,'Very good')">
                   </label>
               </td>
               <td data-th="Good">
                   <label for="opt003">
-                  <input type="radio" id="opt003" name='group1' value = 'A good bit of the time'>
+                  <input type="radio" id="opt003" name='DV_Q1_1' (change)="change($event,3,'Good')">
                    </label>
               </td>
               <td data-th="Fair">
                   <label for="opt004">
-                  <input type="radio" id="opt004" name='group1' value = 'Some of the time'>
+                  <input type="radio" id="opt004" name='DV_Q1_1' (change)="change($event,4,'Fair')">
                    </label>
               </td>
               <td data-th="Poor">
                   <label for="opt005">
-                  <input type="radio" id="opt005" name='group1' value='A little of the time'>
+                  <input type="radio" id="opt005" name='DV_Q1_1' (change)="change($event,5,'Poor')">
                   </label>
               </td>
-
-
           </tr>
           <tr>
               <td class="txtAlignLeft">
                   In general, would you say your quality of life is: <span class="asterisk-red">*</span>
               </td>
               <td data-th="Excellent">
-                  <label for="opt001">
-                  <input type="radio" id="opt001" name='group1' required value='All of the time'>
-                  </label>
-              </td>
-              <td data-th="Very good">
-                  <label for="opt002">
-                  <input type="radio" id="opt002" name='group1' value='Most of the time'>
-                  </label>
-              </td>
-              <td data-th="Good">
-                  <label for="opt003">
-                  <input type="radio" id="opt003" name='group1' value = 'A good bit of the time'>
-                   </label>
-              </td>
-              <td data-th="Fair">
-                  <label for="opt004">
-                  <input type="radio" id="opt004" name='group1' value = 'Some of the time'>
-                   </label>
-              </td>
-              <td data-th="Poor">
-                  <label for="opt005">
-                  <input type="radio" id="opt005" name='group1' value='A little of the time'>
-                  </label>
-              </td>
-
-
+                    <label for="opt001">
+                    <input type="radio" id="opt001" name='DV_Q1_2' (change)="change($event,1,'Excellent')">
+                    </label>
+                </td>
+                <td data-th="Very good">
+                    <label for="opt002">
+                    <input type="radio" id="opt002" name='DV_Q1_2' (change)="change($event,2,'Very good')">
+                    </label>
+                </td>
+                <td data-th="Good">
+                    <label for="opt003">
+                    <input type="radio" id="opt003" name='DV_Q1_2' (change)="change($event,3,'Good')">
+                     </label>
+                </td>
+                <td data-th="Fair">
+                    <label for="opt004">
+                    <input type="radio" id="opt004" name='DV_Q1_2' (change)="change($event,4,'Fair')">
+                     </label>
+                </td>
+                <td data-th="Poor">
+                    <label for="opt005">
+                    <input type="radio" id="opt005" name='DV_Q1_2' (change)="change($event,5,'Poor')">
+                    </label>
+                </td>
           </tr>
           <tr>
               <td class="txtAlignLeft">
                   In general, how would you rate your physical health? <span class="asterisk-red">*</span>
               </td>
               <td data-th="Excellent">
-                  <label for="opt001">
-                  <input type="radio" id="opt001" name='group1' required value='All of the time'>
-                  </label>
-              </td>
-              <td data-th="Very good">
-                  <label for="opt002">
-                  <input type="radio" id="opt002" name='group1' value='Most of the time'>
-                  </label>
-              </td>
-              <td data-th="Good">
-                  <label for="opt003">
-                  <input type="radio" id="opt003" name='group1' value = 'A good bit of the time'>
-                   </label>
-              </td>
-              <td data-th="Fair">
-                  <label for="opt004">
-                  <input type="radio" id="opt004" name='group1' value = 'Some of the time'>
-                   </label>
-              </td>
-              <td data-th="Poor">
-                  <label for="opt005">
-                  <input type="radio" id="opt005" name='group1' value='A little of the time'>
-                  </label>
-              </td>
-
+                    <label for="opt001">
+                    <input type="radio" id="opt001" name='DV_Q1_3' (change)="change($event,1,'Excellent')">
+                    </label>
+                </td>
+                <td data-th="Very good">
+                    <label for="opt002">
+                    <input type="radio" id="opt002" name='DV_Q1_3' (change)="change($event,2,'Very good')">
+                    </label>
+                </td>
+                <td data-th="Good">
+                    <label for="opt003">
+                    <input type="radio" id="opt003" name='DV_Q1_3' (change)="change($event,3,'Good')">
+                     </label>
+                </td>
+                <td data-th="Fair">
+                    <label for="opt004">
+                    <input type="radio" id="opt004" name='DV_Q1_3' (change)="change($event,4,'Fair')">
+                     </label>
+                </td>
+                <td data-th="Poor">
+                    <label for="opt005">
+                    <input type="radio" id="opt005" name='DV_Q1_3' (change)="change($event,5,'Poor')">
+                    </label>
+                </td>
 
           </tr>
           <tr>
@@ -133,30 +128,30 @@
                   In general, how would you rate your mental health, including your mood and your ability to think? <span class="asterisk-red">*</span>
               </td>
               <td data-th="Excellent">
-                  <label for="opt001">
-                  <input type="radio" id="opt001" name='group1' required value='All of the time'>
-                  </label>
-              </td>
-              <td data-th="Very good">
-                  <label for="opt002">
-                  <input type="radio" id="opt002" name='group1' value='Most of the time'>
-                  </label>
-              </td>
-              <td data-th="Good">
-                  <label for="opt003">
-                  <input type="radio" id="opt003" name='group1' value = 'A good bit of the time'>
-                   </label>
-              </td>
-              <td data-th="Fair">
-                  <label for="opt004">
-                  <input type="radio" id="opt004" name='group1' value = 'Some of the time'>
-                   </label>
-              </td>
-              <td data-th="Poor">
-                  <label for="opt005">
-                  <input type="radio" id="opt005" name='group1' value='A little of the time'>
-                  </label>
-              </td>
+                    <label for="opt001">
+                    <input type="radio" id="opt001" name='DV_Q1_4' (change)="change($event,1,'Excellent')">
+                    </label>
+                </td>
+                <td data-th="Very good">
+                    <label for="opt002">
+                    <input type="radio" id="opt002" name='DV_Q1_4' (change)="change($event,2,'Very good')">
+                    </label>
+                </td>
+                <td data-th="Good">
+                    <label for="opt003">
+                    <input type="radio" id="opt003" name='DV_Q1_4' (change)="change($event,3,'Good')">
+                     </label>
+                </td>
+                <td data-th="Fair">
+                    <label for="opt004">
+                    <input type="radio" id="opt004" name='DV_Q1_4' (change)="change($event,4,'Fair')">
+                     </label>
+                </td>
+                <td data-th="Poor">
+                    <label for="opt005">
+                    <input type="radio" id="opt005" name='DV_Q1_4' (change)="change($event,5,'Poor')">
+                    </label>
+                </td>
 
 
           </tr>
@@ -165,30 +160,30 @@
                   In general, how would you rate your satisfaction with your social activities and relationships?<span class="asterisk-red">*</span>
               </td>
               <td data-th="Excellent">
-                  <label for="opt001">
-                  <input type="radio" id="opt001" name='group1' required value='All of the time'>
-                  </label>
-              </td>
-              <td data-th="Very good">
-                  <label for="opt002">
-                  <input type="radio" id="opt002" name='group1' value='Most of the time'>
-                  </label>
-              </td>
-              <td data-th="Good">
-                  <label for="opt003">
-                  <input type="radio" id="opt003" name='group1' value = 'A good bit of the time'>
-                   </label>
-              </td>
-              <td data-th="Fair">
-                  <label for="opt004">
-                  <input type="radio" id="opt004" name='group1' value = 'Some of the time'>
-                   </label>
-              </td>
-              <td data-th="Poor">
-                  <label for="opt005">
-                  <input type="radio" id="opt005" name='group1' value='A little of the time'>
-                  </label>
-              </td>
+                    <label for="opt001">
+                    <input type="radio" id="opt001" name='DV_Q1_5' (change)="change($event,1,'Excellent')">
+                    </label>
+                </td>
+                <td data-th="Very good">
+                    <label for="opt002">
+                    <input type="radio" id="opt002" name='DV_Q1_5' (change)="change($event,2,'Very good')">
+                    </label>
+                </td>
+                <td data-th="Good">
+                    <label for="opt003">
+                    <input type="radio" id="opt003" name='DV_Q1_5' (change)="change($event,3,'Good')">
+                     </label>
+                </td>
+                <td data-th="Fair">
+                    <label for="opt004">
+                    <input type="radio" id="opt004" name='DV_Q1_5' (change)="change($event,4,'Fair')">
+                     </label>
+                </td>
+                <td data-th="Poor">
+                    <label for="opt005">
+                    <input type="radio" id="opt005" name='DV_Q1_5' (change)="change($event,5,'Poor')">
+                    </label>
+                </td>
 
 
           </tr>
@@ -197,34 +192,31 @@
                   In general, please rate how well you carry out your usual social activities and roles. (This includes activities at home, at work and in your community, and responsibilities as a parent child, spouse, employee, friend, etc.) <span class="asterisk-red">*</span>
               </td>
               <td data-th="Excellent">
-                  <label for="opt001">
-                  <input type="radio" id="opt001" name='group1' required value='All of the time'>
-                  </label>
-              </td>
-              <td data-th="Very good">
-                  <label for="opt002">
-                  <input type="radio" id="opt002" name='group1' value='Most of the time'>
-                  </label>
-              </td>
-              <td data-th="Good">
-                  <label for="opt003">
-                  <input type="radio" id="opt003" name='group1' value = 'A good bit of the time'>
-                   </label>
-              </td>
-              <td data-th="Fair">
-                  <label for="opt004">
-                  <input type="radio" id="opt004" name='group1' value = 'Some of the time'>
-                   </label>
-              </td>
-              <td data-th="Poor">
-                  <label for="opt005">
-                  <input type="radio" id="opt005" name='group1' value='A little of the time'>
-                  </label>
-              </td>
-
-
-          </tr>
-              
+                    <label for="opt001">
+                    <input type="radio" id="opt001" name='DV_Q1_6' (change)="change($event,1,'Excellent')">
+                    </label>
+                </td>
+                <td data-th="Very good">
+                    <label for="opt002">
+                    <input type="radio" id="opt002" name='DV_Q1_6' (change)="change($event,2,'Very good')">
+                    </label>
+                </td>
+                <td data-th="Good">
+                    <label for="opt003">
+                    <input type="radio" id="opt003" name='DV_Q1_6' (change)="change($event,3,'Good')">
+                     </label>
+                </td>
+                <td data-th="Fair">
+                    <label for="opt004">
+                    <input type="radio" id="opt004" name='DV_Q1_6' (change)="change($event,4,'Fair')">
+                     </label>
+                </td>
+                <td data-th="Poor">
+                    <label for="opt005">
+                    <input type="radio" id="opt005" name='DV_Q1_6' (change)="change($event,5,'Poor')">
+                    </label>
+                </td>
+          </tr>              
       </tbody>
   </table>
 </div>

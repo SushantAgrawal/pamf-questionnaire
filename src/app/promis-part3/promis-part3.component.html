@@ -1,95 +1,62 @@
 <div class="container">
-  <div class="sh-alert-area">Please answer all questions marked with an (<span class="asterisk-red">*</span>) to continue.</div>
+    <div class="sh-alert-area">Please answer all questions marked with an (
+        <span class="asterisk-red">*</span>) to continue.</div>
 
-  <div class="sub-header-bold">
-      In the past seven days...
-  </div>
-
-  
-<div  class="sh-table">
-  <table>
-      <thead>
-          <tr>
-              <th></th>
-              <th>Never</th>
-              <th>Rarely</th>
-              <th>Sometimes</th>
-              <th>Often</th>
-              <th>Always</th>
-
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <td class="txtAlignLeft">
-                How often have you been bothered by emotional problems such as feeling anxious, depressed or irritable? <span class="asterisk-red">*</span>
-              </td>
-              <td data-th="Never">
-                  <label for="opt001">
-                  <input type="radio" id="opt001" name='group1' required value='All of the time'>
-                  </label>
-              </td>
-              <td data-th="Rarely">
-                  <label for="opt002">
-                  <input type="radio" id="opt002" name='group1' value='Most of the time'>
-                  </label>
-              </td>
-              <td data-th="Sometimes">
-                  <label for="opt003">
-                  <input type="radio" id="opt003" name='group1' value = 'A good bit of the time'>
-                   </label>
-              </td>
-              <td data-th="Often">
-                  <label for="opt004">
-                  <input type="radio" id="opt004" name='group1' value = 'Some of the time'>
-                   </label>
-              </td>
-              <td data-th="Always">
-                  <label for="opt005">
-                  <input type="radio" id="opt005" name='group1' value='A little of the time'>
-                  </label>
-              </td>
+    <div class="sub-header-bold">
+        In the past seven days...
+    </div>
 
 
-          </tr> <tr>
-            <td class="txtAlignLeft">
-                How would you rate your fatigue on average? <span class="asterisk-red">*</span>
-            </td>
-            <td data-th="Never">
-                <label for="opt001">
-                <input type="radio" id="opt001" name='group1' required value='All of the time'>
-                </label>
-            </td>
-            <td data-th="Rarely">
-                <label for="opt002">
-                <input type="radio" id="opt002" name='group1' value='Most of the time'>
-                </label>
-            </td>
-            <td data-th="Sometimes">
-                <label for="opt003">
-                <input type="radio" id="opt003" name='group1' value = 'A good bit of the time'>
-                 </label>
-            </td>
-            <td data-th="Often">
-                <label for="opt004">
-                <input type="radio" id="opt004" name='group1' value = 'Some of the time'>
-                 </label>
-            </td>
-            <td data-th="Always">
-                <label for="opt005">
-                <input type="radio" id="opt005" name='group1' value='A little of the time'>
-                </label>
-            </td>
+    <div class="sh-table">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Never</th>
+                    <th>Rarely</th>
+                    <th>Sometimes</th>
+                    <th>Often</th>
+                    <th>Always</th>
 
-
-        </tr>
-        
-          
-      </tbody>
-  </table>
-</div>
-<div class="btnContainer">
-  <button class="btn-right" (click)="next()">Next</button>
-</div>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="txtAlignLeft">
+                        How often have you been bothered by emotional problems such as feeling anxious, depressed or irritable?
+                        <span class="asterisk-red">*</span>
+                    </td>
+                    <td data-th="Never">
+                        <label for="opt001">
+                            <input type="radio" id="opt001" name='DV_Q3' required (change)="change($event,1,'Never')">
+                        </label>
+                    </td>
+                    <td data-th="Rarely">
+                        <label for="opt002">
+                            <input type="radio" id="opt002" name='DV_Q3' (change)="change($event,2,'Rarely')">
+                        </label>
+                    </td>
+                    <td data-th="Sometimes">
+                        <label for="opt003">
+                            <input type="radio" id="opt003" name='DV_Q3' (change)="change($event,3,'Sometimes')">
+                        </label>
+                    </td>
+                    <td data-th="Often">
+                        <label for="opt004">
+                            <input type="radio" id="opt004" name='DV_Q3' (change)="change($event,4,'Often')">
+                        </label>
+                    </td>
+                    <td data-th="Always">
+                        <label for="opt005">
+                            <input type="radio" id="opt005" name='DV_Q3' (change)="change($event,5,'Always')">
+                        </label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="btnContainer">
+        <button class="btn-right" (click)="next()">Next</button>
+    </div>
 
 </div>

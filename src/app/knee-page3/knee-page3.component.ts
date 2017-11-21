@@ -40,6 +40,12 @@ export class KneePage3Component implements OnInit {
       });
     this.subscriptions.add(sub1);
     }
+    change(event,score,value) {
+      kneeQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text=[];
+      kneeQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score=[];
+      kneeQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text.push(value);
+      kneeQuestions.responses.find(x => x.qx_code === event.srcElement.name).answer_text_score.push(score);
+    }
     next() {
       this.appService.httpPost('knee:page3:submit',kneeQuestions)
     }
