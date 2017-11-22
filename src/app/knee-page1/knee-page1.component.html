@@ -25,7 +25,7 @@
                         <td class="txtAlignLeft">
                             How severe is your knee stiffness after first wakening in the morning?
                             <span class="asterisk-red">*</span>
-                            <span *ngIf="!(start || kneeStiffness)" class="sh-alert-text">Please select a value</span>
+                            <div *ngIf="!(start || kneeStiffness)" class="checkbox-alert">Please select a value</div>
                         </td>
                         <td data-th="None">
                             <label for="opt001">

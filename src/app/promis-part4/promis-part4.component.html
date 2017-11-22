@@ -23,8 +23,8 @@
                     <tr>
                         <td class="txtAlignLeft">
                             How would you rate your fatigue on average?
-                            <span class="asterisk-red">*</span><br/>
-                            <span *ngIf="!(start || fatigue)" class="sh-alert-text">Please select a value</span>
+                            <span class="asterisk-red">*</span>
+                            <div *ngIf="!(start || fatigue)" class="checkbox-alert">Please select a value</div>
                         </td>
                         <td data-th="None">
                             <label for="opt001">
