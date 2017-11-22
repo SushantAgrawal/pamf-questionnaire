@@ -27,7 +27,7 @@ export class PromisPart2Component implements OnInit {
       thisForm.valid && (
         promisQuestions.responses[6].answer_text[0] = this.everydayPhysicalActivities
         , promisQuestions.responses[6].answer_text_score[0] = this.scores[this.everydayPhysicalActivities]
-        ,console.log(promisQuestions.responses)
+        //,console.log(promisQuestions.responses)
         , this
           .router
           .navigate(['promisPart3'])

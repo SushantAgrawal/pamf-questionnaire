@@ -1,6 +1,7 @@
 <div class="container">
     <div class="sh-alert-area">Please answer all questions marked with an (
         <span class="asterisk-red">*</span>) to continue.</div>
+        <div class="sh-alert-warning" *ngIf="!(start || (pivoting && straightening && upDown && upright))">Please answer all questions marked with an (*) to continue.</div>
     <header class="sh-header">PAIN</header>
 
     <div class="sub-header-bold">
