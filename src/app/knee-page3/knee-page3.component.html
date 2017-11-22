@@ -26,8 +26,8 @@
                     <tr>
                         <td class="txtAlignLeft">
                             Rising from sitting
-                            <span class="asterisk-red">*</span> <br/>
-                            <span *ngIf="!(start || rising)" class="sh-alert-text">Please select a value</span>
+                            <span class="asterisk-red">*</span>
+                            <div *ngIf="!(start || rising)" class="checkbox-alert">Please select a value</div>
                         </td>
                         <td data-th="None">
                             <label for="opt001">
@@ -60,8 +60,8 @@
                     <tr>
                         <td class="txtAlignLeft">
                             Bending to floor/pick up an object
-                            <span class="asterisk-red">*</span><br/>
-                            <span *ngIf="!(start || bending)" class="sh-alert-text">Please select a value</span>
+                            <span class="asterisk-red">*</span>
+                            <div *ngIf="!(start || bending)" class="checkbox-alert">Please select a value</div>
                         </td>
                         <td data-th="None">
                             <label for="opt008">

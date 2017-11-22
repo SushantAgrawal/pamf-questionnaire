@@ -9,12 +9,12 @@
     <div class="review-bar">
       <div class="ast-box">
         <span class="asterisk-red">*</span>
-        <span *ngIf="!(start || pain)" class="sh-alert-text">Please select a value</span>
+       
       </div>
       <div class="num-box">
         <label class="node1">No Pain</label>
-        <span>0</span>
-        <input type="radio" name="DV_Q5"  [(ngModel)]="pain" value="0" required />
+        <span for="opt001">0</span>
+        <input type="radio" id="opt001" name="DV_Q5"  [(ngModel)]="pain" value="0" required />
       </div>
       <div class="num-box">
         <span>1</span>
@@ -58,7 +58,7 @@
         <input type="radio" name="DV_Q5" [(ngModel)]="pain" value="10" />
       </div>
     </div>
-
+    <div *ngIf="!(start || pain)" class="checkbox-alert">Please choose at least one option </div>
 
     <div class="btnContainer">
       <button class="btn-right" (click)="next()">Next</button>

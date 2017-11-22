@@ -37,8 +37,8 @@
                         <td class="txtAlignLeft">
                             In general, would you say your health is:
                             <span class="asterisk-red">*</span>
-                            <br/>
-                            <span *ngIf="!(start || health)" class="sh-alert-text">Please select a value</span>
+                            
+                            <div *ngIf="!(start || health)" class="checkbox-alert">Please select a value</div>
                         </td>
                         <td data-th="Excellent">
                             <label for="opt001">
@@ -70,32 +70,31 @@
                         <td class="txtAlignLeft">
                             In general, would you say your quality of life is:
                             <span class="asterisk-red">*</span>
-                            <br/>
-                            <span *ngIf="!(start || quality)" class="sh-alert-text">Please select a value</span>
+                            <div *ngIf="!(start || quality)" class="checkbox-alert">Please select a value</div>
                         </td>
                         <td data-th="Excellent">
-                            <label for="opt001">
-                                <input type="radio" id="opt001" name='DV_Q1_2' [(ngModel)]="quality" value="Excellent" required>
+                            <label for="opt006">
+                                <input type="radio" id="opt006" name='DV_Q1_2' [(ngModel)]="quality" value="Excellent" required>
                             </label>
                         </td>
                         <td data-th="Very good">
-                            <label for="opt002">
-                                <input type="radio" id="opt002" name='DV_Q1_2' [(ngModel)]="quality" value="Very good">
+                            <label for="opt007">
+                                <input type="radio" id="opt007" name='DV_Q1_2' [(ngModel)]="quality" value="Very good">
                             </label>
                         </td>
                         <td data-th="Good">
-                            <label for="opt003">
-                                <input type="radio" id="opt003" name='DV_Q1_2' [(ngModel)]="quality" value="Good">
+                            <label for="opt008">
+                                <input type="radio" id="opt008" name='DV_Q1_2' [(ngModel)]="quality" value="Good">
                             </label>
                         </td>
                         <td data-th="Fair">
-                            <label for="opt004">
-                                <input type="radio" id="opt004" name='DV_Q1_2' [(ngModel)]="quality" value="Fair">
+                            <label for="opt009">
+                                <input type="radio" id="opt009" name='DV_Q1_2' [(ngModel)]="quality" value="Fair">
                             </label>
                         </td>
                         <td data-th="Poor">
-                            <label for="opt005">
-                                <input type="radio" id="opt005" name='DV_Q1_2' [(ngModel)]="quality" value="Poor">
+                            <label for="opt010">
+                                <input type="radio" id="opt010" name='DV_Q1_2' [(ngModel)]="quality" value="Poor">
                             </label>
                         </td>
                     </tr>
@@ -103,32 +102,31 @@
                         <td class="txtAlignLeft">
                             In general, how would you rate your physical health?
                             <span class="asterisk-red">*</span>
-                            <br/>
-                            <span *ngIf="!(start || physical)" class="sh-alert-text">Please select a value</span>
+                            <div *ngIf="!(start || physical)" class="checkbox-alert">Please select a value</div>
                         </td>
                         <td data-th="Excellent">
-                            <label for="opt001">
-                                <input type="radio" id="opt001" name='DV_Q1_3' [(ngModel)]="physical" value="Excellent" required>
+                            <label for="opt011">
+                                <input type="radio" id="opt011" name='DV_Q1_3' [(ngModel)]="physical" value="Excellent" required>
                             </label>
                         </td>
                         <td data-th="Very good">
-                            <label for="opt002">
-                                <input type="radio" id="opt002" name='DV_Q1_3' [(ngModel)]="physical" value="Very good" >
+                            <label for="opt012">
+                                <input type="radio" id="opt012" name='DV_Q1_3' [(ngModel)]="physical" value="Very good" >
                             </label>
                         </td>
                         <td data-th="Good">
-                            <label for="opt003">
-                                <input type="radio" id="opt003" name='DV_Q1_3' [(ngModel)]="physical" value="Good">
+                            <label for="opt013">
+                                <input type="radio" id="opt013" name='DV_Q1_3' [(ngModel)]="physical" value="Good">
                             </label>
                         </td>
                         <td data-th="Fair">
-                            <label for="opt004">
-                                <input type="radio" id="opt004" name='DV_Q1_3' [(ngModel)]="physical" value="Fair">
+                            <label for="opt014">
+                                <input type="radio" id="opt014" name='DV_Q1_3' [(ngModel)]="physical" value="Fair">
                             </label>
                         </td>
                         <td data-th="Poor">
-                            <label for="opt005">
-                                <input type="radio" id="opt005" name='DV_Q1_3' [(ngModel)]="physical" value="Poor">
+                            <label for="opt015">
+                                <input type="radio" id="opt015" name='DV_Q1_3' [(ngModel)]="physical" value="Poor">
                             </label>
                         </td>
 
@@ -137,32 +135,31 @@
                         <td class="txtAlignLeft">
                             In general, how would you rate your mental health, including your mood and your ability to think?
                             <span class="asterisk-red">*</span>
-                            <br/>
-                            <span *ngIf="!(start || mentalHealth)" class="sh-alert-text">Please select a value</span>
+                            <div *ngIf="!(start || mentalHealth)" class="checkbox-alert">Please select a value</div>
                         </td>
                         <td data-th="Excellent">
-                            <label for="opt001">
-                                <input type="radio" id="opt001" name='DV_Q1_4' [(ngModel)]="mentalHealth" value="Excellent" required>
+                            <label for="opt016">
+                                <input type="radio" id="opt016" name='DV_Q1_4' [(ngModel)]="mentalHealth" value="Excellent" required>
                             </label>
                         </td>
                         <td data-th="Very good">
-                            <label for="opt002">
-                                <input type="radio" id="opt002" name='DV_Q1_4' [(ngModel)]="mentalHealth" value="Very good">
+                            <label for="opt017">
+                                <input type="radio" id="opt017" name='DV_Q1_4' [(ngModel)]="mentalHealth" value="Very good">
                             </label>
                         </td>
                         <td data-th="Good">
-                            <label for="opt003">
-                                <input type="radio" id="opt003" name='DV_Q1_4' [(ngModel)]="mentalHealth" value="Good">
+                            <label for="opt018">
+                                <input type="radio" id="opt018" name='DV_Q1_4' [(ngModel)]="mentalHealth" value="Good">
                             </label>
                         </td>
                         <td data-th="Fair">
-                            <label for="opt004">
-                                <input type="radio" id="opt004" name='DV_Q1_4' [(ngModel)]="mentalHealth" value="Fair">
+                            <label for="opt019">
+                                <input type="radio" id="opt019" name='DV_Q1_4' [(ngModel)]="mentalHealth" value="Fair">
                             </label>
                         </td>
                         <td data-th="Poor">
-                            <label for="opt005">
-                                <input type="radio" id="opt005" name='DV_Q1_4' [(ngModel)]="mentalHealth" value="Poor">
+                            <label for="opt020">
+                                <input type="radio" id="opt020" name='DV_Q1_4' [(ngModel)]="mentalHealth" value="Poor">
                             </label>
                         </td>
 
@@ -172,32 +169,31 @@
                         <td class="txtAlignLeft">
                             In general, how would you rate your satisfaction with your social activities and relationships?
                             <span class="asterisk-red">*</span>
-                            <br/>
-                            <span *ngIf="!(start || social)" class="sh-alert-text">Please select a value</span>
+                            <div *ngIf="!(start || social)" class="checkbox-alert">Please select a value</div>
                         </td>
                         <td data-th="Excellent">
-                            <label for="opt001">
-                                <input type="radio" id="opt001" name='DV_Q1_5' [(ngModel)]="social" value="Excellent" required>
+                            <label for="opt021">
+                                <input type="radio" id="opt021" name='DV_Q1_5' [(ngModel)]="social" value="Excellent" required>
                             </label>
                         </td>
                         <td data-th="Very good">
-                            <label for="opt002">
-                                <input type="radio" id="opt002" name='DV_Q1_5' [(ngModel)]="social" value="Very good">
+                            <label for="opt022">
+                                <input type="radio" id="opt022" name='DV_Q1_5' [(ngModel)]="social" value="Very good">
                             </label>
                         </td>
                         <td data-th="Good">
-                            <label for="opt003">
-                                <input type="radio" id="opt003" name='DV_Q1_5' [(ngModel)]="social" value="Good">
+                            <label for="opt023">
+                                <input type="radio" id="opt023" name='DV_Q1_5' [(ngModel)]="social" value="Good">
                             </label>
                         </td>
                         <td data-th="Fair">
-                            <label for="opt004">
-                                <input type="radio" id="opt004" name='DV_Q1_5' [(ngModel)]="social" value="Fair">
+                            <label for="opt024">
+                                <input type="radio" id="opt024" name='DV_Q1_5' [(ngModel)]="social" value="Fair">
                             </label>
                         </td>
                         <td data-th="Poor">
-                            <label for="opt005">
-                                <input type="radio" id="opt005" name='DV_Q1_5' [(ngModel)]="social" value="Poor">
+                            <label for="opt025">
+                                <input type="radio" id="opt025" name='DV_Q1_5' [(ngModel)]="social" value="Poor">
                             </label>
                         </td>
 
@@ -209,32 +205,31 @@
                             at work and in your community, and responsibilities as a parent child, spouse, employee, friend,
                             etc.)
                             <span class="asterisk-red">*</span>
-                            <br/>
-                            <span *ngIf="!(start || activities)" class="sh-alert-text">Please select a value</span>
+                            <div *ngIf="!(start || activities)" class="checkbox-alert">Please select a value</div>
                         </td>
                         <td data-th="Excellent">
-                            <label for="opt001">
-                                <input type="radio" id="opt001" name='DV_Q1_6' [(ngModel)]="activities" value="Excellent" required>
+                            <label for="opt026">
+                                <input type="radio" id="opt026" name='DV_Q1_6' [(ngModel)]="activities" value="Excellent" required>
                             </label>
                         </td>
                         <td data-th="Very good">
-                            <label for="opt002">
-                                <input type="radio" id="opt002" name='DV_Q1_6' [(ngModel)]="activities" value="Very good">
+                            <label for="opt027">
+                                <input type="radio" id="opt027" name='DV_Q1_6' [(ngModel)]="activities" value="Very good">
                             </label>
                         </td>
                         <td data-th="Good">
-                            <label for="opt003">
-                                <input type="radio" id="opt003" name='DV_Q1_6' [(ngModel)]="activities" value="Good">
+                            <label for="opt028">
+                                <input type="radio" id="opt028" name='DV_Q1_6' [(ngModel)]="activities" value="Good">
                             </label>
                         </td>
                         <td data-th="Fair">
-                            <label for="opt004">
-                                <input type="radio" id="opt004" name='DV_Q1_6' [(ngModel)]="activities" value="Fair">
+                            <label for="opt029">
+                                <input type="radio" id="opt029" name='DV_Q1_6' [(ngModel)]="activities" value="Fair">
                             </label>
                         </td>
                         <td data-th="Poor">
-                            <label for="opt005">
-                                <input type="radio" id="opt005" name='DV_Q1_6' [(ngModel)]="activities" value="Poor">
+                            <label for="opt030">
+                                <input type="radio" id="opt030" name='DV_Q1_6' [(ngModel)]="activities" value="Poor">
                             </label>
                         </td>
                     </tr>

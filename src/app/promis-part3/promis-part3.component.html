@@ -24,8 +24,8 @@
                     <tr>
                         <td class="txtAlignLeft">
                             How often have you been bothered by emotional problems such as feeling anxious, depressed or irritable?
-                            <span class="asterisk-red">*</span><br/>
-                            <span *ngIf="!(start || emotionalProblems)" class="sh-alert-text">Please select a value</span>
+                            <span class="asterisk-red">*</span>
+                            <div *ngIf="!(start || emotionalProblems)" class="checkbox-alert">Please select a value</div>
                         </td>
                         <td data-th="Never">
                             <label for="opt001">
