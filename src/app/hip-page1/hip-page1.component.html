@@ -24,7 +24,7 @@
                     <td class="txtAlignLeft">
                         Going up or down stairs
                         <span class="asterisk-red">*</span>
-                        <span *ngIf="!(start || stairs)" class="sh-alert-text">Please select a value</span>
+                        <div *ngIf="!(start || stairs)" class="checkbox-alert">Please select a value</div>
                     </td>
                     <td data-th="None">
                         <label for="opt001">
@@ -56,7 +56,7 @@
                     <td class="txtAlignLeft">
                         Walking on an uneven surface
                         <span class="asterisk-red">*</span>
-                        <span *ngIf="!(start || surface)" class="sh-alert-text">Please select a value</span>
+                        <div *ngIf="!(start || surface)" class="checkbox-alert">Please select a value</div>
                     </td>
                     <td data-th="None">
                         <label for="opt008">

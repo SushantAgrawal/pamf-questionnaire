@@ -41,8 +41,8 @@ body{
 
 .sh-table{padding: 0px; margin: 0px; width: 100%; margin-bottom: 20px;}
 .sh-table th{padding:20px; background-color: #fff; }
-.sh-table td{ text-align: center; }
-.sh-table td label{ display: inline-block; line-height: 50px;  cursor:pointer; }
+.sh-table td{ text-align: center; padding: 0; }
+.sh-table tbody td label{ display:block; cursor:pointer; height: 100%!important;  }
 .sh-table tr:hover{ background-color: #d3dae2;}
 .sh-table tr {
     transition: background 0.2s ease-in;
@@ -54,7 +54,7 @@ body{
     background: #d3dae2;
   
 }
-.sh-table td.txtAlignLeft{ text-align:left; padding: 15px; width: 36%; color:#555555;}
+.sh-table td.txtAlignLeft{ text-align:left; padding: 5px; width: 36%; color:#555555;}
 
 
 .btnClass{
@@ -203,6 +203,7 @@ height: 6px}
         }
     }
 .sh-alert-text{ color: #ff3b39; font-size: 14pt;}
+.checkbox-alert{color: #ff3b39; font-size: 14pt; padding: 5px; text-align: left; background-image:url(data:image/gif;base64,R0lGODlhDAAMAKIAAN3d3WZmZv///8zMzO7u7gAAAAAAAAAAACH5BAAAAAAALAAAAAAMAAwAAAMoKLPcKjDKJYi9FlAcrh7VFXTEV41oZxLpWG4iuYoejGUUoO872PygBAA7DQo=); background-repeat: no-repeat; padding-left: 20px; background-position:left;}
 @media only screen and (max-width: 776px) {
     body{ font-size: 14pt;}
 }
@@ -226,7 +227,7 @@ height: 6px}
     
     }
 
-    .sh-table td.txtAlignLeft{ text-align:left; padding: 15px; width: auto;}
+    .sh-table td.txtAlignLeft{ text-align:left; padding: 5px; width: auto;}
     .sh-table td:before {
         content: attr(data-th)": "; 
         width: 90%;
