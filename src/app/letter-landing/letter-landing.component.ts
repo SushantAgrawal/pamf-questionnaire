@@ -20,8 +20,11 @@ export class LetterLandingComponent implements OnInit {
           ? console.log(d.error)
           : (() => {
             let redirectUrl = d.redirectUrl;
-            let url = new URL(redirectUrl);
-            let c14 = url.searchParams.get("c14");
+            let urlObject = this.appService.parseURL(redirectUrl);
+
+            // let url = new URL(redirectUrl);
+            // let c14 = url.searchParams.get("c14");
+            let c14 = urlObject.searchObject['c14'] || '';
             this.appService.setUrlParam('c14', c14);
             let route = this
               .appService
