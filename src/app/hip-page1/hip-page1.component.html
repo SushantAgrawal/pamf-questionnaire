@@ -1,7 +1,7 @@
 <div class="container">
     <div class="sh-alert-area">Please answer all questions marked with an (
         <span class="asterisk-red">*</span>) to continue.</div>
-    <!-- <div class="sh-alert-warning">Please answer all questions marked with an (*) to continue.</div> -->
+    <div class="sh-alert-warning" *ngIf="!(start || (stairs && surface))">Please answer all questions marked with an (*) to continue.</div>
     <header class="sh-header">PAIN</header>
 
     <div class="sub-header-bold">
@@ -24,16 +24,16 @@
                     <td class="txtAlignLeft">
                         Going up or down stairs
                         <span class="asterisk-red">*</span>
-                        <div *ngIf="!(start || stairs)" class="checkbox-alert">Please select a value</div>
+                        <div *ngIf="!(start || stairs)" class="checkbox-alert">Please choose at least one option</div>
                     </td>
                     <td data-th="None">
                         <label for="opt001">
-                            <input type="radio" id="opt001" name='DV_Q1_1' [(ngModel)]="stairs" value = "none" required>
+                            <input type="radio" id="opt001" name='DV_Q1_1' [(ngModel)]="stairs" value="none" required>
                         </label>
                     </td>
                     <td data-th="Mild">
                         <label for="opt002">
-                            <input type="radio" id="opt002" name='DV_Q1_1' [(ngModel)]="stairs" value="Mild" >
+                            <input type="radio" id="opt002" name='DV_Q1_1' [(ngModel)]="stairs" value="Mild">
                         </label>
                     </td>
                     <td data-th="Moderate">
@@ -43,7 +43,7 @@
                     </td>
                     <td data-th="Severe">
                         <label for="opt004">
-                            <input type="radio" id="opt004" name='DV_Q1_1' [(ngModel)]="stairs" value ="Severe">
+                            <input type="radio" id="opt004" name='DV_Q1_1' [(ngModel)]="stairs" value="Severe">
                         </label>
                     </td>
                     <td data-th="Extreme">
@@ -56,7 +56,7 @@
                     <td class="txtAlignLeft">
                         Walking on an uneven surface
                         <span class="asterisk-red">*</span>
-                        <div *ngIf="!(start || surface)" class="checkbox-alert">Please select a value</div>
+                        <div *ngIf="!(start || surface)" class="checkbox-alert">Please choose at least one option</div>
                     </td>
                     <td data-th="None">
                         <label for="opt008">

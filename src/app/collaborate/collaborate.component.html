@@ -62,7 +62,7 @@
                 <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="9" />
             </div>
         </div>
-        <div *ngIf="!(start || healthIssues)" class="checkbox-alert" style="margin-bottom:40px;">Please select a value</div>
+        <div *ngIf="!(start || healthIssues)" class="checkbox-alert" style="margin-bottom:40px;">Please choose at least one option</div>
 
         <div class="sub-header-txt">
             How much effort was made to listen to the things that matter most to you about your health issues?
@@ -115,7 +115,7 @@
                 <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="9" />
             </div>
         </div>
-        <div *ngIf="!(start || matter)" class="checkbox-alert" style="margin-bottom:40px;">Please select a value</div>
+        <div *ngIf="!(start || matter)" class="checkbox-alert" style="margin-bottom:40px;">Please choose at least one option</div>
 
         <div class="sub-header-txt"> How much effort was made to include what matters most to you in choosing what to do next?</div>
         <div class="review-bar">
@@ -165,7 +165,7 @@
                 <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="8" />
             </div>
         </div>
-        <div  *ngIf="!(start || choosingNext)" class="checkbox-alert" style="margin-bottom:40px;">Please select a value</div>
+        <div  *ngIf="!(start || choosingNext)" class="checkbox-alert" style="margin-bottom:40px;">Please choose at least one option</div>
 
         <div class="btnContainer">
             <button class="btn-right" (click)="next()">Next</button>

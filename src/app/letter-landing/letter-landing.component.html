@@ -1,20 +1,23 @@
 <div class="container">
   <div class="sh-alert-area">Please answer all questions marked with an (
     <span class="asterisk-red">* </span>) to continue.</div>
+  <div class="sh-alert-warning" *ngIf="!(start || code)" >Please answer all questions to continue</div>
+
   <div class="logo-area">
     <img src="/../assets/images/PAMF_logo.png" alt="Sutter Health" class="img-responsive" />
   </div>
   <div class="banner-area">
     <img src="/../assets/images/pamf-landing-page.png" alt="Sutter Health" class="img-responsive" />
-  </div>  
+  </div>
   <form #myForm="ngForm">
     <div class="question-text">
       Dear PAMF Patient, please enter the Total Joint Replacement Access Code printed on your letter:
       <span class="asterisk-red">*</span>
     </div>
-    <div class="question-inputfld">        
+    <div class="question-inputfld">
       <input name="code" type="text" required [(ngModel)]="code">
-      <label *ngIf="!code" class="sh-alert-text">Please enter the code</label>
+      <label *ngIf="!(start || code)" class="sh-alert-text">Please enter the code</label>
+
     </div>
     <div class="question-text">
       Additionally, we are asking patients for their email address. Your email address will be kept confidential and will not be
