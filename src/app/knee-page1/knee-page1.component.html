@@ -1,7 +1,7 @@
 <div class="container">
     <div class="sh-alert-area">Please answer all questions marked with an (
         <span class="asterisk-red">*</span>) to continue.</div>
-        <div class="sh-alert-warning" *ngIf="!(start || (rising && bending && lying && sitting))">Please answer all questions marked with an (*) to continue.</div>
+        <div class="sh-alert-warning" *ngIf="!(start || kneeStiffness)">Please answer all questions marked with an (*) to continue.</div>
     <header class="sh-header">Stiffness</header>
     <div class="sub-header-bold">
         The following question concerns the amount of joint stiffness you hve exerienced during the last week in your knee. Stiffness
