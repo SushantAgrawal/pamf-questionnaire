@@ -50,6 +50,24 @@ app.post("/pamf/:page", (req, res, next) => {
     }
 });
 
+app.get("/pamf/:page", (req, res, next) => {
+    let page = req.params.page;
+    if (page == "submit-questionnaire") {
+        res.json({ "formPost": "true" });
+    } else {
+        let nodeServerBaseUrl = options.pamfOptions.nodeServerBaseUrl;
+        let nodeServerPath = options.pamfOptions.nodeServerPath;
+        let redirectPath = options.pamfOptions.redirection[page];
+        if (_.isFunction(redirectPath)) {
+            redirectPath = redirectPath(req);
+        }
+        let redirectUrl = util.format("%s/%s/%s", nodeServerBaseUrl, nodeServerPath, redirectPath);
+        res.writeHead(301, { Location: redirectUrl });
+        res.end();
+    }
+});
+
+
 var server = app.listen(process.env.PORT || config.port, function () {
     console.log('Node server running at port: ' + config.port);
 });

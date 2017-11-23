@@ -51,23 +51,17 @@ export class AppService {
       split = queries[i].split('=');
       searchObject[split[0]] = split[1];
     }
-    return {
-      host: parser.host,
-      hostname: parser.hostname,
-      port: parser.port,
-      pathname: parser.pathname,
-      searchObject: searchObject
-    };
+    return {host: parser.host, hostname: parser.hostname, port: parser.port, pathname: parser.pathname, searchObject: searchObject};
   }
 
   getRoute(url) {
     // url = new URL(url);
     let urlObject = this.parseURL(url);
-    let urlArray = urlObject.pathname.split('/').filter(x => x);
-    // let urlArray = url
-    //   .pathname
-    //   .split('/')
-    //   .filter(x => x);
+    let urlArray = urlObject
+      .pathname
+      .split('/')
+      .filter(x => x);
+    // let urlArray = url   .pathname   .split('/')   .filter(x => x);
     let route = (urlArray.length > 0) && (urlArray[urlArray.length - 1]);
     // let route = 'incorrectTjr';
     return (route);
@@ -131,13 +125,12 @@ export class AppService {
         .maestroBaseUrl
         .replace(/\/$/, '');
       let path = environment.maestroPath;
-      let url = baseUrl.concat(path, '/', urlMaps[id]);
+      let url = baseUrl.concat('/', path, '/', urlMaps[id]);
       let httpParams = new HttpParams();
       httpParams = queryParams && (Object.keys(queryParams).reduce((prevValue, x, i) => {
         httpParams = httpParams.append(x, queryParams[x]);
         return (httpParams);
       }, httpParams));
-
       if (url) {
         this
           .httpClient
@@ -147,9 +140,16 @@ export class AppService {
               .subject
               .next({id: id, data: d});
           }, err => {
-            this
-              .subject
-              .next({id: id, error: err});
+            if (err.status && ((err.status == 200) || (err.status == 404))) {
+              this
+                .subject
+                .next({id: id, redirectUrl: err.url})
+            } else {
+              this
+                .subject
+                .next({id: id, error: err});
+            }
+            // this   .subject   .next({id: id, error: err});
           });
       } else {
         this
@@ -177,20 +177,19 @@ export class AppService {
 // .post(url, body, { headers: headers })     .subscribe(d => {       this
 // .subject         .next({ id: id, data: d, body: body });     }, err => { if
 // (err.status && ((err.status == 200) || (err.status == 404))) { this .subject
-//         .next({ id: id, redirectUrl: err.url })   } else {    this .subject
-//         .next({ id: id, error: err });       }   }); }; httpGet(id : string,
+//       .next({ id: id, redirectUrl: err.url })   } else {    this .subject
+//  .next({ id: id, error: err });       }   }); }; httpGet(id : string,
 // queryParams?: {     name: string,     value: string }[], headers?: [any],
 // carryBag?: any) {     try {       let url = urlMaps[id];   let myParams = new
 // URLSearchParams();       queryParams && (queryParams.map(x =>
 // myParams.append(x.name, x.value)));       let myHeaders = new Headers();
-//  headers && (headers.map(x => myHeaders.append(x.name, x.value)));       let
+// headers && (headers.map(x => myHeaders.append(x.name, x.value)));       let
 // options; // (headers || queryParams) && (options = new RequestOptions({
-// headers : // headers     ? myHeaders     : null, params: queryParams
-// ? myParams         :         null }));         if (url) {       this
+// headers : // headers     ? myHeaders     : null, params: queryParams ?
+// myParams         :         null }));         if (url) {       this
 // .httpClient           .get(url, options) .map(response => response.json())
-//        .subscribe(d => {           this           .subject
-// .next({id: id, data: d, carryBag: carryBag});        }, err => {
-// this             .subject .next({id: id, error: err});         });     } else
-// {       this .subject         .next({id: id, error:
-// messages.idNotMappedToUrl});     }   } catch (err) {     this .subject
-// .next({id: id, error: messages.httpGetUnknownError});   } };
+//  .subscribe(d => {           this           .subject .next({id: id, data: d,
+// carryBag: carryBag});        }, err => { this             .subject .next({id:
+// id, error: err});         });     } else {       this .subject     .next({id:
+// id, error: messages.idNotMappedToUrl});     }   } catch (err) {     this
+// .subject .next({id: id, error: messages.httpGetUnknownError});   } };
