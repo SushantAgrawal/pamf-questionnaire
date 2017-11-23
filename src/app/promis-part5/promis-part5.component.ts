@@ -60,7 +60,7 @@ export class PromisPart5Component implements OnInit {
     this.subscriptions.add(sub1);
   }
   selectRow(value) {
-    debugger;
+
     this.pain = value;
   }
   next() {

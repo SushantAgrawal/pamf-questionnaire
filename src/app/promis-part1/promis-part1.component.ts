@@ -30,7 +30,7 @@ export class PromisPart1Component implements OnInit {
   ngOnInit() { }
 
   selectRow(value, val) {
-    debugger;
+
     switch (val) {
       case 0:
         this.health = value.key;

@@ -60,7 +60,7 @@ export class CollaborateComponent implements OnInit {
     this.subscriptions.add(sub1);
   }
   selectRow(value, val) {
-    debugger;
+
     switch (val) 
     { 
     case 0: 

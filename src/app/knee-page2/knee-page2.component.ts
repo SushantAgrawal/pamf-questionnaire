@@ -24,7 +24,7 @@ export class KneePage2Component implements OnInit {
 
   ngOnInit() {}
   selectRow(value, val) {
-    debugger;
+
     switch (val) 
     { 
     case 0: 

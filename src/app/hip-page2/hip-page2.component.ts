@@ -60,7 +60,7 @@ export class HipPage2Component implements OnInit {
     this.subscriptions.add(sub1);
   }
   selectRow(value, val) {
-    debugger;
+ 
     switch (val) 
     { 
     case 0: 
@@ -79,7 +79,7 @@ export class HipPage2Component implements OnInit {
     } 
   }
   next() {
-    debugger;
+  
     this.start = false;
     let thisForm = this.myForm.form;
     thisForm.valid && (

@@ -71,7 +71,7 @@ export class KneePage3Component implements OnInit {
     }
 
     selectRow(value, val) {
-      debugger;
+
       switch (val) 
       { 
       case 0: 
