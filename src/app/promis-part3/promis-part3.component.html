@@ -1,7 +1,7 @@
 <div class="container">
     <div class="sh-alert-area">Please answer all questions marked with an (
         <span class="asterisk-red">*</span>) to continue.</div>
-
+        <div class="sh-alert-warning" *ngIf="!(start ||  emotionalProblems)">Please answer all questions marked with an (*) to continue.</div>
     <div class="sub-header-bold">
         In the past seven days...
     </div>
@@ -25,7 +25,7 @@
                         <td class="txtAlignLeft">
                             How often have you been bothered by emotional problems such as feeling anxious, depressed or irritable?
                             <span class="asterisk-red">*</span>
-                            <div *ngIf="!(start || emotionalProblems)" class="checkbox-alert">Please select a value</div>
+                            <div *ngIf="!(start || emotionalProblems)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
                         <td data-th="Never">
                             <label for="opt001">

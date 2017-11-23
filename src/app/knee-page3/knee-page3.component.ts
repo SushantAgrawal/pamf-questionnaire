@@ -59,7 +59,7 @@ export class KneePage3Component implements OnInit {
         , kneeQuestions.responses[5].answer_text_score[0] = this.scores[this.rising]
         , kneeQuestions.responses[6].answer_text[0] = this.bending
         , kneeQuestions.responses[6].answer_text_score[0] = this.scores[this.bending]
-        , console.log(kneeQuestions.responses)
+        //, console.log(kneeQuestions.responses)
         , this.appService.httpPost('knee:page3:submit',kneeQuestions)
       );
       

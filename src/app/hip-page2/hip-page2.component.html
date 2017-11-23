@@ -1,9 +1,8 @@
 <div class="container">
     <div class="sh-alert-area">Please answer all questions marked with an (
         <span class="asterisk-red">*</span>) to continue.</div>
+        <div class="sh-alert-warning" *ngIf="!(start || (rising && bending && lying && sitting))">Please answer all questions marked with an (*) to continue.</div>
     <header class="sh-header">Physical Function</header>
-
-
     <div class="sub-header-bold">
         The following questions concern your physical function. By this we mean your ability to move around and to look after yourself.
         For each of the following activities please indicate the degree of difficulty you have experienced in the last week
@@ -28,7 +27,7 @@
                         <td class="txtAlignLeft">
                             Rising from sitting
                             <span class="asterisk-red">*</span>
-                            <div *ngIf="!(start || rising)" class="checkbox-alert">Please select a value</div>
+                            <div *ngIf="!(start || rising)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
                         <td data-th="None">
                             <label for="opt001">
@@ -62,7 +61,7 @@
                         <td class="txtAlignLeft">
                             Bending to floor/ pick up an object
                             <span class="asterisk-red">*</span><br/>
-                            <div *ngIf="!(start || bending)" class="checkbox-alert">Please select a value</div>
+                            <div *ngIf="!(start || bending)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
                         <td data-th="None">
                             <label for="opt008">
@@ -94,7 +93,7 @@
                         <td class="txtAlignLeft">
                             Lying in bed(turning over, maintaining hip position)
                             <span class="asterisk-red">*</span><br/>
-                            <div *ngIf="!(start || lying)" class="checkbox-alert">Please select a value</div>
+                            <div *ngIf="!(start || lying)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
                         <td data-th="None">
                             <label for="opt013">
@@ -126,7 +125,7 @@
                         <td class="txtAlignLeft">
                             Sitting
                             <span class="asterisk-red">*</span><br/>
-                            <div *ngIf="!(start || sitting)" class="checkbox-alert">Please select a value</div>
+                            <div *ngIf="!(start || sitting)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
                         <td data-th="None">
                             <label for="opt018">

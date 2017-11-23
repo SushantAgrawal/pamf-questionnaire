@@ -9,6 +9,7 @@ export class LetterLandingComponent implements OnInit {
   code: string;
   email: string
   @ViewChild('myForm') myForm: any;
+  start: boolean = true;
   constructor(public appService: AppService, private router: Router) { }
 
   ngOnInit() {
@@ -37,6 +38,7 @@ export class LetterLandingComponent implements OnInit {
   }
 
   next() {
+    this.start = false;
     let thisForm = this.myForm.form;
     
     thisForm.valid && (this.appService.httpPost('letter:landing:next', null,

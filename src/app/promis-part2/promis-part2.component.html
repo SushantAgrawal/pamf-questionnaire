@@ -1,6 +1,7 @@
 <div class="container">
     <div class="sh-alert-area">Please answer all questions marked with an (
         <span class="asterisk-red">*</span>) to continue.</div>
+        <div class="sh-alert-warning" *ngIf="!(start || everydayPhysicalActivities)">Please answer all questions marked with an (*) to continue.</div>
 
     <div class="sub-header-bold">
         Please respond to each item by marking one box per row.
@@ -24,7 +25,7 @@
                         <td class="txtAlignLeft">To what extent are you able to carry out your everyday physical activities such as walking, climbing
                             stairs, carrying groceries, or moving a chair?
                             <span class="asterisk-red">*</span>  <br/>
-                            <div *ngIf="!(start || everydayPhysicalActivities)" class="checkbox-alert">Please select a value</div>
+                            <div *ngIf="!(start || everydayPhysicalActivities)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
                         <td data-th="Completely">
                             <label for="opt001">

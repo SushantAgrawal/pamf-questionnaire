@@ -1,7 +1,7 @@
 <div class="container">
     <div class="sh-alert-area">Please answer all questions marked with an (
         <span class="asterisk-red">*</span>) to continue.</div>
-    <!-- <div class="sh-alert-warning">Please answer all questions marked with an (*) to continue.</div> -->
+        <div class="sh-alert-warning" *ngIf="!(start || (health && quality && physical && mentalHealth && social && activities ))">Please answer all questions marked with an (*) to continue.</div>
     <div class="progress-bar-container">
         <div class="questionnaire-progress">Questionnaire Progress</div>
         <div class="progress-bar" style="width:50%;"></div>
@@ -38,7 +38,7 @@
                             In general, would you say your health is:
                             <span class="asterisk-red">*</span>
                             
-                            <div *ngIf="!(start || health)" class="checkbox-alert">Please select a value</div>
+                            <div *ngIf="!(start || health)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
                         <td data-th="Excellent">
                             <label for="opt001">
@@ -70,7 +70,7 @@
                         <td class="txtAlignLeft">
                             In general, would you say your quality of life is:
                             <span class="asterisk-red">*</span>
-                            <div *ngIf="!(start || quality)" class="checkbox-alert">Please select a value</div>
+                            <div *ngIf="!(start || quality)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
                         <td data-th="Excellent">
                             <label for="opt006">
@@ -102,7 +102,7 @@
                         <td class="txtAlignLeft">
                             In general, how would you rate your physical health?
                             <span class="asterisk-red">*</span>
-                            <div *ngIf="!(start || physical)" class="checkbox-alert">Please select a value</div>
+                            <div *ngIf="!(start || physical)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
                         <td data-th="Excellent">
                             <label for="opt011">
@@ -135,7 +135,7 @@
                         <td class="txtAlignLeft">
                             In general, how would you rate your mental health, including your mood and your ability to think?
                             <span class="asterisk-red">*</span>
-                            <div *ngIf="!(start || mentalHealth)" class="checkbox-alert">Please select a value</div>
+                            <div *ngIf="!(start || mentalHealth)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
                         <td data-th="Excellent">
                             <label for="opt016">
@@ -169,7 +169,7 @@
                         <td class="txtAlignLeft">
                             In general, how would you rate your satisfaction with your social activities and relationships?
                             <span class="asterisk-red">*</span>
-                            <div *ngIf="!(start || social)" class="checkbox-alert">Please select a value</div>
+                            <div *ngIf="!(start || social)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
                         <td data-th="Excellent">
                             <label for="opt021">
@@ -205,7 +205,7 @@
                             at work and in your community, and responsibilities as a parent child, spouse, employee, friend,
                             etc.)
                             <span class="asterisk-red">*</span>
-                            <div *ngIf="!(start || activities)" class="checkbox-alert">Please select a value</div>
+                            <div *ngIf="!(start || activities)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
                         <td data-th="Excellent">
                             <label for="opt026">
