@@ -30,7 +30,10 @@
                             <span class="asterisk-red">*</span>
                             <div *ngIf="!(start || rising)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
-                        <td data-th="None">
+                        <td class="tdselect"  (click)="selectRow(option,0)" [attr.data-th]= "option.key"  *ngFor="let option of scores; let i = index">
+                            <input type="radio" [id]="'rising' +i" name='DV_Q3_1' [(ngModel)]="rising" [value]="option.key" required/>
+                         </td>
+                        <!-- <td data-th="None">
                             <label for="opt001">
                                 <input type="radio" id="opt001" name='DV_Q3_1' required [(ngModel)]="rising" value="none">
                             </label>
@@ -54,7 +57,7 @@
                             <label for="opt005">
                                 <input type="radio" id="opt005" name='DV_Q3_1' [(ngModel)]="rising" value="Extreme">
                             </label>
-                        </td>
+                        </td> -->
 
 
                     </tr>
@@ -64,7 +67,10 @@
                             <span class="asterisk-red">*</span>
                             <div *ngIf="!(start || bending)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
-                        <td data-th="None">
+                        <td class="tdselect"  (click)="selectRow(option,1)" [attr.data-th]= "option.key"  *ngFor="let option of scores; let i = index">
+                            <input type="radio" [id]="'bending' +i" name='DV_Q3_2' [(ngModel)]="bending" [value]="option.key" required/>
+                         </td>
+                        <!-- <td data-th="None">
                             <label for="opt008">
                                 <input type="radio" id="opt008" name='DV_Q3_2' required  [(ngModel)]="bending" value="none" />
                             </label>
@@ -88,7 +94,7 @@
                             <label for="opt012">
                                 <input type="radio" id="opt012" name='DV_Q3_2'  [(ngModel)]="bending" value="Extreme" />
                             </label>
-                        </td>
+                        </td> -->
                     </tr>
                 </tbody>
             </table>

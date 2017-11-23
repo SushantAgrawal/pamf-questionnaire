@@ -15,17 +15,22 @@ export class HipPage2Component implements OnInit {
   bending: string;
   lying: string;
   sitting: string;
-  scores: {} = {
-    none: 1,
-    Mild: 2,
-    Moderate: 3,
-    Severe: 4,
-    Extreme: 5
-  };
+  scores: any[] = [];
+  
+ 
   subscriptions: any;
-  constructor(private router: Router, public appService: AppService) { }
+  constructor(private router: Router, public appService: AppService) { 
+    this.scores = [
+      { key: 'none', value: 1 },
+      { key: 'Mild', value: 2 },
+      { key: 'Moderate', value: 3 },
+      { key: 'Severe', value: 4 },
+      { key: 'Extreme', value: 5 }
+    ];
+  }
 
   ngOnInit() {
+
     this.subscriptions = this
       .appService
       .filterOn("hip:page2:submit")
@@ -53,6 +58,25 @@ export class HipPage2Component implements OnInit {
           })()
       });
     this.subscriptions.add(sub1);
+  }
+  selectRow(value, val) {
+    debugger;
+    switch (val) 
+    { 
+    case 0: 
+    this.rising = value.key; 
+      break; 
+    case 1: 
+    this.bending = value.key; 
+      break; 
+    case 2: 
+    this.lying = value.key; 
+      break; 
+    case 3: 
+    this.sitting = value.key; 
+      break; 
+    default:       
+    } 
   }
   next() {
     debugger;

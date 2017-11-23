@@ -13,6 +13,7 @@ export class PromisPart5Component implements OnInit {
   @ViewChild('myForm') myForm: any;
   start: boolean = true;
   pain: string; 
+  scores: any[] = [0,1,2,3,4,5,6,7,8,9,10];
   constructor(private router: Router, public appService: AppService) { }
 
   ngOnInit() {

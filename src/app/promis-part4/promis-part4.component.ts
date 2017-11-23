@@ -12,16 +12,23 @@ export class PromisPart4Component implements OnInit {
   @ViewChild('myForm') myForm: any;
   start: boolean = true;
   fatigue: string;
-  scores: {} = {
-    None: 1,
-    Mild: 2,
-    Moderate: 3,
-    Severe: 4,
-    "Very Severe": 5
-  };
-  constructor(private router: Router) { }
+ 
+  scores: any[] = [];
+  
+  constructor(private router: Router) {
+    this.scores = [
+      { key: 'none', value: 1 },
+      { key: 'Mild', value: 2 },
+      { key: 'Moderate', value: 3 },
+      { key: 'Severe', value: 4 },
+      { key: 'Very Severe', value: 5 }
+    ];
+   }
 
   ngOnInit() { }
+  selectRow(value, val) {
+    this.fatigue = value.key; 
+  }
 
   next() {
     this.start = false;

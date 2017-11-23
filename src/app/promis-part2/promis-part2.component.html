@@ -2,7 +2,6 @@
     <div class="sh-alert-area">Please answer all questions marked with an (
         <span class="asterisk-red">*</span>) to continue.</div>
         <div class="sh-alert-warning" *ngIf="!(start || everydayPhysicalActivities)">Please answer all questions marked with an (*) to continue.</div>
-
     <div class="sub-header-bold">
         Please respond to each item by marking one box per row.
     </div>
@@ -27,7 +26,10 @@
                             <span class="asterisk-red">*</span>  <br/>
                             <div *ngIf="!(start || everydayPhysicalActivities)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
-                        <td data-th="Completely">
+                        <td class="tdselect"  (click)="selectRow(option,0)" [attr.data-th]= "option.key"  *ngFor="let option of scores; let i = index">
+                            <input type="radio" [id]="'everydayPhysicalActivities' +i" name='DV_Q2' [(ngModel)]="everydayPhysicalActivities" [value]="option.key" required/>
+                         </td>
+                        <!-- <td data-th="Completely">
                             <label for="opt001">
                                 <input type="radio" id="opt001" name='DV_Q2'  [(ngModel)]="everydayPhysicalActivities" value="Completely" required>
                             </label>
@@ -51,7 +53,7 @@
                             <label for="opt005">
                                 <input type="radio" id="opt005" name='DV_Q2' [(ngModel)]="everydayPhysicalActivities" value="Not at all">
                             </label>
-                        </td>
+                        </td> -->
                     </tr>
                 </tbody>
             </table>

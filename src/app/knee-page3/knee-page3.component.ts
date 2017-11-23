@@ -14,14 +14,19 @@ export class KneePage3Component implements OnInit {
   start: boolean = true;
   rising: string;
   bending: string;
-  scores: {} = {
-    none: 1,
-    Mild: 2,
-    Moderate: 3,
-    Severe: 4,
-    Extreme: 5
-  };
-  constructor(private router : Router, private appService:AppService) {}  
+  scores: any[] = [];
+  
+
+  constructor(private router : Router, private appService:AppService) {
+    this.scores = [
+      { key: 'none', value: 1 },
+      { key: 'Mild', value: 2 },
+      { key: 'Moderate', value: 3 },
+      { key: 'Severe', value: 4 },
+      { key: 'Extreme', value: 5 }
+    ];
+
+  }  
     ngOnInit() {
       this.subscriptions = this
       .appService
@@ -63,6 +68,20 @@ export class KneePage3Component implements OnInit {
         , this.appService.httpPost('knee:page3:submit',kneeQuestions)
       );
       
+    }
+
+    selectRow(value, val) {
+      debugger;
+      switch (val) 
+      { 
+      case 0: 
+      this.rising = value.key; 
+        break; 
+      case 1: 
+      this.bending = value.key; 
+        break;
+      default:       
+      } 
     }
 
     ngOnDestroy() {

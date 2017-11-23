@@ -27,7 +27,11 @@
                             <span class="asterisk-red">*</span>
                             <div *ngIf="!(start || emotionalProblems)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
-                        <td data-th="Never">
+                        <td class="tdselect"  (click)="selectRow(option,0)" [attr.data-th]= "option.key"  *ngFor="let option of scores; let i = index">
+                            <input type="radio" [id]="'emotionalProblems' +i" name='DV_Q3' [(ngModel)]="emotionalProblems" [value]="option.key" required/>
+                         </td>
+
+                        <!-- <td data-th="Never">
                             <label for="opt001">
                                 <input type="radio" id="opt001" name='DV_Q3'  [(ngModel)]="emotionalProblems" value="Never" required>
                             </label>
@@ -51,7 +55,7 @@
                             <label for="opt005">
                                 <input type="radio" id="opt005" name='DV_Q3'  [(ngModel)]="emotionalProblems" value="Always">
                             </label>
-                        </td>
+                        </td> -->
                     </tr>
                 </tbody>
             </table>
