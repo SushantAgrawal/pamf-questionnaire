@@ -38,9 +38,10 @@ export class LetterLandingComponent implements OnInit {
 
   next() {
     let thisForm = this.myForm.form;
+    
     thisForm.valid && (this.appService.httpPost('letter:landing:next', null,
       { contact_type: this.appService.urlParams['c1'], code: this.code, email: this.email }));
-    // let validCode = x.controls.code.valid;
+    
   }
 
   ngOnDestroy() {
@@ -49,3 +50,6 @@ export class LetterLandingComponent implements OnInit {
       .unsubscribe();
   }
 }
+
+//deprecated
+// let validCode = x.controls.code.valid;
