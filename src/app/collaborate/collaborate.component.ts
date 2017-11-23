@@ -15,7 +15,20 @@ export class CollaborateComponent implements OnInit {
   healthIssues: string;
   matter: string;
   choosingNext: string;
-  constructor(private router: Router, public appService: AppService) { }
+  scores: any[] = [];
+  constructor(private router: Router, public appService: AppService) { 
+    this.scores = [
+      { key: 1, value: 'No effort was made' ,css:'node1'},
+      { key: 2 },
+      { key: 3 },
+      { key: 4 },
+      { key: 5 },
+      { key: 6 },
+      { key: 7 },
+      { key: 8 },
+      { key: 9, value: 'Every effort was made',css:'node-last' }
+    ];
+  }
 
   ngOnInit() {
     this.subscriptions = this
@@ -45,6 +58,22 @@ export class CollaborateComponent implements OnInit {
           })()
       });
     this.subscriptions.add(sub1);
+  }
+  selectRow(value, val) {
+    debugger;
+    switch (val) 
+    { 
+    case 0: 
+    this.healthIssues = value; 
+      break; 
+    case 1: 
+    this.matter = value; 
+      break; 
+    case 2: 
+    this.choosingNext = value; 
+      break; 
+    default:       
+    } 
   }
 
   next() {

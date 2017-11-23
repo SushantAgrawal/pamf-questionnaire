@@ -12,9 +12,23 @@ export class PromisPart5Component implements OnInit {
   subscriptions: any;
   @ViewChild('myForm') myForm: any;
   start: boolean = true;
-  pain: string; 
-  scores: any[] = [0,1,2,3,4,5,6,7,8,9,10];
-  constructor(private router: Router, public appService: AppService) { }
+  pain: string;
+  scores: any[] = [];
+  // scores: any[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  constructor(private router: Router, public appService: AppService) {
+    this.scores = [
+      { key: 1, value: 'No Pain',css:'node1' },
+      { key: 2 },
+      { key: 3 },
+      { key: 4 },
+      { key: 5 },
+      { key: 6 },
+      { key: 7 },
+      { key: 8 },
+      { key: 9 },
+      { key: 10, value: 'Worst Imaginable Pain',css:'node-last'  }
+    ];
+  }
 
   ngOnInit() {
     this.subscriptions = this
@@ -45,6 +59,10 @@ export class PromisPart5Component implements OnInit {
       });
     this.subscriptions.add(sub1);
   }
+  selectRow(value) {
+    debugger;
+    this.pain = value;
+  }
   next() {
     this.start = false;
     let thisForm = this.myForm.form;
@@ -54,7 +72,7 @@ export class PromisPart5Component implements OnInit {
       //, console.log(promisQuestions.responses)
       , this.appService.httpPost('promis:part5:submit', promisQuestions)
     );
-    
+
   }
 
   ngOnDestroy() {

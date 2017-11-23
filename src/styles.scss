@@ -185,21 +185,27 @@ height: 6px}
     color: #555555;
     font-weight: 500;
     }
-.review-bar{ display: flex; background-color: #f5f6f5; margin-bottom: 40px; height:20px; padding: 10px; margin-top: 100px;
+.review-bar{ display: flex; background-color: #f5f6f5; margin-bottom: 40px; padding: 0px 8px;  margin-top: 100px;
     &:hover{
         background-color: #d3dae2;
     }
         .ast-box{ width: 15%;}
-        .num-box{ text-align: center; position: relative; font-size: 12pt; margin: auto 3%; font-weight: bold;
-        span{
-            position: absolute; top: -32px; left: 5px;
+        .num-box{ cursor: pointer; text-align: center; position: relative; padding: 8px 3%; font-size: 12pt; font-weight: bold;
+            border-left: solid 1px transparent;
+            border-right: solid 1px transparent;
+            .txt-count{
+                position: absolute; top: -32px; left: 43%;
+            }
+            .node1{
+                position: absolute; top:-82px; left: 43%; color: #11a9a4; width: 268px; font-size: 20pt; font-weight: normal; text-align:left;
+            }
+            .node-last{
+                position: absolute; top:-82px; right: 43%; color: #11a9a4; width: 280px; font-size: 20pt; font-weight: normal; text-align:right;
+            }
         }
-        .node1{
-            position: absolute; top:-82px; left: 0px; color: #11a9a4; width: 268px; font-size: 20pt; font-weight: normal; text-align:left;
-        }
-        .node-last{
-            position: absolute; top:-82px; right: 0px; color: #11a9a4; width: 280px; font-size: 20pt; font-weight: normal; text-align:right;
-        }
+        .num-box:hover{
+            border-left: solid 1px #cccccc;
+            border-right: solid 1px #cccccc;
         }
     }
 .sh-alert-text{ color: #ff3b39; font-size: 14pt;}
@@ -246,14 +252,17 @@ height: 6px}
     }
     .sh-table td label{ display: inline-block!important; line-height: 50px; cursor:pointer; }
     .review-bar .num-box{
-        margin: auto 1%;
+        padding: 8px 1.8%;
     }
     .review-bar .num-box .node1{
-        font-size: 12pt; width: 120px; text-align: left;
+        font-size: 11pt; width: 120px; text-align: left;
     }
-    .review-bar .num-box .node-last{font-size: 12pt; width: 174px; text-align:right;}
+    .review-bar .num-box .node-last{font-size: 11pt; width: 174px; text-align:right;}
     .review-bar .ast-box{
         width: 5%;
+    }
+    .review-bar .num-box .txt-count{
+        left: 37%;
     }
     .btnClass, .btnContainer .btn-left, .btnContainer .btn-right{
         font-size: 14pt;
@@ -263,14 +272,18 @@ height: 6px}
     }
 
     }
-
+    @media only screen and (max-width: 375px) {
+        .review-bar .num-box{
+            padding: 8px 1%;
+        }
+    }
     @media only screen and (max-width: 320px) {
         
         .question-inputfld input{
             width: 200px;
         }
         .review-bar .num-box {
-            margin: auto .5%;
+            padding: 8px .5%;
         }
         .review-bar .num-box .node-last, .review-bar .num-box .node1{ font-size: 10pt;}
     }
