@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AppService } from '../app.service';
+import { urlMaps } from '../app.config';
 @Component({
   selector: 'app-thank-you-hip',
   templateUrl: './thank-you-hip.component.html',
@@ -7,8 +8,10 @@ import { AppService } from '../app.service';
   encapsulation: ViewEncapsulation.None
 })
 export class ThankYouHipComponent implements OnInit {
-
-  constructor(public appService:AppService) { }
+  webSite:any;
+  constructor(public appService:AppService) { 
+    this.webSite= urlMaps['pamf:hip:replacement:website:url'];
+  }
 
   ngOnInit() {
   }

@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AppService } from '../app.service';
+import { urlMaps } from '../app.config';
+
 @Component({
   selector: 'app-thank-you-knee',
   templateUrl: './thank-you-knee.component.html',
@@ -7,10 +9,13 @@ import { AppService } from '../app.service';
   encapsulation: ViewEncapsulation.None
 })
 export class ThankYouKneeComponent implements OnInit {
-
-  constructor(public appService:AppService) { }
+  webSite:any;
+  constructor(public appService:AppService) {
+    this.webSite= urlMaps['pamf:knee:replacement;website:url'];
+   }
 
   ngOnInit() {
+
   }
 
   next(){
