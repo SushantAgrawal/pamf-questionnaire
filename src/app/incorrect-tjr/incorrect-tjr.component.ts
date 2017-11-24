@@ -26,7 +26,7 @@ export class IncorrectTjrComponent implements OnInit {
   }
 
   done() {
-    this.appService.httpPost('incorrect:tjr:done');
+    this.appService.httpGet('incorrect:tjr:done');
   }
 
   ngOnDestroy() {

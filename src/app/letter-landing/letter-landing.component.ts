@@ -53,10 +53,6 @@ export class LetterLandingComponent implements OnInit {
       code: this.code,
       email: this.email
     }));
-    // thisForm.valid && (this.appService.httpPost('letter:landing:next', null,   {
-    // contact_type: this.appService.urlParams['c1'], code: this.code, email:
-    // this.email }));
-
   }
 
   ngOnDestroy() {
