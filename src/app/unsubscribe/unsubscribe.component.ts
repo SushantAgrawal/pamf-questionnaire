@@ -17,7 +17,7 @@ export class UnsubscribeComponent implements OnInit {
           ? console.log(d.error)
           : (() => {
             let redirectUrl = d.redirectUrl;
-            let url = new URL(redirectUrl);
+            // let url = new URL(redirectUrl);
             let route = this
               .appService
               .getRoute(redirectUrl);
