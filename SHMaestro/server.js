@@ -37,7 +37,6 @@ app.post("/pamf/:page", (req, res, next) => {
     let page = req.params.page;
     if (page == "submit-questionnaire") {
         res.json({ "formPost": "true" });
-        console.log(req.body);
     } else {
         let nodeServerBaseUrl = options.pamfOptions.nodeServerBaseUrl;
         let nodeServerPath = options.pamfOptions.nodeServerPath;

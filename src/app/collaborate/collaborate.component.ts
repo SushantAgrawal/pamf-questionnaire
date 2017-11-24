@@ -56,7 +56,6 @@ export class CollaborateComponent implements OnInit {
                 accessed_by: this.appService.urlParams['c11'],
                 complete_date: this.appService.urlParams['c14']
               });
-            console.log(d.data);
           })()
       });
     let sub1 = this
