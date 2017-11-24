@@ -50,7 +50,7 @@ export class HipLandingComponent implements OnInit {
   
   next() {
     let urlParams: any = this.appService.urlParams;
-    this.appService.httpPost('hip:landing:next', null,
+    this.appService.httpGet('hip:landing:next',
       {
         code: urlParams.c1,
         bundle:urlParams.c2,

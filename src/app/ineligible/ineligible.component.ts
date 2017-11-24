@@ -29,7 +29,7 @@ export class IneligibleComponent implements OnInit {
     );
   }
   next(){
-    this.appService.httpPost('ineligible:next');
+    this.appService.httpGet('ineligible:next');
   }
   
   ngOnDestroy() {

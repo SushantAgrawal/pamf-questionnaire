@@ -49,7 +49,7 @@ export class KneeLandingComponent implements OnInit {
   }
   next() {
     let urlParams: any = this.appService.urlParams;
-    this.appService.httpPost('knee:landing:next', null,
+    this.appService.httpGet('knee:landing:next',
       {
         code: urlParams.c1,
         bundle:urlParams.c2,

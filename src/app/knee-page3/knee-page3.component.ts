@@ -35,10 +35,17 @@ export class KneePage3Component implements OnInit {
         d.error
           ? console.log(d.error)
           : (() => {
-            this.appService.httpPost('knee:page3:redirect');
+            this.appService.httpGet('knee:page3:redirect',{
+              code: this.appService.urlParams['c1'],
+              bundle: this.appService.urlParams['c2'],
+              contact_type: this.appService.urlParams['c4'],
+              accessed_by: this.appService.urlParams['c11'],
+              complete_date: this.appService.urlParams['c14']
+            });
             console.log(d.data);
           })()
       });
+
     let sub1 = this.appService.filterOn('knee:page3:redirect')
       .subscribe(d => {
         d.error
