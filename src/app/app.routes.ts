@@ -23,10 +23,13 @@ import {IneligibleComponent} from './ineligible/ineligible.component';
 import {CollaborateComponent} from './collaborate/collaborate.component';
 
 export const ROUTES : Routes = [
+    // {
+    //     path:'landing-page',
+    //     component:LetterLandingComponent
+    // },
     {
         path: '',
-        redirectTo: 'letterLanding',
-        pathMatch: 'full'
+        component:LetterLandingComponent        
     }, {
         path: 'pamf',
         redirectTo: 'letterLanding',

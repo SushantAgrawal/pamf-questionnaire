@@ -62,7 +62,8 @@ app.get("/pamf/:page", (req, res, next) => {
             redirectPath = redirectPath(req);
         }
         let redirectUrl = util.format("%s/%s/%s", nodeServerBaseUrl, nodeServerPath, redirectPath);
-        res.writeHead(301, { Location: redirectUrl });
+        res.redirect(redirectUrl);
+        // res.writeHead(301, { Location: redirectUrl });
         res.end();
     }
 });

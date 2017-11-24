@@ -24,8 +24,12 @@ app.get('/:page', function (req, res) {
     res.sendFile(path.join(__publicFolder + '/index.html'));
 });
 // app.get('/pamf/incorrectTjr',(req,res)=>{
-//     res.json({"redirect":true});
+//     res.sendFile(path.join(__publicFolder + '/index.html'));
 // })
+app.get('/pamf/:page',(req,res)=>{
+    res.sendFile(path.join(__publicFolder + '/index.html'));
+    // res.json({"redirect":true});
+})
 // Allow for Jenkins smoke test
 app.get('/test', function (req, res) {
     res.send('hello jenkins');
