@@ -89,7 +89,7 @@ export class HipPage2Component implements OnInit {
 
     this.start = false;
     let thisForm = this.myForm.form;
-    thisForm.valid && (hipQuestions.responses[2].answer_text[0] = this.rising, hipQuestions.responses[2].answer_text_score[0] = this.scores[this.rising], hipQuestions.responses[3].answer_text[0] = this.bending, hipQuestions.responses[3].answer_text_score[0] = this.scores[this.bending], hipQuestions.responses[4].answer_text[0] = this.lying, hipQuestions.responses[4].answer_text_score[0] = this.scores[this.lying], hipQuestions.responses[5].answer_text[0] = this.sitting, hipQuestions.responses[5].answer_text_score[0] = this.scores[this.sitting], this.appService.httpPost('hip:page2:submit', hipQuestions));
+    thisForm.valid && (this.appService.fillHipQuestionsTopSec(),hipQuestions.responses[2].answer_text[0] = this.rising, hipQuestions.responses[2].answer_text_score[0] = this.scores[this.rising], hipQuestions.responses[3].answer_text[0] = this.bending, hipQuestions.responses[3].answer_text_score[0] = this.scores[this.bending], hipQuestions.responses[4].answer_text[0] = this.lying, hipQuestions.responses[4].answer_text_score[0] = this.scores[this.lying], hipQuestions.responses[5].answer_text[0] = this.sitting, hipQuestions.responses[5].answer_text_score[0] = this.scores[this.sitting], this.appService.httpPost('hip:page2:submit', hipQuestions));
 
   }
 

@@ -69,12 +69,7 @@ export class AppService {
     return (route);
   }
 
-  transform() {
-    let today = Date.now();
-    var datePipe = new DatePipe("en-US");
-    let value = datePipe.transform(today, 'yyyy-MM-dd HH:mm:ss');
-    return value;
-  }
+  
  
   fillHipQuestionsTopSec() {
     let date = new Date();
@@ -90,9 +85,9 @@ export class AppService {
     hipQuestions.qx_device = '';
     hipQuestions.qx_ip_address = '';
     hipQuestions.qx_started_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
-    hipQuestions.qx_accessed_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
+    hipQuestions.qx_accessed_at = hipQuestions.qx_started_at;
     hipQuestions.qx_accessed_by = this.urlParams.c11;
-    hipQuestions.qx_completed_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
+    hipQuestions.qx_completed_at = hipQuestions.qx_started_at;
     hipQuestions.qx_status = 'COMPLETED';
   }  
 
@@ -110,9 +105,9 @@ export class AppService {
     kneeQuestions.qx_device = '';
     kneeQuestions.qx_ip_address = '';
     kneeQuestions.qx_started_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
-    kneeQuestions.qx_accessed_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
+    kneeQuestions.qx_accessed_at = hipQuestions.qx_started_at;
     kneeQuestions.qx_accessed_by = this.urlParams.c11;
-    kneeQuestions.qx_completed_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
+    kneeQuestions.qx_completed_at = hipQuestions.qx_started_at;
     kneeQuestions.qx_status = 'COMPLETED';
   }
 
@@ -130,9 +125,9 @@ export class AppService {
     promisQuestions.qx_device = '';
     promisQuestions.qx_ip_address = '';
     promisQuestions.qx_started_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
-    promisQuestions.qx_accessed_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
+    promisQuestions.qx_accessed_at = hipQuestions.qx_started_at;
     promisQuestions.qx_accessed_by = this.urlParams.c11;
-    promisQuestions.qx_completed_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
+    promisQuestions.qx_completed_at = hipQuestions.qx_started_at;
     promisQuestions.qx_status = 'COMPLETED';
   }
 
@@ -146,16 +141,21 @@ export class AppService {
     collaborate.qx_id = '356';
     collaborate.qx_vendor = 'newpro';
     collaborate.qx_os = '';
-    collaborate.qx_browser = '';
+    collaborate.qx_browser = '';0
     collaborate.qx_device = '';
     collaborate.qx_ip_address = '';
-    collaborate.qx_started_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
-    collaborate.qx_accessed_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
+    collaborate.qx_started_at = (this.urlParams.c14) ? this.urlParams.c14 : this.transform();
+    collaborate.qx_accessed_at = hipQuestions.qx_started_at;
     collaborate.qx_accessed_by = this.urlParams.c11;
-    collaborate.qx_completed_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
+    collaborate.qx_completed_at = hipQuestions.qx_started_at;
     collaborate.qx_status = 'COMPLETED';
   }
-
+  transform() {
+    let today = Date.now();
+    var datePipe = new DatePipe("en-US");
+    let value = datePipe.transform(today, 'yyyy-MM-dd HH:mm:ss');
+    return value;
+  }
 
   emit(id: string, options?: any) {
     this
