@@ -12,21 +12,21 @@ export class KneePage1Component implements OnInit {
   @ViewChild('myForm') myForm: any;
   start: boolean = true;
   kneeStiffness: string;
-  scores: any[] = [];
+  options: any [] = ['none','Mild','Moderate','Severe','Extreme'];
+  scores: {} = {
+    none: 1,
+    Mild: 2,
+    Moderate: 3,
+    Severe: 4,
+    Extreme: 5
+  };
  
-  constructor(private router: Router) {
-    this.scores = [
-      { key: 'none', value: 1 },
-      { key: 'Mild', value: 2 },
-      { key: 'Moderate', value: 3 },
-      { key: 'Severe', value: 4 },
-      { key: 'Extreme', value: 5 }
-    ];
+  constructor(private router: Router) {    
 
   }
   ngOnInit() { }
   selectRow(value, val) {
-     this.kneeStiffness = value.key; 
+     this.kneeStiffness = value; 
   }
 
   next() {

@@ -26,8 +26,8 @@
                             <span class="asterisk-red">*</span>  <br/>
                             <div *ngIf="!(start || everydayPhysicalActivities)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
-                        <td class="tdselect"  (click)="selectRow(option,0)" [attr.data-th]= "option.key"  *ngFor="let option of scores; let i = index">
-                            <input type="radio" [id]="'everydayPhysicalActivities' +i" name='DV_Q2' [(ngModel)]="everydayPhysicalActivities" [value]="option.key" required/>
+                        <td class="tdselect"  (click)="selectRow(option,0)" [attr.data-th]= "option"  *ngFor="let option of options; let i = index">
+                            <input type="radio" [id]="'everydayPhysicalActivities' +i" name='DV_Q2' [(ngModel)]="everydayPhysicalActivities" [value]="option" required/>
                          </td>
                         <!-- <td data-th="Completely">
                             <label for="opt001">

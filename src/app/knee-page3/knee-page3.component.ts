@@ -14,17 +14,17 @@ export class KneePage3Component implements OnInit {
   start: boolean = true;
   rising: string;
   bending: string;
-  scores: any[] = [];
-  
+  options: any [] = ['none','Mild','Moderate','Severe','Extreme'];
+  scores: {} = {
+    none: 1,
+    Mild: 2,
+    Moderate: 3,
+    Severe: 4,
+    Extreme: 5
+  };
+ 
 
   constructor(private router : Router, private appService:AppService) {
-    this.scores = [
-      { key: 'none', value: 1 },
-      { key: 'Mild', value: 2 },
-      { key: 'Moderate', value: 3 },
-      { key: 'Severe', value: 4 },
-      { key: 'Extreme', value: 5 }
-    ];
 
   }  
     ngOnInit() {
@@ -59,7 +59,7 @@ export class KneePage3Component implements OnInit {
     next() {
       this.start = false;
       let thisForm = this.myForm.form;
-      thisForm.valid && (
+      thisForm.valid && (this.appService.fillKneeQuestionsTopSec(),
         kneeQuestions.responses[5].answer_text[0] = this.rising
         , kneeQuestions.responses[5].answer_text_score[0] = this.scores[this.rising]
         , kneeQuestions.responses[6].answer_text[0] = this.bending
@@ -75,10 +75,10 @@ export class KneePage3Component implements OnInit {
       switch (val) 
       { 
       case 0: 
-      this.rising = value.key; 
+      this.rising = value; 
         break; 
       case 1: 
-      this.bending = value.key; 
+      this.bending = value; 
         break;
       default:       
       } 

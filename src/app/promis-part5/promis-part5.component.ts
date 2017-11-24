@@ -66,7 +66,7 @@ export class PromisPart5Component implements OnInit {
   next() {
     this.start = false;
     let thisForm = this.myForm.form;
-    thisForm.valid && (
+    thisForm.valid && (this.appService.fillPromisQuestionsTopSec(),
       promisQuestions.responses[9].answer_text[0] = this.pain
       , promisQuestions.responses[9].answer_text_score[0] = this.pain
       //, console.log(promisQuestions.responses)

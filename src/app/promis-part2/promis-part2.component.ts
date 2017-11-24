@@ -11,21 +11,21 @@ export class PromisPart2Component implements OnInit {
   @ViewChild('myForm') myForm: any;
   start: boolean = true;
   everydayPhysicalActivities: string;
-  scores: any[] = []; 
+  options: any [] = ['Completely','Mostly','Moderate','A little','Not at all'];
+  scores: {} = {
+    Completely: 1,
+    Mostly: 2,
+    Moderate: 3,
+    "A little": 4,
+    "Not at all": 5
+  };
+ 
   constructor(private router : Router) {
-    this.scores = [
-      { key: 'Completely', value: 1 },
-      { key: 'Mostly', value: 2 },
-      { key: 'Moderately', value: 3 },
-      { key: 'A little', value: 4 },
-      { key: 'Not at all', value: 5 }
-    ];
   }
   
     ngOnInit() {}
     selectRow(value, val) {
-      if (val == 0) { this.everydayPhysicalActivities = value.key; }
-      else { this.everydayPhysicalActivities = value.key; }
+      this.everydayPhysicalActivities = value; 
     }
   
     next() {

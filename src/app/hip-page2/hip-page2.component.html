@@ -30,8 +30,8 @@
                             <div *ngIf="!(start || rising)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
 
-                        <td class="tdselect" (click)="selectRow(option,0)" [attr.data-th]="option.key" *ngFor="let option of scores; let i = index">
-                            <input type="radio" [id]="i" name='DV_Q2_1' [(ngModel)]="rising" [value]="option.key" required/>
+                        <td class="tdselect" (click)="selectRow(option,0)" [attr.data-th]="option" *ngFor="let option of options; let i = index">
+                            <input type="radio" [id]="i" name='DV_Q2_1' [(ngModel)]="rising" [value]="option" required/>
                         </td>
 
 
@@ -70,8 +70,8 @@
                             <br/>
                             <div *ngIf="!(start || bending)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
-                        <td class="tdselect"  (click)="selectRow(option,1)" [attr.data-th]="option.key" *ngFor="let option of scores; let i = index">
-                            <input type="radio" [id]="'bending_' +i" name='DV_Q2_2' [(ngModel)]="bending" [value]="option.key" required/>
+                        <td class="tdselect"  (click)="selectRow(option,1)" [attr.data-th]="option" *ngFor="let option of options; let i = index">
+                            <input type="radio" [id]="'bending_' +i" name='DV_Q2_2' [(ngModel)]="bending" [value]="option" required/>
                         </td>
 
                         <!-- <td data-th="None">
@@ -107,8 +107,8 @@
                             <br/>
                             <div *ngIf="!(start || lying)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
-                        <td class="tdselect" (click)="selectRow(option,2)" [attr.data-th]= "option.key"  *ngFor="let option of scores; let i = index">
-                            <input type="radio" [id]="'lying_' +i" name='DV_Q2_3' [(ngModel)]="lying" [value]="option.key" required/>
+                        <td class="tdselect" (click)="selectRow(option,2)" [attr.data-th]= "option"  *ngFor="let option of options; let i = index">
+                            <input type="radio" [id]="'lying_' +i" name='DV_Q2_3' [(ngModel)]="lying" [value]="option" required/>
                          </td>
                          
                         <!-- <td data-th="None">
@@ -144,8 +144,8 @@
                             <br/>
                             <div *ngIf="!(start || sitting)" class="checkbox-alert">Please choose at least one option</div>
                         </td>
-                        <td class="tdselect"  (click)="selectRow(option,3)" [attr.data-th]= "option.key"  *ngFor="let option of scores; let i = index">
-                            <input type="radio" [id]="'sitting_' +i" name='DV_Q2_4' [(ngModel)]="sitting" [value]="option.key" required/>
+                        <td class="tdselect"  (click)="selectRow(option,3)" [attr.data-th]= "option"  *ngFor="let option of options; let i = index">
+                            <input type="radio" [id]="'sitting_' +i" name='DV_Q2_4' [(ngModel)]="sitting" [value]="option" required/>
                          </td>
                          
                         <!-- <td data-th="None">

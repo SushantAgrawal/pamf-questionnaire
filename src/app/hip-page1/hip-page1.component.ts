@@ -10,16 +10,16 @@ export class HipPage1Component implements OnInit {
   start: boolean = true;
   stairs: string;
   surface: string;
-  scores: any[] = [];
+  options: any [] = ['none','Mild','Moderate','Severe','Extreme'];
+  scores: {} = {
+    none: 1,
+    Mild: 2,
+    Moderate: 3,
+    Severe: 4,
+    Extreme: 5
+  };
 
-  constructor(private router: Router) {
-    this.scores = [
-      { key: 'none', value: 1 },
-      { key: 'Mild', value: 2 },
-      { key: 'Moderate', value: 3 },
-      { key: 'Severe', value: 4 },
-      { key: 'Extreme', value: 5 }
-    ];
+  constructor(private router: Router) {  
     // this.gender = null;
   }
 
@@ -32,8 +32,8 @@ export class HipPage1Component implements OnInit {
   // hipQuestions     .responses     .find(x => x.qx_code ===
   // event.srcElement.name)     .answer_text_score     .push(score); }
   selectRow(value, val) {
-    if (val == 0) { this.stairs = value.key; }
-    else { this.surface = value.key; }
+    if (val == 0) { this.stairs = value; }
+    else { this.surface = value; }
   }
   next() {
     this.start = false;

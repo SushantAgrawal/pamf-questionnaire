@@ -16,16 +16,16 @@ export class PromisPart1Component implements OnInit {
   mentalHealth: string;
   social: string;
   activities: string;
-  scores: any[] = [];
+  options: any [] = ['Excellent','Very good','Good','Fair','Poor'];
+  scores: {} = {
+    Excellent: 1,
+    "Very good": 2,
+    Good: 3,
+    Fair: 4,
+    Poor: 5
+  };
 
   constructor(private router: Router) {
-    this.scores = [
-      { key: 'Excellent', value: 1 },
-      { key: 'Very good', value: 2 },
-      { key: 'Good', value: 3 },
-      { key: 'Fair', value: 4 },
-      { key: 'Poor', value: 5 }
-    ];
   }
   ngOnInit() { }
 
@@ -33,22 +33,22 @@ export class PromisPart1Component implements OnInit {
 
     switch (val) {
       case 0:
-        this.health = value.key;
+        this.health = value;
         break;
       case 1:
-        this.quality = value.key;
+        this.quality = value;
         break;
       case 2:
-        this.physical = value.key;
+        this.physical = value;
         break;
       case 3:
-        this.mentalHealth = value.key;
+        this.mentalHealth = value;
         break;
       case 4:
-        this.social = value.key;
+        this.social = value;
         break;
       case 5:
-        this.activities = value.key;
+        this.activities = value;
         break;
       default:
     }

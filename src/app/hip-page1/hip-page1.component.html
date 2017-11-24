@@ -26,8 +26,8 @@
                         <span class="asterisk-red">*</span>
                         <div *ngIf="!(start || stairs)" class="checkbox-alert">Please choose at least one option</div>
                     </td>
-                    <td class="tdselect" (click)="selectRow(option,0)" [attr.data-th]= "option.key"  *ngFor="let option of scores; let i = index">
-                        <input type="radio" [id]="i" name='DV_Q1_1' [(ngModel)]="stairs" [value]="option.key" required/>
+                    <td class="tdselect" (click)="selectRow(option,0)" [attr.data-th]= "option"  *ngFor="let option of options; let i = index">
+                        <input type="radio" [id]="i" name='DV_Q1_1' [(ngModel)]="stairs" [value]="option" required/>
                     </td>
                 </tr>
                 <tr>
@@ -36,8 +36,8 @@
                         <span class="asterisk-red">*</span>
                         <div *ngIf="!(start || surface)" class="checkbox-alert">Please choose at least one option</div>
                     </td>
-                    <td class="tdselect" (click)="selectRow(option,1)" [attr.data-th]= "option.key"  *ngFor="let option of scores; let i = index">
-                        <input type="radio" [id]="'surface' + i" name='DV_Q1_2' [(ngModel)]="surface" [value]="option.key" required/>
+                    <td class="tdselect" (click)="selectRow(option,1)" [attr.data-th]= "option"  *ngFor="let option of options; let i = index">
+                        <input type="radio" [id]="'surface' + i" name='DV_Q1_2' [(ngModel)]="surface" [value]="option" required/>
                     </td>
                 </tr>
             </tbody>

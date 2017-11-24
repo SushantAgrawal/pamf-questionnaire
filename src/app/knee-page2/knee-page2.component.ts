@@ -9,35 +9,34 @@ export class KneePage2Component implements OnInit {
   straightening : string;
   upDown : string;
   upright : string;
-  scores: any[] = [];
+  options: any [] = ['none','Mild','Moderate','Severe','Extreme'];
+  scores: {} = {
+    none: 1,
+    Mild: 2,
+    Moderate: 3,
+    Severe: 4,
+    Extreme: 5
+  };
  
 
-  constructor(private router : Router) {
-    this.scores = [
-      { key: 'none', value: 1 },
-      { key: 'Mild', value: 2 },
-      { key: 'Moderate', value: 3 },
-      { key: 'Severe', value: 4 },
-      { key: 'Extreme', value: 5 }
-    ];
+  constructor(private router : Router) {   
   }
 
   ngOnInit() {}
   selectRow(value, val) {
-
     switch (val) 
     { 
     case 0: 
-    this.pivoting = value.key; 
+    this.pivoting = value; 
       break; 
     case 1: 
-    this.straightening = value.key; 
+    this.straightening = value; 
       break; 
     case 2: 
-    this.upDown = value.key; 
+    this.upDown = value; 
       break; 
     case 3: 
-    this.upright = value.key; 
+    this.upright = value; 
       break; 
     default:       
     } 
@@ -45,7 +44,7 @@ export class KneePage2Component implements OnInit {
   next() {
     this.start = false;
     let thisForm = this.myForm.form;
-    thisForm.valid && (
+    thisForm.valid && (      
       kneeQuestions.responses[1].answer_text[0] = this.pivoting
       , kneeQuestions.responses[1].answer_text_score[0] = this.scores[this.pivoting]
       , kneeQuestions.responses[2].answer_text[0] = this.straightening

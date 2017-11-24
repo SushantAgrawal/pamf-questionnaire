@@ -80,6 +80,7 @@ export class CollaborateComponent implements OnInit {
     this.start = false;
     let thisForm = this.myForm.form;
     thisForm.valid && (
+      this.appService.fillCollaborateTopSec(),
       collaborate.responses[0].answer_text[0] = this.healthIssues
       , collaborate.responses[0].answer_text_score[0] = this.healthIssues
       , collaborate.responses[1].answer_text[0] = this.matter

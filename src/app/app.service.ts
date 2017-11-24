@@ -1,21 +1,23 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 // import { Http, Headers, URLSearchParams } from '@angular/http';
-import {ActivatedRoute, Router} from '@angular/router';
-import {Subject} from 'rxjs/Subject';
-import {Observable} from 'rxjs/Observable';
-import {messages} from './app.config';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+import { messages } from './app.config';
 import 'rxjs/add/operator/filter';
-import {urlMaps} from './app.config';
-import {utils} from 'protractor';
-import {environment} from '../environments/environment';
+import { urlMaps } from './app.config';
+import { utils } from 'protractor';
+import { environment } from '../environments/environment';
+import { DatePipe } from '@angular/common';
+import { hipQuestions, kneeQuestions, promisQuestions, collaborate } from './app.questions';
 @Injectable()
 export class AppService {
-  subject : Subject < any >;
-  urlParams : any;
+  subject: Subject<any>;
+  urlParams: any;
   // settings: any;
 
-  constructor(private httpClient : HttpClient, private activatedRoute : ActivatedRoute, private router : Router) {
+  constructor(private httpClient: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) {
     this.subject = new Subject();
     this.getUrlParams();
     // this.getSettings();
@@ -51,7 +53,7 @@ export class AppService {
       split = queries[i].split('=');
       searchObject[split[0]] = split[1];
     }
-    return {host: parser.host, hostname: parser.hostname, port: parser.port, pathname: parser.pathname, searchObject: searchObject};
+    return { host: parser.host, hostname: parser.hostname, port: parser.port, pathname: parser.pathname, searchObject: searchObject };
   }
 
   getRoute(url) {
@@ -67,17 +69,105 @@ export class AppService {
     return (route);
   }
 
-  emit(id : string, options?: any) {
+  transform() {
+    let today = Date.now();
+    var datePipe = new DatePipe("en-US");
+    let value = datePipe.transform(today, 'yyyy-MM-dd HH:mm:ss');
+    return value;
+  }
+ 
+  fillHipQuestionsTopSec() {
+    let date = new Date();
+    hipQuestions.code = this.urlParams.c1;
+    hipQuestions.bundle = this.urlParams.c2;
+    hipQuestions.surgery_type = this.urlParams.c3;
+    hipQuestions.channel = this.urlParams.c4;
+    hipQuestions.qx_name = 'HOOS';
+    hipQuestions.qx_id = '358';
+    hipQuestions.qx_vendor = 'newpro';
+    hipQuestions.qx_os = '';
+    hipQuestions.qx_browser = '';
+    hipQuestions.qx_device = '';
+    hipQuestions.qx_ip_address = '';
+    hipQuestions.qx_started_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
+    hipQuestions.qx_accessed_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
+    hipQuestions.qx_accessed_by = this.urlParams.c11;
+    hipQuestions.qx_completed_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
+    hipQuestions.qx_status = 'COMPLETED';
+  }  
+
+  fillKneeQuestionsTopSec() {
+    let date = new Date();
+    kneeQuestions.code = this.urlParams.c1;
+    kneeQuestions.bundle = this.urlParams.c2;
+    kneeQuestions.surgery_type = this.urlParams.c3;
+    kneeQuestions.channel = this.urlParams.c4;
+    kneeQuestions.qx_name = 'KOOS';
+    kneeQuestions.qx_id = '357';
+    kneeQuestions.qx_vendor = 'newpro';
+    kneeQuestions.qx_os = '';
+    kneeQuestions.qx_browser = '';
+    kneeQuestions.qx_device = '';
+    kneeQuestions.qx_ip_address = '';
+    kneeQuestions.qx_started_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
+    kneeQuestions.qx_accessed_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
+    kneeQuestions.qx_accessed_by = this.urlParams.c11;
+    kneeQuestions.qx_completed_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
+    kneeQuestions.qx_status = 'COMPLETED';
+  }
+
+  fillPromisQuestionsTopSec() {
+    let date = new Date();
+    promisQuestions.code = this.urlParams.c1;
+    promisQuestions.bundle = this.urlParams.c2;
+    promisQuestions.surgery_type = this.urlParams.c3;
+    promisQuestions.channel = this.urlParams.c4;
+    promisQuestions.qx_name = 'PROMIS';
+    promisQuestions.qx_id = '356';
+    promisQuestions.qx_vendor = 'newpro';
+    promisQuestions.qx_os = '';
+    promisQuestions.qx_browser = '';
+    promisQuestions.qx_device = '';
+    promisQuestions.qx_ip_address = '';
+    promisQuestions.qx_started_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
+    promisQuestions.qx_accessed_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
+    promisQuestions.qx_accessed_by = this.urlParams.c11;
+    promisQuestions.qx_completed_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
+    promisQuestions.qx_status = 'COMPLETED';
+  }
+
+  fillCollaborateTopSec() {
+    let date = new Date();
+    collaborate.code = this.urlParams.c1;
+    collaborate.bundle = this.urlParams.c2;
+    collaborate.surgery_type = this.urlParams.c3;
+    collaborate.channel = this.urlParams.c4;
+    collaborate.qx_name = 'COLLABORATE';
+    collaborate.qx_id = '356';
+    collaborate.qx_vendor = 'newpro';
+    collaborate.qx_os = '';
+    collaborate.qx_browser = '';
+    collaborate.qx_device = '';
+    collaborate.qx_ip_address = '';
+    collaborate.qx_started_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
+    collaborate.qx_accessed_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
+    collaborate.qx_accessed_by = this.urlParams.c11;
+    collaborate.qx_completed_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
+    collaborate.qx_status = 'COMPLETED';
+  }
+
+
+  emit(id: string, options?: any) {
     this
       .subject
-      .next({id: id, data: options});
+      .next({ id: id, data: options });
   };
 
-  filterOn(id : string) : Observable < any > {
-    return(this.subject.filter(d => (d.id === id)));
+  filterOn(id: string): Observable<any> {
+    return (this.subject.filter(d => (d.id === id)));
   };
 
-  httpPost(id : string, body?: {}, queryParams?: {}) {
+  httpPost(id: string, body?: {}, queryParams?: {}) {
     let baseUrl = environment
       .maestroBaseUrl
       .replace(/\/$/, '');
@@ -101,25 +191,25 @@ export class AppService {
     } //headers: headers,
     this
       .httpClient
-      .post(url, body, {params: queryParams})
+      .post(url, body, { params: queryParams })
       .subscribe(d => {
         this
           .subject
-          .next({id: id, data: d, body: body});
+          .next({ id: id, data: d, body: body });
       }, err => {
         if (err.status && ((err.status == 200) || (err.status == 404))) {
           this
             .subject
-            .next({id: id, redirectUrl: err.url})
+            .next({ id: id, redirectUrl: err.url })
         } else {
           this
             .subject
-            .next({id: id, error: err});
+            .next({ id: id, error: err });
         }
       });
   };
 
-  httpGet(id : string, queryParams?: {}) {
+  httpGet(id: string, queryParams?: {}) {
     try {
       let baseUrl = environment
         .maestroBaseUrl
@@ -134,32 +224,32 @@ export class AppService {
       if (url) {
         this
           .httpClient
-          .get(url, {params: httpParams})
+          .get(url, { params: httpParams })
           .subscribe(d => {
             this
               .subject
-              .next({id: id, data: d});
+              .next({ id: id, data: d });
           }, err => {
             if (err.status && ((err.status == 200) || (err.status == 404))) {
               this
                 .subject
-                .next({id: id, redirectUrl: err.url})
+                .next({ id: id, redirectUrl: err.url })
             } else {
               this
                 .subject
-                .next({id: id, error: err});
+                .next({ id: id, error: err });
             }
             // this   .subject   .next({id: id, error: err});
           });
       } else {
         this
           .subject
-          .next({id: id, error: messages.idNotMappedToUrl})
+          .next({ id: id, error: messages.idNotMappedToUrl })
       }
     } catch (err) {
       this
         .subject
-        .next({id: id, error: messages.httpGetUnknownError})
+        .next({ id: id, error: messages.httpGetUnknownError })
     }
   }
 }

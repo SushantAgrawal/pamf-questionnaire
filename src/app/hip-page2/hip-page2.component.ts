@@ -15,18 +15,24 @@ export class HipPage2Component implements OnInit {
   bending: string;
   lying: string;
   sitting: string;
-  scores: any[] = [];
-  
+  options: any [] = ['none','Mild','Moderate','Severe','Extreme'];
+  scores: {} = {
+    none: 1,
+    Mild: 2,
+    Moderate: 3,
+    Severe: 4,
+    Extreme: 5
+  };
  
   subscriptions: any;
   constructor(private router: Router, public appService: AppService) { 
-    this.scores = [
-      { key: 'none', value: 1 },
-      { key: 'Mild', value: 2 },
-      { key: 'Moderate', value: 3 },
-      { key: 'Severe', value: 4 },
-      { key: 'Extreme', value: 5 }
-    ];
+    // this.options = [
+    //   { key: 'none', value: 1 },
+    //   { key: 'Mild', value: 2 },
+    //   { key: 'Moderate', value: 3 },
+    //   { key: 'Severe', value: 4 },
+    //   { key: 'Extreme', value: 5 }
+    // ];
   }
 
   ngOnInit() {
@@ -64,16 +70,16 @@ export class HipPage2Component implements OnInit {
     switch (val) 
     { 
     case 0: 
-    this.rising = value.key; 
+    this.rising = value; 
       break; 
     case 1: 
-    this.bending = value.key; 
+    this.bending = value; 
       break; 
     case 2: 
-    this.lying = value.key; 
+    this.lying = value; 
       break; 
     case 3: 
-    this.sitting = value.key; 
+    this.sitting = value; 
       break; 
     default:       
     } 
@@ -83,6 +89,7 @@ export class HipPage2Component implements OnInit {
     this.start = false;
     let thisForm = this.myForm.form;
     thisForm.valid && (
+      this.appService.fillHipQuestionsTopSec(),
       hipQuestions.responses[2].answer_text[0] = this.rising
       , hipQuestions.responses[2].answer_text_score[0] = this.scores[this.rising]
       , hipQuestions.responses[3].answer_text[0] = this.bending

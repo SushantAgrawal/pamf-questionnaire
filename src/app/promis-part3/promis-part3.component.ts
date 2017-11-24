@@ -11,23 +11,23 @@ import { promisQuestions } from '../app.questions';
 export class PromisPart3Component implements OnInit {
   @ViewChild('myForm') myForm: any;
   start: boolean = true;
-  emotionalProblems: string;
-  scores: any[] = [];
-
+  emotionalProblems: string; 
+  options: any [] = ['Never','Rarely','Sometimes','Often','Always'];
+  scores: {} = {
+    Never: 1,
+    Rarely: 2,
+    Sometimes: 3,
+    Often: 4,
+    Always: 5
+  };
+ 
 
   constructor(private router: Router) {
-    this.scores = [
-      { key: 'Never', value: 1 },
-      { key: 'Rarely', value: 2 },
-      { key: 'Sometimes', value: 3 },
-      { key: 'Often', value: 4 },
-      { key: 'Always', value: 5 }
-    ];
   }
 
   ngOnInit() { }
   selectRow(value, val) {
-    this.emotionalProblems = value.key;
+    this.emotionalProblems = value;
   }
 
     next() {
