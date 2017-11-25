@@ -43,7 +43,7 @@ export class HipPage1Component implements OnInit {
       , hipQuestions.responses[0].answer_text_score[0] = this.scores[this.stairs]
       , hipQuestions.responses[1].answer_text[0] = this.surface
       , hipQuestions.responses[1].answer_text_score[0] = this.scores[this.surface]
-      , this.router.navigate(['hipPage2'])
+      , this.router.navigate(['hipPage2'], { queryParamsHandling: "merge"})
     );
   }
 }

@@ -98,5 +98,4 @@ export class HipPage2Component implements OnInit {
       .subscriptions
       .unsubscribe();
   }
-
 }

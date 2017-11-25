@@ -54,6 +54,6 @@ export class KneePage2Component implements OnInit {
       , kneeQuestions.responses[4].answer_text[0] = this.upright
       , kneeQuestions.responses[4].answer_text_score[0] = this.scores[this.upright]
       // , console.log(kneeQuestions.responses)
-      , this.router.navigate(['kneePage3']));
+      , this.router.navigate(['kneePage3'], { queryParamsHandling: "merge"}));
   }
 }

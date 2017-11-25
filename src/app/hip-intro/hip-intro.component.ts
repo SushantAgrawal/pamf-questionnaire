@@ -11,6 +11,6 @@ export class HipIntroComponent implements OnInit {
   next() {
     this
       .router
-      .navigate(['hipPage1'])
+      .navigate(['hipPage1'], { queryParamsHandling: "merge"})
   }
 }

@@ -39,7 +39,7 @@ export class PromisPart3Component implements OnInit {
         // ,console.log(promisQuestions.responses)
         , this
           .router
-          .navigate(['promisPart4'])
+          .navigate(['promisPart4'], { queryParamsHandling: "merge"})
       );
     }
 

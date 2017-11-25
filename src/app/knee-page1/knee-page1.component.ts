@@ -37,7 +37,7 @@ export class KneePage1Component implements OnInit {
       , kneeQuestions.responses[0].answer_text_score[0] = this.scores[this.kneeStiffness]
       , this
         .router
-        .navigate(['kneePage2'])
+        .navigate(['kneePage2'], { queryParamsHandling: "merge"})
     );
 
   }

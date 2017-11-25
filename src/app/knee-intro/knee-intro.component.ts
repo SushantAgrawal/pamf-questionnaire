@@ -15,7 +15,7 @@ export class KneeIntroComponent implements OnInit {
     next() {
       this
         .router
-        .navigate(['kneePage1'])
+        .navigate(['kneePage1'], { queryParamsHandling: "merge"})
     }
 
 }
