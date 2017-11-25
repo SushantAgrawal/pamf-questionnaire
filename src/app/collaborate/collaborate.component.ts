@@ -56,7 +56,6 @@ export class CollaborateComponent implements OnInit {
                 accessed_by: this.appService.urlParams['c11'],
                 complete_date: this.appService.urlParams['c14']
               });
-            console.log(d.data);
           })()
       });
     let sub1 = this
@@ -99,7 +98,7 @@ export class CollaborateComponent implements OnInit {
   next() {
     this.start = false;
     let thisForm = this.myForm.form;
-    thisForm.valid && (collaborate.responses[0].answer_text[0] = this.healthIssues, collaborate.responses[0].answer_text_score[0] = this.healthIssues, collaborate.responses[1].answer_text[0] = this.matter, collaborate.responses[1].answer_text_score[0] = this.matter, collaborate.responses[2].answer_text[0] = this.choosingNext, collaborate.responses[2].answer_text_score[0] = this.choosingNext, console.log(collaborate.responses), this.appService.httpPost('collaborate:submit', collaborate));
+    thisForm.valid && (this.appService.fillCollaborateTopSec(),collaborate.responses[0].answer_text[0] = this.healthIssues, collaborate.responses[0].answer_text_score[0] = this.healthIssues, collaborate.responses[1].answer_text[0] = this.matter, collaborate.responses[1].answer_text_score[0] = this.matter, collaborate.responses[2].answer_text[0] = this.choosingNext, collaborate.responses[2].answer_text_score[0] = this.choosingNext, console.log(collaborate.responses), this.appService.httpPost('collaborate:submit', collaborate));
 
   }
 
