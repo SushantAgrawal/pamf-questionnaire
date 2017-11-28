@@ -36,7 +36,7 @@ export class PromisPart4Component implements OnInit {
     thisForm.valid && (
       promisQuestions.responses[8].answer_text[0] = this.fatigue
       , promisQuestions.responses[8].answer_text_score[0] = this.scores[this.fatigue]
-      , console.log(promisQuestions.responses)
+
       , this
         .router
         .navigate(['promisPart5'], { queryParamsHandling: "merge"})
