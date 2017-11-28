@@ -29,7 +29,7 @@ export const urlMaps = {
     "pamf:knee:replacement:pro3:url":"http://www.sutterhealth.org/orthopedics/knee/preparing-for-knee-replacement.html",
     "pamf:knee:replacement:pro4:url":"http://www.sutterhealth.org/orthopedics/knee/recovery-from-knee-replacement.html",
     "pamf:hip:replacement:website:url":"http://www.sutterhealth.org/orthopedics/hip/index.html",
-    "pamf:knee:replacement;website:url":"http://www.sutterhealth.org/orthopedics/knee/index.html",
+    "pamf:knee:replacement:website:url":"http://www.sutterhealth.org/orthopedics/knee/index.html",
     "pamf:hip:replacement:pro1:url":"http://www.sutterhealth.org/orthopedics/joint-replacement/when-to-have-joint-replacement.html",
     "pamf:hip:replacement:pro2:url":"http://www.sutterhealth.org/orthopedics/hip/hip-replacement-procedure.html",
     "pamf:hip:replacement:pro3:url":"http://www.sutterhealth.org/orthopedics/hip/preparing-for-hip-replacement.html",
