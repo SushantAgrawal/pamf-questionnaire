@@ -28,7 +28,6 @@ app.get('/:page', function (req, res) {
 // })
 app.get('/pamf/:page',(req,res)=>{
     res.sendFile(path.join(__publicFolder + '/index.html'));
-    // res.json({"redirect":true});
 })
 // Allow for Jenkins smoke test
 app.get('/test', function (req, res) {
