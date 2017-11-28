@@ -11,7 +11,7 @@ import { urlMaps } from '../app.config';
 export class ThankYouKneeComponent implements OnInit {
   webSite:any;
   constructor(public appService:AppService) {
-    this.webSite= urlMaps['pamf:knee:replacement;website:url'];
+    this.webSite= urlMaps['pamf:knee:replacement:website:url'];
    }
 
   ngOnInit() {
