@@ -23,49 +23,7 @@
                 <label [attr.class]="option.css">{{option.value}}</label>
                 <span class="txt-count" [attr.for]="'healthIssues' +i">{{option.key}}</span>
                 <input type="radio" [id]="'healthIssues' +i" name='DV_Q1_1' [(ngModel)]="healthIssues" [value]="option.key" required/>
-            </div>
-            <!-- <div class="num-box">
-                <label class="node1">No effort was made</label>
-                <span>0</span>
-                <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="0" required />
-            </div>
-            <div class="num-box">
-                <span>1</span>
-                <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="1" />
-            </div>
-            <div class="num-box">
-                <span>2</span>
-                <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="2" />
-            </div>
-            <div class="num-box">
-                <span>3</span>
-                <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="3" />
-            </div>
-            <div class="num-box">
-                <span>4</span>
-                <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="4" />
-            </div>
-            <div class="num-box">
-                <span>5</span>
-                <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="5" />
-            </div>
-            <div class="num-box">
-                <span>6</span>
-                <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="6" />
-            </div>
-            <div class="num-box">
-                <span>7</span>
-                <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="7" />
-            </div>
-            <div class="num-box">
-                <span>8</span>
-                <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="8" />
-            </div>
-            <div class="num-box">
-                <label class="node-last">Every effort was made</label>
-                <span>9</span>
-                <input type="radio" name="DV_Q1_1" [(ngModel)]="healthIssues" value="9" />
-            </div> -->
+            </div>            
         </div>
         <div *ngIf="!(start || healthIssues)" class="checkbox-alert" style="margin-bottom:40px;">Please choose at least one option</div>
 
@@ -80,49 +38,7 @@
                     <label [attr.class]="option.css" >{{option.value}}</label>
                 <span class="txt-count" [attr.for]="'matter' +i">{{option.key}}</span>
                 <input type="radio" [id]="'matter' +i" name='DV_Q1_2' [(ngModel)]="matter" [value]="option.key" required/>
-            </div>
-            <!-- <div class="num-box">
-                <label class="node1">No effort was made</label>
-                <span>0</span>
-                <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="0" />
-            </div>
-            <div class="num-box">
-                <span>1</span>
-                <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="1" />
-            </div>
-            <div class="num-box">
-                <span>2</span>
-                <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="2" />
-            </div>
-            <div class="num-box">
-                <span>3</span>
-                <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="3" />
-            </div>
-            <div class="num-box">
-                <span>4</span>
-                <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="4" />
-            </div>
-            <div class="num-box">
-                <span>5</span>
-                <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="5" />
-            </div>
-            <div class="num-box">
-                <span>6</span>
-                <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="6" />
-            </div>
-            <div class="num-box">
-                <span>7</span>
-                <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="7" />
-            </div>
-            <div class="num-box">
-                <span>8</span>
-                <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="8" />
-            </div>
-            <div class="num-box">
-                <label class="node-last">Every effort was made</label>
-                <span>9</span>
-                <input type="radio" name="DV_Q1_2" [(ngModel)]="matter" value="9" />
-            </div> -->
+            </div>            
         </div>
         <div *ngIf="!(start || matter)" class="checkbox-alert" style="margin-bottom:40px;">Please choose at least one option</div>
 
@@ -135,53 +51,11 @@
                     <label [attr.class]="option.css" >{{option.value}}</label>
                 <span class="txt-count" [attr.for]="'choosingNext' +i">{{option.key}}</span>
                 <input type="radio" [id]="'choosingNext' +i" name='DV_Q1_3' [(ngModel)]="choosingNext" [value]="option.key" required/>
-            </div>
-            <!-- <div class="num-box">
-                <label class="node1">No effort was made</label>
-                <span>0</span>
-                <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="0" />
-            </div>
-            <div class="num-box">
-                <span>1</span>
-                <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="1" />
-            </div>
-            <div class="num-box">
-                <span>2</span>
-                <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="2" />
-            </div>
-            <div class="num-box">
-                <span>3</span>
-                <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="3" />
-            </div>
-            <div class="num-box">
-                <span>4</span>
-                <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="4" />
-            </div>
-            <div class="num-box">
-                <span>5</span>
-                <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="5" />
-            </div>
-            <div class="num-box">
-                <span>6</span>
-                <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="6" />
-            </div>
-            <div class="num-box">
-                <span>7</span>
-                <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="7" />
-            </div>
-            <div class="num-box">
-                <span>8</span>
-                <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="8" />
-            </div>
-            <div class="num-box">
-                <label class="node-last">Every effort was made</label>
-                <span>9</span>
-                <input type="radio" name="DV_Q1_3" [(ngModel)]="choosingNext" value="8" />
-            </div> -->
+            </div>            
         </div>
         <div *ngIf="!(start || choosingNext)" class="checkbox-alert" style="margin-bottom:40px;">Please choose at least one option</div>
         <div class="btnContainer">
-            <button class="btn-right" (click)="next()">Next</button>
+            <button class="btn-right" type="button" (click)="next()">Next</button>
         </div>
     </form>
 

@@ -10,72 +10,18 @@
     <div class="review-bar">
       <div class="ast-box" >
         <span class="asterisk-red">*</span>
-        <!--        -->
       </div>
 
       <div class="num-box" *ngFor="let option of scores; let i = index" (click)="selectRow(option.key)">
           <label class="node1" [attr.class]="option.css">{{option.value}}</label>
         <span class="txt-count" [attr.for]="'pain' +i">{{option.key}}</span>
         <input type="radio" [id]="'pain' +i" name='DV_Q1_1' [(ngModel)]="pain" [value]="option.key" required/>
-      </div>
-
-      <!-- <div class="num-box">
-        <label class="node1">No Pain</label>
-        <span for="opt001">0</span>
-        <input type="radio" id="opt001" name="DV_Q5"  [(ngModel)]="pain" value="0" required />
-      </div>
-
-      <div class="num-box">
-        <label class="node1">No Pain</label>
-        <span for="opt001">0</span>
-        <input type="radio" id="opt001" name="DV_Q5"  [(ngModel)]="pain" value="0" required />
-      </div>
-      <div class="num-box">
-        <span>1</span>
-        <input type="radio" name="DV_Q5"  [(ngModel)]="pain" value="1"  />
-      </div>
-      <div class="num-box">
-        <span>2</span>
-        <input type="radio" name="DV_Q5"  [(ngModel)]="pain" value="2"  />
-      </div>
-      <div class="num-box">
-        <span>3</span>
-        <input type="radio" name="DV_Q5"  [(ngModel)]="pain" value="3" />
-      </div>
-      <div class="num-box">
-        <span>4</span>
-        <input type="radio" name="DV_Q5"  [(ngModel)]="pain" value="4" />
-      </div>
-      <div class="num-box">
-        <span>5</span>
-        <input type="radio" name="DV_Q5"  [(ngModel)]="pain" value="5"  />
-      </div>
-      <div class="num-box">
-        <span>6</span>
-        <input type="radio" name="DV_Q5"  [(ngModel)]="pain" value="6"  />
-      </div>
-      <div class="num-box">
-        <span>7</span>
-        <input type="radio" name="DV_Q5" [(ngModel)]="pain" value="7" />
-      </div>
-      <div class="num-box">
-        <span>8</span>
-        <input type="radio" name="DV_Q5" [(ngModel)]="pain" value="8" />
-      </div>
-      <div class="num-box">
-        <span>9</span>
-        <input type="radio" name="DV_Q5" [(ngModel)]="pain" value="9" />
-      </div>
-      <div class="num-box">
-        <label class="node-last">Worst Imaginable Pain</label>
-        <span>10</span>
-        <input type="radio" name="DV_Q5" [(ngModel)]="pain" value="10" />
-      </div>-->
+      </div>     
     </div>
     <div *ngIf="!(start || pain)" class="checkbox-alert">Please choose at least one option </div>
 
     <div class="btnContainer">
-      <button class="btn-right" (click)="next()">Next</button>
+      <button type="button" class="btn-right" (click)="next()">Next</button>
     </div>
   </form>
 

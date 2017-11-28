@@ -70,7 +70,6 @@ export class PromisPart1Component implements OnInit {
       , promisQuestions.responses[4].answer_text_score[0] = this.scores[this.social]
       , promisQuestions.responses[5].answer_text[0] = this.activities
       , promisQuestions.responses[5].answer_text_score[0] = this.scores[this.activities]
-      , console.log(promisQuestions.responses)
       , this
         .router
         .navigate(['promisPart2'], { queryParamsHandling: "merge"})

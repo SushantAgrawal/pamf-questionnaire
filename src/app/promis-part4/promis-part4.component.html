@@ -28,39 +28,14 @@
                         </td>
                         <td class="tdselect"  (click)="selectRow(option,0)" [attr.data-th]= "option"  *ngFor="let option of options; let i = index">
                             <input type="radio" [id]="'fatigue' +i" name='DV_Q4' [(ngModel)]="fatigue" [value]="option" required/>
-                         </td>
-                        <!-- <td data-th="None">
-                            <label for="opt001">
-                                <input type="radio" id="opt001" name='DV_Q4'  [(ngModel)]="fatigue" value="None" required>
-                            </label>
-                        </td>
-                        <td data-th="Mild">
-                            <label for="opt002">
-                                <input type="radio" id="opt002" name='DV_Q4'  [(ngModel)]="fatigue" value="Mild" >
-                            </label>
-                        </td>
-                        <td data-th="Moderate">
-                            <label for="opt003">
-                                <input type="radio" id="opt003" name='DV_Q4'  [(ngModel)]="fatigue" value="Moderate" >
-                            </label>
-                        </td>
-                        <td data-th="Severe">
-                            <label for="opt004">
-                                <input type="radio" id="opt004" name='DV_Q4'  [(ngModel)]="fatigue" value="Severe" >
-                            </label>
-                        </td>
-                        <td data-th="Very Severe">
-                            <label for="opt005">
-                                <input type="radio" id="opt005" name='DV_Q4'  [(ngModel)]="fatigue" value="Very Severe" >
-                            </label>
-                        </td> -->
+                         </td>                       
                     </tr>
 
                 </tbody>
             </table>
         </div>
         <div class="btnContainer">
-            <button class="btn-right" (click)="next()">Next</button>
+            <button type="button" class="btn-right" (click)="next()">Next</button>
         </div>
     </form>
 

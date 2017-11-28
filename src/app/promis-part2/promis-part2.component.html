@@ -28,38 +28,13 @@
                         </td>
                         <td class="tdselect"  (click)="selectRow(option,0)" [attr.data-th]= "option"  *ngFor="let option of options; let i = index">
                             <input type="radio" [id]="'everydayPhysicalActivities' +i" name='DV_Q2' [(ngModel)]="everydayPhysicalActivities" [value]="option" required/>
-                         </td>
-                        <!-- <td data-th="Completely">
-                            <label for="opt001">
-                                <input type="radio" id="opt001" name='DV_Q2'  [(ngModel)]="everydayPhysicalActivities" value="Completely" required>
-                            </label>
-                        </td>
-                        <td data-th="Mostly">
-                            <label for="opt002">
-                                <input type="radio" id="opt002" name='DV_Q2'  [(ngModel)]="everydayPhysicalActivities" value="Mostly" required>
-                            </label>
-                        </td>
-                        <td data-th="Moderately">
-                            <label for="opt003">
-                                <input type="radio" id="opt003" name='DV_Q2' [(ngModel)]="everydayPhysicalActivities" value="Moderately">
-                            </label>
-                        </td>
-                        <td data-th="A little">
-                            <label for="opt004">
-                                <input type="radio" id="opt004" name='DV_Q2' [(ngModel)]="everydayPhysicalActivities" value="A little">
-                            </label>
-                        </td>
-                        <td data-th="Not at all">
-                            <label for="opt005">
-                                <input type="radio" id="opt005" name='DV_Q2' [(ngModel)]="everydayPhysicalActivities" value="Not at all">
-                            </label>
-                        </td> -->
+                         </td>                        
                     </tr>
                 </tbody>
             </table>
         </div>
         <div class="btnContainer">
-            <button class="btn-right" (click)="next()">Next</button>
+            <button type="button" class="btn-right" (click)="next()">Next</button>
         </div>
     </form>
 </div>

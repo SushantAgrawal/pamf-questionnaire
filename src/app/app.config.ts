@@ -33,7 +33,7 @@ export const urlMaps = {
     "pamf:hip:replacement:pro1:url":"http://www.sutterhealth.org/orthopedics/joint-replacement/when-to-have-joint-replacement.html",
     "pamf:hip:replacement:pro2:url":"http://www.sutterhealth.org/orthopedics/hip/hip-replacement-procedure.html",
     "pamf:hip:replacement:pro3:url":"http://www.sutterhealth.org/orthopedics/hip/preparing-for-hip-replacement.html",
-    "pamf:hip:replacement:tpro4:url":"http://www.sutterhealth.org/orthopedics/hip/recovery-from-hip-replacement.html",
+    "pamf:hip:replacement:pro4:url":"http://www.sutterhealth.org/orthopedics/hip/recovery-from-hip-replacement.html",
 }
 
 

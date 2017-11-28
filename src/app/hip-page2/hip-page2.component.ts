@@ -1,17 +1,17 @@
-import {Component, OnInit, ViewEncapsulation, ViewChild, ElementRef} from '@angular/core';
-import {Router} from '@angular/router';
-import {hipQuestions} from '../app.questions';
-import {AppService} from '../app.service';
-@Component({selector: 'app-hip-page2', templateUrl: './hip-page2.component.html', styleUrls: ['./hip-page2.component.scss'], encapsulation: ViewEncapsulation.None})
+import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
+import { hipQuestions } from '../app.questions';
+import { AppService } from '../app.service';
+@Component({ selector: 'app-hip-page2', templateUrl: './hip-page2.component.html', styleUrls: ['./hip-page2.component.scss'], encapsulation: ViewEncapsulation.None })
 export class HipPage2Component implements OnInit {
-  @ViewChild('myForm')myForm : any;
-  start : boolean = true;
-  rising : string;
-  bending : string;
-  lying : string;
-  sitting : string;
-  options : any[] = ['none', 'Mild', 'Moderate', 'Severe', 'Extreme'];
-  scores : {} = {
+  @ViewChild('myForm') myForm: any;
+  start: boolean = true;
+  rising: string;
+  bending: string;
+  lying: string;
+  sitting: string;
+  options: any[] = ['none', 'Mild', 'Moderate', 'Severe', 'Extreme'];
+  scores: {} = {
     none: 1,
     Mild: 2,
     Moderate: 3,
@@ -19,8 +19,8 @@ export class HipPage2Component implements OnInit {
     Extreme: 5
   };
 
-  subscriptions : any;
-  constructor(private router : Router, public appService : AppService) {}
+  subscriptions: any;
+  constructor(private router: Router, public appService: AppService) { }
 
   ngOnInit() {
     this.subscriptions = this
@@ -55,7 +55,7 @@ export class HipPage2Component implements OnInit {
               .getRoute(redirectUrl);
             this
               .router
-              .navigate([route], {queryParamsHandling: "merge"});
+              .navigate([route], { queryParamsHandling: "merge" });
           })()
       });
     this
@@ -83,9 +83,7 @@ export class HipPage2Component implements OnInit {
   next() {
     this.start = false;
     let thisForm = this.myForm.form;
-    thisForm.valid && (
-      console.log('abcd')
-      , this.appService.fillHipQuestionsTopSec()
+    thisForm.valid && (this.appService.fillHipQuestionsTopSec()
       , hipQuestions.responses[2].answer_text[0] = this.rising
       , hipQuestions.responses[2].answer_text_score[0] = this.scores[this.rising]
       , hipQuestions.responses[3].answer_text[0] = this.bending
