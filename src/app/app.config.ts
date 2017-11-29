@@ -14,7 +14,7 @@ export const urlMaps = {
     "knee:page3:redirect": "load-questionnaire",
     "promis:part5:submit": "submit-questionnaire",
     "promis:part5:redirect": "load-questionnaire",
-    "knee:landing:next": "load-questionnaire-knee",
+    "knee:landing:next": "load-questionnaire",
     "ineligible:next": "login",
     "unsubscribe:next": "opt-out",
     "do:not:unsubscribe": "http://www.pamf.org",

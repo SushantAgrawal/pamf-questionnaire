@@ -1,35 +1,35 @@
-import {Routes} from '@angular/router';
-import {LetterLandingComponent} from './letter-landing/letter-landing.component';
-import {HipLandingComponent} from './hip-landing/hip-landing.component';
-import {IncorrectTjrComponent} from './incorrect-tjr/incorrect-tjr.component';
-import {HipIntroComponent} from './hip-intro/hip-intro.component';
-import {HipPage1Component} from './hip-page1/hip-page1.component';
-import {HipPage2Component} from './hip-page2/hip-page2.component';
-import {KneeIntroComponent} from './knee-intro/knee-intro.component';
-import {KneeLandingComponent} from './knee-landing/knee-landing.component';
-import {KneePage1Component} from './knee-page1/knee-page1.component';
-import {KneePage2Component} from './knee-page2/knee-page2.component';
-import {KneePage3Component} from './knee-page3/knee-page3.component';
-import {PromisPart1Component} from './promis-part1/promis-part1.component';
-import {PromisPart2Component} from './promis-part2/promis-part2.component';
-import {PromisPart3Component} from './promis-part3/promis-part3.component';
-import {PromisPart4Component} from './promis-part4/promis-part4.component';
-import {PromisPart5Component} from './promis-part5/promis-part5.component';
-import {ThankYouHipComponent} from './thank-you-hip/thank-you-hip.component';
-import {ThankYouKneeComponent} from './thank-you-knee/thank-you-knee.component';
-import {UnsubscribeComponent} from './unsubscribe/unsubscribe.component';
-import {UnsubscribeThankYouComponent} from './unsubscribe-thank-you/unsubscribe-thank-you.component';
-import {IneligibleComponent} from './ineligible/ineligible.component';
-import {CollaborateComponent} from './collaborate/collaborate.component';
+import { Routes } from '@angular/router';
+import { LetterLandingComponent } from './letter-landing/letter-landing.component';
+import { HipLandingComponent } from './hip-landing/hip-landing.component';
+import { IncorrectTjrComponent } from './incorrect-tjr/incorrect-tjr.component';
+import { HipIntroComponent } from './hip-intro/hip-intro.component';
+import { HipPage1Component } from './hip-page1/hip-page1.component';
+import { HipPage2Component } from './hip-page2/hip-page2.component';
+import { KneeIntroComponent } from './knee-intro/knee-intro.component';
+import { KneeLandingComponent } from './knee-landing/knee-landing.component';
+import { KneePage1Component } from './knee-page1/knee-page1.component';
+import { KneePage2Component } from './knee-page2/knee-page2.component';
+import { KneePage3Component } from './knee-page3/knee-page3.component';
+import { PromisPart1Component } from './promis-part1/promis-part1.component';
+import { PromisPart2Component } from './promis-part2/promis-part2.component';
+import { PromisPart3Component } from './promis-part3/promis-part3.component';
+import { PromisPart4Component } from './promis-part4/promis-part4.component';
+import { PromisPart5Component } from './promis-part5/promis-part5.component';
+import { ThankYouHipComponent } from './thank-you-hip/thank-you-hip.component';
+import { ThankYouKneeComponent } from './thank-you-knee/thank-you-knee.component';
+import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
+import { UnsubscribeThankYouComponent } from './unsubscribe-thank-you/unsubscribe-thank-you.component';
+import { IneligibleComponent } from './ineligible/ineligible.component';
+import { CollaborateComponent } from './collaborate/collaborate.component';
 
-export const ROUTES : Routes = [
+export const ROUTES: Routes = [
     // {
     //     path:'landing-page',
     //     component:LetterLandingComponent
     // },
     {
         path: '',
-        component:LetterLandingComponent        
+        component: LetterLandingComponent
     }, {
         path: 'pamf',
         redirectTo: 'letterLanding',
@@ -48,7 +48,8 @@ export const ROUTES : Routes = [
         data: {
             title: 'Letter landing'
         }
-    }, {
+    },
+    {
         path: 'hipLanding',
         component: HipLandingComponent,
         data: {
@@ -60,6 +61,14 @@ export const ROUTES : Routes = [
         data: {
             title: 'Incorrect code'
         }
+    },
+    {
+        path: 'pamf/hipIntro',
+        component: HipIntroComponent,
+        data: {
+            title: 'Hip intro'
+        }
+
     }, {
         path: 'hipIntro',
         component: HipIntroComponent,
