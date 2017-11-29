@@ -11,13 +11,16 @@ import { utils } from 'protractor';
 import { environment } from '../environments/environment';
 import { DatePipe } from '@angular/common';
 import { hipQuestions, kneeQuestions, promisQuestions, collaborate } from './app.questions';
+import { Ng2DeviceService } from 'ng2-device-detector';
+
+
 @Injectable()
 export class AppService {
   subject: Subject<any>;
   urlParams: any;
   // settings: any;
-
-  constructor(private httpClient: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) {
+  deviceInfo = null;
+  constructor(private deviceService: Ng2DeviceService,private httpClient: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) {
     this.subject = new Subject();
     this.getUrlParams();
     // this.getSettings();
@@ -72,6 +75,7 @@ export class AppService {
   
  
   fillHipQuestionsTopSec() {
+    this.deviceInfo = this.deviceService.getDeviceInfo();
     let date = new Date();
     hipQuestions.code = this.urlParams.c1;
     hipQuestions.bundle = this.urlParams.c2;
@@ -80,9 +84,9 @@ export class AppService {
     hipQuestions.qx_name = 'HOOS';
     hipQuestions.qx_id = '358';
     hipQuestions.qx_vendor = 'newpro';
-    hipQuestions.qx_os = '';
-    hipQuestions.qx_browser = '';
-    hipQuestions.qx_device = '';
+    hipQuestions.qx_os = this.deviceInfo.os;
+    hipQuestions.qx_browser = this.deviceInfo.browser;
+    hipQuestions.qx_device = this.deviceInfo.device;
     hipQuestions.qx_ip_address = '';
     hipQuestions.qx_started_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
     hipQuestions.qx_accessed_at = hipQuestions.qx_started_at;
@@ -92,6 +96,7 @@ export class AppService {
   }  
 
   fillKneeQuestionsTopSec() {
+    this.deviceInfo = this.deviceService.getDeviceInfo();
     let date = new Date();
     kneeQuestions.code = this.urlParams.c1;
     kneeQuestions.bundle = this.urlParams.c2;
@@ -100,9 +105,9 @@ export class AppService {
     kneeQuestions.qx_name = 'KOOS';
     kneeQuestions.qx_id = '357';
     kneeQuestions.qx_vendor = 'newpro';
-    kneeQuestions.qx_os = '';
-    kneeQuestions.qx_browser = '';
-    kneeQuestions.qx_device = '';
+    kneeQuestions.qx_os = this.deviceInfo.os;
+    kneeQuestions.qx_browser = this.deviceInfo.browser;
+    kneeQuestions.qx_device = this.deviceInfo.device;
     kneeQuestions.qx_ip_address = '';
     kneeQuestions.qx_started_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
     kneeQuestions.qx_accessed_at = hipQuestions.qx_started_at;
@@ -113,6 +118,7 @@ export class AppService {
 
   fillPromisQuestionsTopSec() {
     let date = new Date();
+    this.deviceInfo = this.deviceService.getDeviceInfo();
     promisQuestions.code = this.urlParams.c1;
     promisQuestions.bundle = this.urlParams.c2;
     promisQuestions.surgery_type = this.urlParams.c3;
@@ -120,9 +126,9 @@ export class AppService {
     promisQuestions.qx_name = 'PROMIS';
     promisQuestions.qx_id = '356';
     promisQuestions.qx_vendor = 'newpro';
-    promisQuestions.qx_os = '';
-    promisQuestions.qx_browser = '';
-    promisQuestions.qx_device = '';
+    promisQuestions.qx_os = this.deviceInfo.os;
+    promisQuestions.qx_browser = this.deviceInfo.browser;
+    promisQuestions.qx_device = this.deviceInfo.device;
     promisQuestions.qx_ip_address = '';
     promisQuestions.qx_started_at = this.urlParams.c14 ? this.urlParams.c14 : this.transform();
     promisQuestions.qx_accessed_at = hipQuestions.qx_started_at;
@@ -133,6 +139,7 @@ export class AppService {
 
   fillCollaborateTopSec() {
     let date = new Date();
+    this.deviceInfo = this.deviceService.getDeviceInfo();
     collaborate.code = this.urlParams.c1;
     collaborate.bundle = this.urlParams.c2;
     collaborate.surgery_type = this.urlParams.c3;
@@ -140,9 +147,9 @@ export class AppService {
     collaborate.qx_name = 'COLLABORATE';
     collaborate.qx_id = '356';
     collaborate.qx_vendor = 'newpro';
-    collaborate.qx_os = '';
-    collaborate.qx_browser = '';0
-    collaborate.qx_device = '';
+    collaborate.qx_os = this.deviceInfo.os;
+    collaborate.qx_browser = this.deviceInfo.browser;
+    collaborate.qx_device = this.deviceInfo.device;
     collaborate.qx_ip_address = '';
     collaborate.qx_started_at = (this.urlParams.c14) ? this.urlParams.c14 : this.transform();
     collaborate.qx_accessed_at = hipQuestions.qx_started_at;

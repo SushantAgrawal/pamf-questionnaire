@@ -30,6 +30,7 @@ import { IneligibleComponent } from './ineligible/ineligible.component';
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
 import { UnsubscribeThankYouComponent } from './unsubscribe-thank-you/unsubscribe-thank-you.component';
 import {  ReactiveFormsModule } from '@angular/forms';
+import { Ng2DeviceDetectorModule } from 'ng2-device-detector';
 // import { HipMandatoryComponent } from './hip-mandatory/hip-mandatory.component';
 // import { HttpModule } from '@angular/http';
 
@@ -65,7 +66,8 @@ import {  ReactiveFormsModule } from '@angular/forms';
     BrowserModule, 
     HttpClientModule, 
     // HttpModule,
-    RouterModule.forRoot(ROUTES, {useHash: false}), FormsModule,ReactiveFormsModule
+    RouterModule.forRoot(ROUTES, {useHash: false}), FormsModule,ReactiveFormsModule,
+    Ng2DeviceDetectorModule.forRoot()
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
