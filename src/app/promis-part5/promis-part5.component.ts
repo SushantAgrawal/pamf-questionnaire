@@ -13,9 +13,12 @@ export class PromisPart5Component implements OnInit {
   constructor(private router : Router, public appService : AppService) {
     this.scores = [
       {
-        key: 1,
+        key: 0,
         value: 'No Pain',
         css: 'node1'
+      },
+      {
+        key: 1
       }, {
         key: 2
       }, {
