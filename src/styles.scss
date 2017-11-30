@@ -133,6 +133,7 @@ body{
 .question-small-link{
     font-size: 16px;
     @extend .external-links; 
+    margin-bottom: 80px;
 }
 .question-helps{
         padding: 0px; list-style-type: none; margin: 0px;
@@ -212,6 +213,14 @@ height: 6px}
 .checkbox-alert{color: #ff3b39; font-size: 14pt; padding: 5px; text-align: left; background-image:url(data:image/gif;base64,R0lGODlhDAAMAKIAAN3d3WZmZv///8zMzO7u7gAAAAAAAAAAACH5BAAAAAAALAAAAAAMAAwAAAMoKLPcKjDKJYi9FlAcrh7VFXTEV41oZxLpWG4iuYoejGUUoO872PygBAA7DQo=); background-repeat: no-repeat; padding-left: 20px; background-position:left;}
 @media only screen and (max-width: 776px) {
     body{ font-size: 14pt;}
+    .review-bar .num-box{
+        padding: 8px 2.1%;
+    }
+    .review-bar .num-box .node1{
+        font-size: 16pt; width: 200px; text-align: left;
+    }
+    .review-bar .num-box .node-last{font-size: 16pt; width: 220px; text-align:right;}
+    
 }
 @media only screen and (max-width: 568px) {
    
@@ -252,7 +261,7 @@ height: 6px}
     }
     .sh-table td label{ display: inline-block!important; line-height: 50px; cursor:pointer; }
     .review-bar .num-box{
-        padding: 8px 1.8%;
+        padding: 8px 1.2%;
     }
     .review-bar .num-box .node1{
         font-size: 11pt; width: 120px; text-align: left;
@@ -275,26 +284,28 @@ height: 6px}
         margin-bottom: 20px;
     }
     .question-small-link{
-        margin-bottom: 20px;
+        margin-bottom: 40px;
+        
     }
 
     }
     @media only screen and (max-width: 375px) {
         .review-bar .num-box{
-            padding: 8px 1%;
+            padding: 8px .85%;
         }
+
     }
     @media only screen and (max-width: 320px) {
         .review-bar .num-box .node1{
-            font-size: 11pt; width: 100px; text-align: left;
+            font-size: 10pt; width: 100px; text-align: left;
         }
-        .review-bar .num-box .node-last{font-size: 11pt; width: 100px; text-align:right;}
+        .review-bar .num-box .node-last{font-size: 10pt; width: 100px; text-align:right;}
         
         .question-inputfld input{
             width: 200px;
         }
         .review-bar .num-box {
-            padding: 8px .5%;
+            padding: 8px .2%;
         }
         .review-bar .num-box .node-last, .review-bar .num-box .node1{ font-size: 10pt;}
     }

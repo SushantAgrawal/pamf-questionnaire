@@ -14,9 +14,12 @@ export class CollaborateComponent implements OnInit {
   constructor(private router : Router, public appService : AppService) {
     this.scores = [
       {
-        key: 1,
+        key: 0,
         value: 'No effort was made',
         css: 'node1'
+      },
+      {
+        key: 1
       }, {
         key: 2
       }, {
