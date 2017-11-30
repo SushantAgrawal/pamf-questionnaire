@@ -133,6 +133,7 @@ body{
 .question-small-link{
     font-size: 16px;
     @extend .external-links; 
+    margin-bottom: 80px;
 }
 .question-helps{
         padding: 0px; list-style-type: none; margin: 0px;
@@ -275,7 +276,8 @@ height: 6px}
         margin-bottom: 20px;
     }
     .question-small-link{
-        margin-bottom: 20px;
+        margin-bottom: 40px;
+        
     }
 
     }
