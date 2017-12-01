@@ -17,7 +17,7 @@ export class IneligibleComponent implements OnInit {
         d.error
           ? console.log(d.error)
           : (() => {
-            let redirectUrl = d.redirectUrl;
+            let redirectUrl = d.data.redirectUrl;
             let route = this
               .appService
               .getRoute(redirectUrl);

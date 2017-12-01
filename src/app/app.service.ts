@@ -20,7 +20,7 @@ export class AppService {
   urlParams: any;
   // settings: any;
   deviceInfo = null;
-  constructor(private deviceService: Ng2DeviceService,private httpClient: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private deviceService: Ng2DeviceService, private httpClient: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) {
     this.subject = new Subject();
     this.getUrlParams();
     // this.getSettings();
@@ -72,8 +72,8 @@ export class AppService {
     return (route);
   }
 
-  
- 
+
+
   fillHipQuestionsTopSec() {
     this.deviceInfo = this.deviceService.getDeviceInfo();
     let date = new Date();
@@ -93,7 +93,7 @@ export class AppService {
     hipQuestions.qx_accessed_by = this.urlParams.c11;
     hipQuestions.qx_completed_at = hipQuestions.qx_started_at;
     hipQuestions.qx_status = 'COMPLETED';
-  }  
+  }
 
   fillKneeQuestionsTopSec() {
     this.deviceInfo = this.deviceService.getDeviceInfo();
@@ -237,16 +237,17 @@ export class AppService {
               .subject
               .next({ id: id, data: d });
           }, err => {
-            if (err.status && ((err.status == 200) || (err.status == 404))) {
-              this
-                .subject
-                .next({ id: id, redirectUrl: err.url })
-            } else {
-              this
-                .subject
-                .next({ id: id, error: err });
-            }
-            // this   .subject   .next({id: id, error: err});
+            this.subject.next({ id: id, error: err });
+            // if (err.status && ((err.status == 200) || (err.status == 404))) {
+            //   this
+            //     .subject
+            //     .next({ id: id, redirectUrl: err.url })
+            // } else {
+            //   this
+            //     .subject
+            //     .next({ id: id, error: err });
+            // }
+            // 
           });
       } else {
         this

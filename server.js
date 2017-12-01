@@ -27,7 +27,7 @@ app.get('/*letterLanding', (req, res) => {
     res.sendFile(path.join(__publicFolder + '/index.html'));
 })
 app.get('/*', (req, res) => {
-    res.json({ url: req.url });
+    res.json({ redirectUrl: req.url });
 })
 
 // Allow for Jenkins smoke test

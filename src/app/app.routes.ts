@@ -184,5 +184,8 @@ export const ROUTES: Routes = [
         data: {
             title: 'Collaborate'
         }
+    },{
+        path:'**',
+        redirectTo:'letterLanding'
     }
 ];
