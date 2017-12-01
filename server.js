@@ -36,5 +36,5 @@ app.get('/test', function (req, res) {
 });
 
 // Running the server
-// app.listen(argv.p, _ => console.log('Running on port ' + argv.p));
-app.listen(4200, _ => console.log('Running on port ' + 4200));
+app.listen(argv.p, _ => console.log('Running on port ' + argv.p));
+// app.listen(4200, _ => console.log('Running on port ' + 4200));
