@@ -33,8 +33,8 @@ export class KneePage1Component implements OnInit {
     this.start = false;
     let thisForm = this.myForm.form;
     thisForm.valid && (
-      kneeQuestions.responses[0].answer_text[0] = this.kneeStiffness
-      , kneeQuestions.responses[0].answer_text_score[0] = this.scores[this.kneeStiffness]
+      kneeQuestions.responses[0].answer_text[0] = this.kneeStiffness.toString()
+      , kneeQuestions.responses[0].answer_text_score[0] = this.scores[this.kneeStiffness].toString()
       , this
         .router
         .navigate(['kneePage2'], { queryParamsHandling: "merge"})

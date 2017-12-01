@@ -34,8 +34,8 @@ export class PromisPart3Component implements OnInit {
       this.start = false;
       let thisForm = this.myForm.form;
       thisForm.valid && (
-        promisQuestions.responses[7].answer_text[0] = this.emotionalProblems
-        , promisQuestions.responses[7].answer_text_score[0] = this.scores[this.emotionalProblems]
+        promisQuestions.responses[7].answer_text[0] = this.emotionalProblems.toString()
+        , promisQuestions.responses[7].answer_text_score[0] = this.scores[this.emotionalProblems].toString()
 
         , this
           .router

@@ -34,8 +34,8 @@ export class PromisPart4Component implements OnInit {
     this.start = false;
     let thisForm = this.myForm.form;
     thisForm.valid && (
-      promisQuestions.responses[8].answer_text[0] = this.fatigue
-      , promisQuestions.responses[8].answer_text_score[0] = this.scores[this.fatigue]
+      promisQuestions.responses[8].answer_text[0] = this.fatigue.toString()
+      , promisQuestions.responses[8].answer_text_score[0] = this.scores[this.fatigue].toString()
 
       , this
         .router
