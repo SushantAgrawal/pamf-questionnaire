@@ -45,14 +45,14 @@ export class KneePage2Component implements OnInit {
     this.start = false;
     let thisForm = this.myForm.form;
     thisForm.valid && (      
-      kneeQuestions.responses[1].answer_text[0] = this.pivoting
-      , kneeQuestions.responses[1].answer_text_score[0] = this.scores[this.pivoting]
-      , kneeQuestions.responses[2].answer_text[0] = this.straightening
-      , kneeQuestions.responses[2].answer_text_score[0] = this.scores[this.straightening]
-      , kneeQuestions.responses[3].answer_text[0] = this.upDown
-      , kneeQuestions.responses[3].answer_text_score[0] = this.scores[this.upDown]
-      , kneeQuestions.responses[4].answer_text[0] = this.upright
-      , kneeQuestions.responses[4].answer_text_score[0] = this.scores[this.upright]
+      kneeQuestions.responses[1].answer_text[0] = this.pivoting.toString()
+      , kneeQuestions.responses[1].answer_text_score[0] = this.scores[this.pivoting].toString()
+      , kneeQuestions.responses[2].answer_text[0] = this.straightening.toString()
+      , kneeQuestions.responses[2].answer_text_score[0] = this.scores[this.straightening].toString()
+      , kneeQuestions.responses[3].answer_text[0] = this.upDown.toString()
+      , kneeQuestions.responses[3].answer_text_score[0] = this.scores[this.upDown].toString()
+      , kneeQuestions.responses[4].answer_text[0] = this.upright.toString()
+      , kneeQuestions.responses[4].answer_text_score[0] = this.scores[this.upright].toString()
       // , console.log(kneeQuestions.responses)
       , this.router.navigate(['kneePage3'], { queryParamsHandling: "merge"}));
   }

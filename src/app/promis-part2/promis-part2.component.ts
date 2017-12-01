@@ -32,8 +32,8 @@ export class PromisPart2Component implements OnInit {
       this.start = false;
       let thisForm = this.myForm.form;
       thisForm.valid && (
-        promisQuestions.responses[6].answer_text[0] = this.everydayPhysicalActivities
-        , promisQuestions.responses[6].answer_text_score[0] = this.scores[this.everydayPhysicalActivities]
+        promisQuestions.responses[6].answer_text[0] = this.everydayPhysicalActivities.toString()
+        , promisQuestions.responses[6].answer_text_score[0] = this.scores[this.everydayPhysicalActivities].toString()
 
         , this
           .router

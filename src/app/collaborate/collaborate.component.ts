@@ -101,7 +101,14 @@ export class CollaborateComponent implements OnInit {
   next() {
     this.start = false;
     let thisForm = this.myForm.form;
-    thisForm.valid && (this.appService.fillCollaborateTopSec(),collaborate.responses[0].answer_text[0] = this.healthIssues, collaborate.responses[0].answer_text_score[0] = this.healthIssues, collaborate.responses[1].answer_text[0] = this.matter, collaborate.responses[1].answer_text_score[0] = this.matter, collaborate.responses[2].answer_text[0] = this.choosingNext, collaborate.responses[2].answer_text_score[0] = this.choosingNext,  this.appService.httpPost('collaborate:submit', collaborate));
+    thisForm.valid && (this.appService.fillCollaborateTopSec()
+    ,collaborate.responses[0].answer_text[0] = this.healthIssues.toString()
+    , collaborate.responses[0].answer_text_score[0] = this.healthIssues.toString()
+    , collaborate.responses[1].answer_text[0] = this.matter.toString()
+    , collaborate.responses[1].answer_text_score[0] = this.matter.toString()
+    , collaborate.responses[2].answer_text[0] = this.choosingNext.toString()
+    , collaborate.responses[2].answer_text_score[0] = this.choosingNext.toString()
+    ,  this.appService.httpPost('collaborate:submit', collaborate));
 
   }
 

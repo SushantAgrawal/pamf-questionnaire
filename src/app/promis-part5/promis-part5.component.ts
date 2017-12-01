@@ -91,10 +91,10 @@ export class PromisPart5Component implements OnInit {
   next() {
     this.start = false;
     let thisForm = this.myForm.form;
-    thisForm.valid && (promisQuestions.responses[9].answer_text[0] = this.pain, promisQuestions.responses[9].answer_text_score[0] = this.pain,
+    thisForm.valid && (promisQuestions.responses[9].answer_text[0] = this.pain.toString()
+    , promisQuestions.responses[9].answer_text_score[0] = this.pain.toString(),
       this.appService.fillPromisQuestionsTopSec(),
     this.appService.httpPost('promis:part5:submit', promisQuestions));
-
   }
 
   ngOnDestroy() {

@@ -66,10 +66,10 @@ export class KneePage3Component implements OnInit {
       this.start = false;
       let thisForm = this.myForm.form;
       thisForm.valid && (this.appService.fillKneeQuestionsTopSec(),
-        kneeQuestions.responses[5].answer_text[0] = this.rising
-        , kneeQuestions.responses[5].answer_text_score[0] = this.scores[this.rising]
-        , kneeQuestions.responses[6].answer_text[0] = this.bending
-        , kneeQuestions.responses[6].answer_text_score[0] = this.scores[this.bending]
+        kneeQuestions.responses[5].answer_text[0] = this.rising.toString()
+        , kneeQuestions.responses[5].answer_text_score[0] = this.scores[this.rising].toString()
+        , kneeQuestions.responses[6].answer_text[0] = this.bending.toString()
+        , kneeQuestions.responses[6].answer_text_score[0] = this.scores[this.bending].toString()
         //, console.log(kneeQuestions.responses)
         , this.appService.httpPost('knee:page3:submit',kneeQuestions)
       );

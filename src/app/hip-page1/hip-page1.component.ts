@@ -39,10 +39,10 @@ export class HipPage1Component implements OnInit {
     this.start = false;
     let thisForm = this.myForm.form;
     thisForm.valid && (
-      hipQuestions.responses[0].answer_text[0] = this.stairs
-      , hipQuestions.responses[0].answer_text_score[0] = this.scores[this.stairs]
-      , hipQuestions.responses[1].answer_text[0] = this.surface
-      , hipQuestions.responses[1].answer_text_score[0] = this.scores[this.surface]
+      hipQuestions.responses[0].answer_text[0] = this.stairs.toString()
+      , hipQuestions.responses[0].answer_text_score[0] = this.scores[this.stairs].toString()
+      , hipQuestions.responses[1].answer_text[0] = this.surface.toString()
+      , hipQuestions.responses[1].answer_text_score[0] = this.scores[this.surface].toString()
       , this.router.navigate(['hipPage2'], { queryParamsHandling: "merge"})
     );
   }

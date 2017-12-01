@@ -58,18 +58,18 @@ export class PromisPart1Component implements OnInit {
     this.start = false;
     let thisForm = this.myForm.form;
     thisForm.valid && (
-      promisQuestions.responses[0].answer_text[0] = this.health
-      , promisQuestions.responses[0].answer_text_score[0] = this.scores[this.health]
-      , promisQuestions.responses[1].answer_text[0] = this.quality
-      , promisQuestions.responses[1].answer_text_score[0] = this.scores[this.quality]
-      , promisQuestions.responses[2].answer_text[0] = this.physical
-      , promisQuestions.responses[2].answer_text_score[0] = this.scores[this.physical]
-      , promisQuestions.responses[3].answer_text[0] = this.mentalHealth
-      , promisQuestions.responses[3].answer_text_score[0] = this.scores[this.mentalHealth]
-      , promisQuestions.responses[4].answer_text[0] = this.social
-      , promisQuestions.responses[4].answer_text_score[0] = this.scores[this.social]
-      , promisQuestions.responses[5].answer_text[0] = this.activities
-      , promisQuestions.responses[5].answer_text_score[0] = this.scores[this.activities]
+      promisQuestions.responses[0].answer_text[0] = this.health.toString()
+      , promisQuestions.responses[0].answer_text_score[0] = this.scores[this.health].toString()
+      , promisQuestions.responses[1].answer_text[0] = this.quality.toString()
+      , promisQuestions.responses[1].answer_text_score[0] = this.scores[this.quality].toString()
+      , promisQuestions.responses[2].answer_text[0] = this.physical.toString()
+      , promisQuestions.responses[2].answer_text_score[0] = this.scores[this.physical].toString()
+      , promisQuestions.responses[3].answer_text[0] = this.mentalHealth.toString()
+      , promisQuestions.responses[3].answer_text_score[0] = this.scores[this.mentalHealth].toString()
+      , promisQuestions.responses[4].answer_text[0] = this.social.toString()
+      , promisQuestions.responses[4].answer_text_score[0] = this.scores[this.social].toString()
+      , promisQuestions.responses[5].answer_text[0] = this.activities.toString()
+      , promisQuestions.responses[5].answer_text_score[0] = this.scores[this.activities].toString()
       , this
         .router
         .navigate(['promisPart2'], { queryParamsHandling: "merge"})
