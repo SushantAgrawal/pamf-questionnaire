@@ -228,7 +228,7 @@ export class AppService {
         httpParams = httpParams.append(x, queryParams[x]);
         return (httpParams);
       }, httpParams));
-      httpParams= httpParams.append("random",Math.random().toString());
+      httpParams= httpParams?httpParams.append("random",Math.random().toString()):new HttpParams().append("random",Math.random().toString());
       if (url) {
         this
           .httpClient
