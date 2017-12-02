@@ -15,6 +15,16 @@ let pamfOptions = {
                 ret = "collaborate?c14=10/12/2017"
             }else if(code == 'promis'){
                 ret = "promisPart1?c14=10/12/2017"
+            }else if(code == 'thankYouHip'){
+                ret = "thankYouHip?c14=10/12/2017"
+            }else if(code == 'thankYouKnee'){
+                ret = "thankYouKnee?c14=10/12/2017"
+            }else if(code == 'unsubscribe'){
+                ret = "unsubscribe?c14=10/12/2017"
+            }else if(code == 'unsubscribeThankYou'){
+                ret = "unsubscribeThankYou?c14=10/12/2017"
+            }else if(code == 'ineligible'){
+                ret = "ineligible?c14=10/12/2017"
             }            
             else {
                 ret = "incorrectTjr";

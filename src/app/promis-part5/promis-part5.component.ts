@@ -70,8 +70,7 @@ export class PromisPart5Component implements OnInit {
         d.error
           ? console.log(d.error)
           : (() => {
-            let redirectUrl = d.redirectUrl;
-            // let url = new URL(redirectUrl);
+            let redirectUrl = d.data.redirectUrl;
             let route = this
               .appService
               .getRoute(redirectUrl);

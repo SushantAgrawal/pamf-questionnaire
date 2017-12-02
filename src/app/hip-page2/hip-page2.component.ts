@@ -48,7 +48,7 @@ export class HipPage2Component implements OnInit {
         d.error
           ? console.log(d.error)
           : (() => {
-            let redirectUrl = d.redirectUrl;
+            let redirectUrl = d.data.redirectUrl;
             // let url = new URL(redirectUrl);
             let route = this
               .appService
