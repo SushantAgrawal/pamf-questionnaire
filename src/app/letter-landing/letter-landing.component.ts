@@ -26,19 +26,22 @@ export class LetterLandingComponent implements OnInit {
               .parseURL(redirectUrl);
 
             let c14 = urlObject.searchObject['c14'] || '';
-            this
-              .appService
-              .setUrlParam('c14', c14);
+            
             let route = this
               .appService
               .getRoute(redirectUrl);
+              this
+              .appService
+              .getRouteParam(redirectUrl);
+              this
+              .appService
+              .setUrlParam('c14', c14);
             this
               .router
               .navigate([route], {
                 queryParamsHandling: "merge",
-                queryParams: {
-                  c14: c14
-                }
+                queryParams: this
+                .appService.urlParams
               });
           })()
       });

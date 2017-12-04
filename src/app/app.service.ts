@@ -71,6 +71,27 @@ export class AppService {
     // let route = 'incorrectTjr';
     return (route);
   }
+  getRouteParam(url) {  
+    // let urlArray = url.slice(url.indexOf('?') + 1).split('&');
+    // let urlParam = urlArray.reduce((prevValue, x, i) => {
+    //   let elementArray = x && x.split('=');
+    //   (elementArray.length > 0) && (prevValue[elementArray[0]] = elementArray[1]);
+    //   return (prevValue);
+    // }, {});
+
+    // this.urlParams =urlParam;
+
+    // return (urlParam);
+
+    let rawParams = decodeURIComponent(url);
+    let urlArray = rawParams.slice(rawParams.indexOf('?') + 1).split('&');
+    this.urlParams = urlArray.reduce((prevValue, x, i) => {
+      let elementArray = x && x.split('=');
+      (elementArray.length > 0) && (prevValue[elementArray[0]] = elementArray[1]);
+      return (prevValue);
+    }, {});
+  }
+
 
 
 
