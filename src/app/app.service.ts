@@ -18,16 +18,15 @@ import { Ng2DeviceService } from 'ng2-device-detector';
 export class AppService {
   subject: Subject<any>;
   urlParams: any;
-  // settings: any;
   deviceInfo = null;
   constructor(private deviceService: Ng2DeviceService, private httpClient: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) {
     this.subject = new Subject();
-    this.getUrlParams();
-    // this.getSettings();
+    let rawParams = decodeURIComponent(window.location.search)
+    this.getUrlParams(rawParams);
   }
 
-  getUrlParams() {
-    let rawParams = decodeURIComponent(window.location.search);
+  getUrlParams(rawParams) {
+    rawParams = decodeURIComponent(rawParams);
     let urlArray = rawParams.slice(rawParams.indexOf('?') + 1).split('&');
     this.urlParams = urlArray.reduce((prevValue, x, i) => {
       let elementArray = x && x.split('=');
@@ -60,41 +59,15 @@ export class AppService {
   }
 
   getRoute(url) {
-    // url = new URL(url);
     let urlObject = this.parseURL(url);
     let urlArray = urlObject
       .pathname
       .split('/')
       .filter(x => x);
-    // let urlArray = url   .pathname   .split('/')   .filter(x => x);
     let route = (urlArray.length > 0) && (urlArray[urlArray.length - 1]);
-    // let route = 'incorrectTjr';
     return (route);
   }
-  getRouteParam(url) {  
-    // let urlArray = url.slice(url.indexOf('?') + 1).split('&');
-    // let urlParam = urlArray.reduce((prevValue, x, i) => {
-    //   let elementArray = x && x.split('=');
-    //   (elementArray.length > 0) && (prevValue[elementArray[0]] = elementArray[1]);
-    //   return (prevValue);
-    // }, {});
-
-    // this.urlParams =urlParam;
-
-    // return (urlParam);
-
-    let rawParams = decodeURIComponent(url);
-    let urlArray = rawParams.slice(rawParams.indexOf('?') + 1).split('&');
-    this.urlParams = urlArray.reduce((prevValue, x, i) => {
-      let elementArray = x && x.split('=');
-      (elementArray.length > 0) && (prevValue[elementArray[0]] = elementArray[1]);
-      return (prevValue);
-    }, {});
-  }
-
-
-
-
+  
   fillHipQuestionsTopSec() {
     this.deviceInfo = this.deviceService.getDeviceInfo();
     let date = new Date();
@@ -201,12 +174,6 @@ export class AppService {
       .replace(/\/$/, '');
     let path = environment.maestroPath;
     let url = baseUrl.concat('/', path, '/', urlMaps[id]);
-    // if (body) {   var headers = new HttpHeaders();   headers =
-    // headers.append('Content-Type', 'application/x-www-form-urlencoded');   let
-    // httpParams = new HttpParams();   httpParams = Object     .keys(body)
-    // .reduce((prevValue, x, i) => {       httpParams = httpParams.append(x,
-    // body[x]);       return (httpParams);     }, httpParams);   body =
-    // httpParams.toString(); }
     if (queryParams) {
       let httpParams = new HttpParams();
       httpParams = Object
@@ -216,7 +183,7 @@ export class AppService {
           return (httpParams);
         }, httpParams);
       queryParams = httpParams;
-    } //headers: headers,
+    }
     this
       .httpClient
       .post(url, body, { params: queryParams })
@@ -260,16 +227,6 @@ export class AppService {
               .next({ id: id, data: d });
           }, err => {
             this.subject.next({ id: id, error: err });
-            // if (err.status && ((err.status == 200) || (err.status == 404))) {
-            //   this
-            //     .subject
-            //     .next({ id: id, redirectUrl: err.url })
-            // } else {
-            //   this
-            //     .subject
-            //     .next({ id: id, error: err });
-            // }
-            // 
           });
       } else {
         this

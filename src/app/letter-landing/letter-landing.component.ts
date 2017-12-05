@@ -1,7 +1,6 @@
 import {Component, OnInit, ViewEncapsulation, ViewChild, ElementRef} from '@angular/core';
 import {AppService} from '../app.service';
 import {Router} from '@angular/router';
-// import {environment} from '../../environments/environment';
 
 @Component({selector: 'app-letter-landing', templateUrl: './letter-landing.component.html', styleUrls: ['./letter-landing.component.scss'], encapsulation: ViewEncapsulation.None})
 export class LetterLandingComponent implements OnInit {
@@ -32,7 +31,7 @@ export class LetterLandingComponent implements OnInit {
               .getRoute(redirectUrl);
               this
               .appService
-              .getRouteParam(redirectUrl);
+              .getUrlParams(redirectUrl);
               this
               .appService
               .setUrlParam('c14', c14);
