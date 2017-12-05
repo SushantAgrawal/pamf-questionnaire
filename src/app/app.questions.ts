@@ -10,10 +10,10 @@ export const hipQuestions = {
     "qx_browser": "", // from browser user agent
     "qx_device": "", // from browser user agent
     "qx_ip_address": "", // from browser user agent
-    "qx_started_at": "2017-08-16 12:50:00", // if c14 from query parameter is passed, then this should be the c14 value
-    "qx_accessed_at": "same as qx_started_at", // if c14 from query parameter is passed, then this should be the c14 value
-    "qx_accessed_by": "c11 from query parameter",
-    "qx_completed_at": "2017-08-17 12:52:57", // if c14 from query parameter is passed, then this should be the c14 value
+    "qx_started_at": "", // if c14 from query parameter is passed, then this should be the c14 value
+    "qx_accessed_at": "", // if c14 from query parameter is passed, then this should be the c14 value
+    "qx_accessed_by": "",//c11 from query parameter
+    "qx_completed_at": "", // if c14 from query parameter is passed, then this should be the c14 value
     "qx_status": "COMPLETED",
     "qx_instance_id": "", // this will be set at server side, unique identifier
     "qx_raw_score": "",// this will be set at server side, calculated programmatically
@@ -193,10 +193,10 @@ export const kneeQuestions = {
     "qx_browser": "", // from browser user agent
     "qx_device": "", // from browser user agent
     "qx_ip_address": "", // from browser user agent
-    "qx_started_at": "2017-08-16 12:50:00", // if c14 from query parameter is passed, then this should be the c14 value
-    "qx_accessed_at": "same as qx_started_at", // if c14 from query parameter is passed, then this should be the c14 value
-    "qx_accessed_by": "c11 from query parameter",
-    "qx_completed_at": "2017-08-17 12:52:57", // if c14 from query parameter is passed, then this should be the c14 value
+    "qx_started_at": "", // if c14 from query parameter is passed, then this should be the c14 value
+    "qx_accessed_at": "", // if c14 from query parameter is passed, then this should be the c14 value
+    "qx_accessed_by": "",
+    "qx_completed_at": "", // if c14 from query parameter is passed, then this should be the c14 value
     "qx_status": "COMPLETED",
     "qx_instance_id": "", // this will be set at server side, unique identifier
     "qx_raw_score": "", // this will be set at server side, calculated programmatically
@@ -402,10 +402,10 @@ export const promisQuestions = {
     "qx_browser": "", // from browser user agent
     "qx_device": "", // from browser user agent
     "qx_ip_address": "", // from browser user agent
-    "qx_started_at": "2017-08-16 12:50:00", // if c14 from query parameter is passed, then this should be the c14 value
-    "qx_accessed_at": "same as qx_started_at", // if c14 from query parameter is passed, then this should be the c14 value
-    "qx_accessed_by": "c11 from query parameter",
-    "qx_completed_at": "2017-08-17 12:52:57", // if c14 from query parameter is passed, then this should be the c14 value
+    "qx_started_at": "", // if c14 from query parameter is passed, then this should be the c14 value
+    "qx_accessed_at": "", //same as qx_started_at if c14 from query parameter is passed, then this should be the c14 value
+    "qx_accessed_by": "",
+    "qx_completed_at": "", // if c14 from query parameter is passed, then this should be the c14 value
     "qx_status": "COMPLETED",
     "qx_instance_id": "",// this will be set at server side, unique identifier
     "qx_mental_raw_score": "", // this will be set at server side, calculated programmatically
@@ -706,10 +706,10 @@ export const collaborate = {
     "qx_browser": "", // from browser user agent
     "qx_device": "", // from browser user agent
     "qx_ip_address": "", // from browser user agent
-    "qx_started_at": "2017-08-16 12:50:00", // if c14 from query parameter is passed, then this should be the c14 value
-    "qx_accessed_at": "same as qx_started_at", // if c14 from query parameter is passed, then this should be the c14 value
-    "qx_accessed_by": "c11 from query parameter",
-    "qx_completed_at": "2017-08-17 12:52:57", // if c14 from query parameter is passed, then this should be the c14 value
+    "qx_started_at": "", // if c14 from query parameter is passed, then this should be the c14 value
+    "qx_accessed_at": "", // if c14 from query parameter is passed, then this should be the c14 value
+    "qx_accessed_by": "",
+    "qx_completed_at": "", // if c14 from query parameter is passed, then this should be the c14 value
     "qx_status": "COMPLETED",
     "qx_instance_id": "",// this will be set at server side, unique identifier
     "qx_raw_score": "",// this will be set at server side, calculated programmatically

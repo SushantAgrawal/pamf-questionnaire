@@ -25,11 +25,13 @@ import { CollaborateComponent } from './collaborate/collaborate.component';
 export const ROUTES: Routes = [
     {
         path: '',
-        component: LetterLandingComponent
+        component: LetterLandingComponent,
+        pathMatch: 'full'
     },
     {
         path: '*/letterLanding',
-        redirectTo: 'letterLanding'
+        redirectTo: 'letterLanding',
+        pathMatch: 'full'
     },
     {
         path: 'pamf',
@@ -46,6 +48,7 @@ export const ROUTES: Routes = [
     }, {
         path: 'letterLanding',
         component: LetterLandingComponent,
+        pathMatch: 'full',
         data: {
             title: 'Letter landing'
         }
@@ -53,12 +56,14 @@ export const ROUTES: Routes = [
     {
         path: 'hipLanding',
         component: HipLandingComponent,
+        pathMatch: 'full',
         data: {
             title: 'Hip landing'
         }
     }, {
         path: 'incorrectTjr',
         component: IncorrectTjrComponent,
+        pathMatch: 'full',
         data: {
             title: 'Incorrect code'
         }
@@ -66,6 +71,7 @@ export const ROUTES: Routes = [
     {
         path: 'pamf/hipIntro',
         component: HipIntroComponent,
+        pathMatch: 'full',
         data: {
             title: 'Hip intro'
         }
@@ -73,119 +79,139 @@ export const ROUTES: Routes = [
     }, {
         path: 'hipIntro',
         component: HipIntroComponent,
+        pathMatch: 'full',
         data: {
             title: 'Hip intro'
         }
     }, {
         path: 'hipPage1',
         component: HipPage1Component,
+        pathMatch: 'full',
         data: {
             title: 'Hip questions page1'
         }
     }, {
         path: 'hipPage2',
         component: HipPage2Component,
+        pathMatch: 'full',
         data: {
             title: 'Hip questions page2'
         }
     }, {
         path: 'kneeLanding',
         component: KneeLandingComponent,
+        pathMatch: 'full',
         data: {
             title: 'Knee landing'
         }
     }, {
         path: 'kneeIntro',
         component: KneeIntroComponent,
+        pathMatch: 'full',
         data: {
             title: 'Knee intro'
         }
     }, {
         path: 'kneePage1',
         component: KneePage1Component,
+        pathMatch: 'full',
         data: {
             title: 'Knee questions page1'
         }
     }, {
         path: 'kneePage2',
         component: KneePage2Component,
+        pathMatch: 'full',
         data: {
             title: 'Knee questions page2'
         }
     }, {
         path: 'kneePage3',
         component: KneePage3Component,
+        pathMatch: 'full',
         data: {
             title: 'Knee questions page3'
         }
     }, {
         path: 'promisPart1',
         component: PromisPart1Component,
+        pathMatch: 'full',
         data: {
             title: 'Promis part1'
         }
     }, {
         path: 'promisPart2',
         component: PromisPart2Component,
+        pathMatch: 'full',
         data: {
             title: 'Promis part2'
         }
     }, {
         path: 'promisPart3',
         component: PromisPart3Component,
+        pathMatch: 'full',
         data: {
             title: 'Promis part 3'
         }
     }, {
         path: 'promisPart4',
         component: PromisPart4Component,
+        pathMatch: 'full',
         data: {
             title: 'Promis part4'
         }
     }, {
         path: 'promisPart5',
         component: PromisPart5Component,
+        pathMatch: 'full',
         data: {
             title: 'Promis part5'
         }
     }, {
         path: 'thankYouHip',
         component: ThankYouHipComponent,
+        pathMatch: 'full',
         data: {
             title: 'Thank You Hip Replacement'
         }
     }, {
         path: 'thankYouKnee',
         component: ThankYouKneeComponent,
+        pathMatch: 'full',
         data: {
             title: 'Thank You Knee Replacement'
         }
     }, {
         path: 'unsubscribe',
         component: UnsubscribeComponent,
+        pathMatch: 'full',
         data: {
             title: 'Unsubscribe'
         }
     }, {
         path: 'unsubscribeThankYou',
         component: UnsubscribeThankYouComponent,
+        pathMatch: 'full',
         data: {
             title: 'Unsubscribe thank you'
         }
     }, {
         path: 'ineligible',
         component: IneligibleComponent,
+        pathMatch: 'full',
         data: {
             title: 'Ineligible'
         }
     }, {
         path: 'collaborate',
         component: CollaborateComponent,
+        pathMatch: 'full',
         data: {
             title: 'Collaborate'
         }
     },{
         path:'**',
+        pathMatch: 'full',
         redirectTo:'letterLanding'
     }
 ];
