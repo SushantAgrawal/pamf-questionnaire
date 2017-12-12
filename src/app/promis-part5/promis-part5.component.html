@@ -2,7 +2,7 @@
   <form #myForm="ngForm">
     <div class="sh-alert-area">Please answer all questions marked with an (
       <span class="asterisk-red">* </span>) to continue.</div>
-    <div class="sh-alert-warning" *ngIf="!(start ||  (pain.toString()!=''))">Please answer all questions marked with an (*) to continue.</div>
+    <div class="sh-alert-warning" *ngIf="!(start ||  pain.toString())">Please answer all questions marked with an (*) to continue.</div>
     <header class="sh-header">Pain</header>
     <div class="sub-header-txt">
       How would you rate your pain on average?
@@ -18,7 +18,7 @@
         <input type="radio" [id]="'pain' +i" name='DV_Q1_1' [(ngModel)]="pain" [value]="option.key" required/>
       </div>     
     </div>
-    <div *ngIf="!(start ||  (pain.toString()!=''))" class="checkbox-alert">Please choose at least one option </div>
+    <div *ngIf="!(start ||  pain.toString())" class="checkbox-alert">Please choose at least one option </div>
 
     <div class="btnContainer">
       <button type="button" class="btn-right" (click)="next()">Next</button>
