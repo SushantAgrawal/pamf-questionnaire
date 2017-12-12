@@ -7,9 +7,9 @@ export class CollaborateComponent implements OnInit {
   subscriptions : any;
   @ViewChild('myForm')myForm : any;
   start : boolean = true;
-  healthIssues : string;
-  matter : string;
-  choosingNext : string;
+  healthIssues : string='';
+  matter : string='';
+  choosingNext : string='';
   scores : any[] = [];
   constructor(private router : Router, public appService : AppService) {
     this.scores = [

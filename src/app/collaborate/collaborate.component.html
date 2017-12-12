@@ -2,7 +2,7 @@
     <form #myForm="ngForm">
         <div class="sh-alert-area">Please answer all questions marked with an (
             <span class="asterisk-red">* </span>) to continue.</div>
-        <div class="sh-alert-warning" *ngIf="!(start || ( healthIssues && matter && choosingNext))">Please answer all questions marked with an (*) to continue.</div>
+        <div class="sh-alert-warning" *ngIf="!(start || ((healthIssues.toString()!='') && (matter.toString()!='')  && (choosingNext.toString()!='') ))">Please answer all questions marked with an (*) to continue.</div>
         <div class="progress-bar-container">
             <div class="questionnaire-progress">Questionnaire Progress</div>
             <div class="progress-bar" style="width:7%;"></div>
@@ -25,7 +25,7 @@
                 <input type="radio" [id]="'healthIssues' +i" name='DV_Q1_1' [(ngModel)]="healthIssues" [value]="option.key" required/>
             </div>            
         </div>
-        <div *ngIf="!(start || healthIssues)" class="checkbox-alert" style="margin-bottom:40px;">Please choose at least one option</div>
+        <div *ngIf="!(start || (healthIssues.toString()!=''))" class="checkbox-alert" style="margin-bottom:40px;">Please choose at least one option</div>
 
         <div class="sub-header-txt">
             How much effort was made to listen to the things that matter most to you about your health issues?
@@ -40,7 +40,7 @@
                 <input type="radio" [id]="'matter' +i" name='DV_Q1_2' [(ngModel)]="matter" [value]="option.key" required/>
             </div>            
         </div>
-        <div *ngIf="!(start || matter)" class="checkbox-alert" style="margin-bottom:40px;">Please choose at least one option</div>
+        <div *ngIf="!(start || (matter.toString()!='') )" class="checkbox-alert" style="margin-bottom:40px;">Please choose at least one option</div>
 
         <div class="sub-header-txt"> How much effort was made to include what matters most to you in choosing what to do next?</div>
         <div class="review-bar">
@@ -53,7 +53,7 @@
                 <input type="radio" [id]="'choosingNext' +i" name='DV_Q1_3' [(ngModel)]="choosingNext" [value]="option.key" required/>
             </div>            
         </div>
-        <div *ngIf="!(start || choosingNext)" class="checkbox-alert" style="margin-bottom:40px;">Please choose at least one option</div>
+        <div *ngIf="!(start || (choosingNext.toString()!='') )" class="checkbox-alert" style="margin-bottom:40px;">Please choose at least one option</div>
         <div class="btnContainer">
             <button class="btn-right" type="button" (click)="next()">Next</button>
         </div>
